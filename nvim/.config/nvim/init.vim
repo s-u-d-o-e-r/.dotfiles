@@ -122,7 +122,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'haya14busa/incsearch-fuzzy.vim'
     Plug 'nvim-lua/popup.nvim'
     Plug 'nvim-lua/plenary.nvim'
-    Plug 'nvim-telescope/telescope.nvim'
+    " Plug 'nvim-telescope/telescope.nvim'
     Plug 'yaegassy/coc-jsdoc', {'do': 'yarn install --frozen-lockfile'}
     " Plug 'Cybolic/palenight.vim'
     Plug 'arthurxavierx/vim-caser'
@@ -563,8 +563,8 @@ map <leader><leader>f :Clap files<CR>
 map <leader><leader>p :Clap providers<CR>
 
 "telescope
-nnoremap<leader><leader>tf <cmd>Telescope find_files<cr>
-nnoremap <leader><leader>tg <cmd>Telescope live_grep find_command=rg,--ignore<cr>
+" nnoremap<leader><leader>tf <cmd>Telescope find_files<cr>
+" nnoremap <leader><leader>tg <cmd>Telescope live_grep find_command=rg,--ignore<cr>
 " nnoremap <leader>b <cmd>Telescope buffers<cr>
 " nnoremap <leader>h <cmd>Telescope help_tags<cr>
 " Buffers delete
@@ -840,7 +840,7 @@ highlight Normal guibg=none
 highlight LineNr guifg=#5eacd3
 highlight netrwDir guifg=#5eacd3
 highlight qfFileName guifg=#aed75f
-hi TelescopeBorder guifg=#5eacd
+" hi TelescopeBorder guifg=#5eacd
 hi HighlightedyankRegion term=bold ctermbg=0 guibg=#EEE8A9
 
 
