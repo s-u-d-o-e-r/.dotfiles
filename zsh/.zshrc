@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/nvorony/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -113,18 +113,34 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Set Spaceship ZSH as a prompt
-autoload -U promptinit; promptinit
-prompt spaceship
 
-
-source "/Users/nvorony/.oh-my-zsh/custom/themes/spaceship.zsh-theme"
 
 export PATH="$HOME/.cargo/bin:$PATH"
 
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#95a5a6"
+
+
 source ~/antigen.zsh
 
+# Load the oh-my-zsh's library.
+antigen use oh-my-zsh
 
+# Bundles from the default repo (robbyrussell's oh-my-zsh).
+antigen bundle git
+antigen bundle heroku
+antigen bundle pip
+antigen bundle lein
+antigen bundle command-not-found
+
+# Syntax highlighting bundle.
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen theme spaceship-prompt/spaceship-prompt
+
+antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle 'wfxr/forgit'
 
+
+
+# Tell Antigen that you're done.
 antigen apply
