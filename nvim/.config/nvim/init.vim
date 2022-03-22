@@ -307,7 +307,6 @@ let g:material_style = 'palenight'
 
 let g:gruvbox_material_statusline_style = 'mix'
 let g:gruvbox_material_diagnostic_virtual_text = 'colored'
-let g:gruvbox_material_diagnostic_text_highlight = 1
 let g:gruvbox_material_transparent_background = 1
 let g:gruvbox_material_background = 'soft'
 let g:gruvbox_material_palette= "mix"

@@ -24,6 +24,9 @@
 	"git.showCommitInFloating": true,
 	"git.addGBlameToBufferVar": true,
 	"diagnostic.virtualText": true,
+	"diagnostic.infoSign": "",
+	"diagnostic.errorSign": "",
+	"diagnostic.warningSign": "",
 	"codeLens.enable": true,
 	"diagnostic-languageserver.filetypes": {
 		"vim": "vint",
