@@ -1,176 +1,136 @@
 call plug#begin('~/.vim/plugged')
-    Plug 's-u-d-o-e-r/vim-gitcommit-issue-id'
-    Plug 'ekalinin/Dockerfile.vim'
-    "" Enable repeating supported plugin maps with '.'
-    Plug 'tpope/vim-repeat'
-    "" Repeat command extended to visual mode.
-    Plug 'inkarkat/vim-visualrepeat'
-    "" Brings physics-based smooth scrolling
-    Plug 'yuttie/comfortable-motion.vim'
-    "" A dark colorscheme with vibrant colors
-    " Plug 'flrnprz/candid.vim'
-    ""Plug 'mileszs/ack.vim'
-    Plug 'tpope/vim-abolish'
-    ""A Git wrapper
-    Plug 'tpope/vim-fugitive'
-    "" Fake data generator
-    Plug 'tkhren/vim-fake'
-    "" Buffers close menu
-    Plug 'Asheq/close-buffers.vim'
-    "" Switch between single-line and multiline forms of code gS - spit / gJ - join
-    Plug 'AndrewRadev/splitjoin.vim'
-    Plug 'junegunn/fzf' , { 'do': { -> fzf#install() } }
-    Plug 'junegunn/fzf.vim'
-    " Include source for coc.nvim
-    Plug 'Shougo/neoinclude.vim'
-    " " Include source for coc.nvim
-    Plug 'jsfaint/coc-neoinclude'
-    Plug 'neoclide/coc.nvim',   {'branch': 'release'}
-    " Color scheme
-    " Plug 'haishanh/night-owl.vim'
-    " " Screenshot maker
-    Plug 'kristijanhusak/vim-carbon-now-sh'
-    " A lightweight and powerful git branch viewer for vim.
-    " Plug 'rbong/vim-flog'
-    " A solid language pack for Vim.
-    " Plug 'sheerun/vim-polyglot'
-    " Fuzzy file, buffer, mru, tag, etc finder
-    Plug 'ctrlpvim/ctrlp.vim'
-    " " Lean & mean status/tabline for vim that's light as air
-    Plug 'bling/vim-airline'
-    " " Themes for airline
-    Plug 'vim-airline/vim-airline-themes'
-    " Snippets support
-    Plug 'Shougo/neosnippet.vim'
-    " Plug 'github/copilot.vim'
-    " Default snippets
-    Plug 'Shougo/neosnippet-snippets'
-    " Print documents in echo area.
-    Plug 'Shougo/echodoc.vim'
-    " " Extended session management for Vim
-    Plug 'xolox/vim-session'
-    " " Session
-    " " Required for vim-session
-    Plug 'xolox/vim-misc'
-    " File extensions icons
-    Plug 'ryanoasis/vim-devicons'
-    " (Do)cumentation (Ge)nerator 15+ languages  Generate proper code documentation skeletons with a single keypress.
-    " Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
-    " Vim bundle for styled-components based javascript files.
-    Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-    " A Vim plugin that provides GraphQL file detection, syntax highlighting, and indentation.
-    " Plug 'jparise/vim-graphql'
-    " Modern performant generic finder and dispatcher for Vim and NeoVim
-    Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' } "{ 'do': { -> clap#installer#force_download() } }
-    " Color scheme
-    " Plug 'drewtempelmeyer/palenight.vim'
-    " The undo history visualizer for VIM
-    Plug 'mbbill/undotree'
-    " Commentary.vim: comment stuff out 
-    Plug 'tpope/vim-commentary'
-    " The fancy start screen for Vim.
-    " Plug 'mhinz/vim-startify'
-    " Vim dashboard
-    Plug 'glepnir/dashboard-nvim'
-    " The open source plugin for productivity metrics, goals, leaderboards, and automatic time tracking.
-    " Plug 'wakatime/vim-wakatime'
-    " A Vim plugin which shows git diff markers in the sign column
-    Plug 'airblade/vim-gitgutter'
-    " Use RipGrep in Vim and display results in a quickfix list
-    " Plug 'jremmen/vim-ripgrep'
-    " Changes Vim working directory to project root (i dentified by presence of known directory or file).
-    Plug 'airblade/vim-rooter'
-    " Vim motions on speed!
-    Plug 'easymotion/vim-easymotion'
-    " Have Vim automatically reload a file that has changed externally
-    Plug 'djoshea/vim-autoread'
-    " Plugin manager for coc
-    Plug 'theoldmoon0602/coc-plug'
-    " Color scheme
-    Plug 'joshdick/onedark.vim'
-    " Motions to and inside git conflict markers
-    Plug 'rhysd/conflict-marker.vim'
-    " Vim plugin to automate replacing expressions with assigned variables in any programming language
-    Plug 'da-x/name-assign.vim'
-    " " VimL competition
-    " Plug 'Shougo/neco-vim'
-    " Plug 'neoclide/coc-neco'
-    " " Plugin that adds a 'cut' operation separate from 'delete'
-    Plug 'svermeulen/vim-cutlass'
-    " " Vim plugin that provides additional text objects
-    Plug 'wellle/targets.vim'
-    " Color scheme
-    Plug 'sainnhe/gruvbox-material'
-    "Git branch search using ctrlp.vim.
-    Plug 'imkmf/ctrlp-branches'
-    "emmet-vim is a vim plug-in which provides support for expanding abbreviations similar to emmet.
-    Plug 'mattn/emmet-vim'
-    "An always-on highlight for a unique character in every word on a line to help you use f, F and family.
-    Plug 'unblevable/quick-scope'
-    "sandwich.vim is a set of operator and textobject plugins to add/delete/replace surroundings of a sandwiched textobject, like (foo), 'bar'.
-    Plug 'machakann/vim-sandwich'
-    "Hardtime helps you break that annoying habit vimmers have of scrolling up and down the page using jjjjj and kkkkk but without compromising the rest of our vim experience.
-    Plug 'takac/vim-hardtime'
-    "Treesitter configurations and abstraction layer for Neovim.
-    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
-    "Blazing fast minimap for vim, powered by 🛰 code-minimap written in Rust
-    " Plug 'wfxr/minimap.vim'
-    "EditorConfig plugin for Vim
-    Plug 'editorconfig/editorconfig-vim'
-    Plug 'haya14busa/incsearch.vim'
-    Plug 'haya14busa/incsearch-easymotion.vim'
-    Plug 'haya14busa/incsearch-fuzzy.vim'
-    Plug 'nvim-lua/popup.nvim'
-    Plug 'nvim-lua/plenary.nvim'
-    " Plug 'nvim-telescope/telescope.nvim'
-    Plug 'yaegassy/coc-jsdoc', {'do': 'yarn install --frozen-lockfile'}
-    " Plug 'Cybolic/palenight.vim'
-    Plug 'arthurxavierx/vim-caser'
-    " Plug 'jiangmiao/auto-pairs'
-    Plug 'christoomey/vim-conflicted'
-    Plug 'preservim/tagbar'
-    Plug 'arcticicestudio/nord-vim'
-    " Plug 'rcarriga/nvim-notify'
-    " Plug 'nvim-treesitter/playground'
+Plug 's-u-d-o-e-r/vim-gitcommit-issue-id'
+Plug 'ekalinin/Dockerfile.vim'
+"" Enable repeating supported plugin maps with '.'
+Plug 'tpope/vim-repeat'
+"" Repeat command extended to visual mode.
+Plug 'inkarkat/vim-visualrepeat'
+"" Brings physics-based smooth scrolling
+Plug 'yuttie/comfortable-motion.vim'
+"" A dark colorscheme with vibrant colors
+" Plug 'flrnprz/candid.vim'
+""Plug 'mileszs/ack.vim'
+Plug 'tpope/vim-abolish'
+""A Git wrapper
+Plug 'tpope/vim-fugitive'
+"" Fake data generator
+Plug 'tkhren/vim-fake'
+"" Buffers close menu
+Plug 'Asheq/close-buffers.vim'
+"" Switch between single-line and multiline forms of code gS - spit / gJ - join
+Plug 'AndrewRadev/splitjoin.vim'
+Plug 'junegunn/fzf' , { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+" Include source for coc.nvim
+Plug 'Shougo/neoinclude.vim'
+" " Include source for coc.nvim
+Plug 'jsfaint/coc-neoinclude'
+Plug 'neoclide/coc.nvim',   {'branch': 'release'}
+" Color scheme
+" Plug 'haishanh/night-owl.vim'
+" " Screenshot maker
+Plug 'kristijanhusak/vim-carbon-now-sh'
+" A lightweight and powerful git branch viewer for vim.
+" Plug 'rbong/vim-flog'
+" A solid language pack for Vim.
+" Plug 'sheerun/vim-polyglot'
+" Fuzzy file, buffer, mru, tag, etc finder
+Plug 'ctrlpvim/ctrlp.vim'
+" " Lean & mean status/tabline for vim that's light as air
+Plug 'bling/vim-airline'
+" " Themes for airline
+Plug 'vim-airline/vim-airline-themes'
+" Snippets support
+Plug 'Shougo/neosnippet.vim'
+" Plug 'github/copilot.vim'
+" Default snippets
+Plug 'Shougo/neosnippet-snippets'
+" Print documents in echo area.
+Plug 'Shougo/echodoc.vim'
+" " Extended session management for Vim
+Plug 'xolox/vim-session'
+" " Session
+" " Required for vim-session
+Plug 'xolox/vim-misc'
+" File extensions icons
+Plug 'ryanoasis/vim-devicons'
+" (Do)cumentation (Ge)nerator 15+ languages  Generate proper code documentation skeletons with a single keypress.
+" Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
+" Vim bundle for styled-components based javascript files.
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+" A Vim plugin that provides GraphQL file detection, syntax highlighting, and indentation.
+" Plug 'jparise/vim-graphql'
+" Modern performant generic finder and dispatcher for Vim and NeoVim
+Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' } "{ 'do': { -> clap#installer#force_download() } }
+" Color scheme
+" Plug 'drewtempelmeyer/palenight.vim'
+" The undo history visualizer for VIM
+Plug 'mbbill/undotree'
+" Commentary.vim: comment stuff out 
+Plug 'tpope/vim-commentary'
+" The fancy start screen for Vim.
+" Plug 'mhinz/vim-startify'
+" Vim dashboard
+Plug 'glepnir/dashboard-nvim'
+" The open source plugin for productivity metrics, goals, leaderboards, and automatic time tracking.
+" Plug 'wakatime/vim-wakatime'
+" A Vim plugin which shows git diff markers in the sign column
+Plug 'airblade/vim-gitgutter'
+" Use RipGrep in Vim and display results in a quickfix list
+" Plug 'jremmen/vim-ripgrep'
+" Changes Vim working directory to project root (i dentified by presence of known directory or file).
+Plug 'airblade/vim-rooter'
+" Vim motions on speed!
+Plug 'easymotion/vim-easymotion'
+" Have Vim automatically reload a file that has changed externally
+Plug 'djoshea/vim-autoread'
+" Color scheme
+Plug 'joshdick/onedark.vim'
+" Motions to and inside git conflict markers
+Plug 'rhysd/conflict-marker.vim'
+" Vim plugin to automate replacing expressions with assigned variables in any programming language
+Plug 'da-x/name-assign.vim'
+" " VimL competition
+" Plug 'Shougo/neco-vim'
+" Plug 'neoclide/coc-neco'
+" " Plugin that adds a 'cut' operation separate from 'delete'
+Plug 'svermeulen/vim-cutlass'
+" " Vim plugin that provides additional text objects
+Plug 'wellle/targets.vim'
+" Color scheme
+Plug 'sainnhe/gruvbox-material'
+"Git branch search using ctrlp.vim.
+Plug 'imkmf/ctrlp-branches'
+"emmet-vim is a vim plug-in which provides support for expanding abbreviations similar to emmet.
+Plug 'mattn/emmet-vim'
+"An always-on highlight for a unique character in every word on a line to help you use f, F and family.
+Plug 'unblevable/quick-scope'
+"sandwich.vim is a set of operator and textobject plugins to add/delete/replace surroundings of a sandwiched textobject, like (foo), 'bar'.
+Plug 'machakann/vim-sandwich'
+"Hardtime helps you break that annoying habit vimmers have of scrolling up and down the page using jjjjj and kkkkk but without compromising the rest of our vim experience.
+Plug 'takac/vim-hardtime'
+"Treesitter configurations and abstraction layer for Neovim.
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+"Blazing fast minimap for vim, powered by 🛰 code-minimap written in Rust
+" Plug 'wfxr/minimap.vim'
+"EditorConfig plugin for Vim
+Plug 'editorconfig/editorconfig-vim'
+Plug 'haya14busa/incsearch.vim'
+Plug 'haya14busa/incsearch-easymotion.vim'
+Plug 'haya14busa/incsearch-fuzzy.vim'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+" Plug 'nvim-telescope/telescope.nvim'
+Plug 'yaegassy/coc-jsdoc', {'do': 'yarn install --frozen-lockfile'}
+" Plug 'Cybolic/palenight.vim'
+Plug 'arthurxavierx/vim-caser'
+" Plug 'jiangmiao/auto-pairs'
+Plug 'christoomey/vim-conflicted'
+Plug 'preservim/tagbar'
+Plug 'arcticicestudio/nord-vim'
+" Plug 'rcarriga/nvim-notify'
+" Plug 'nvim-treesitter/playground'
 call plug#end()
-
- call coc_plug#begin()
-    CocPlug 'coc-yank'
-    CocPlug 'coc-word'
-    CocPlug 'coc-spell-checker'
-    CocPlug 'coc-snippets'
-    CocPlug 'coc-prettier'
-    CocPlug 'coc-neosnippet'
-    CocPlug 'coc-marketplace'
-    CocPlug 'coc-lists'
-    CocPlug 'coc-jest'
-    CocPlug 'coc-java'
-    CocPlug 'coc-highlight'
-    CocPlug 'coc-git'
-    CocPlug 'coc-explorer'
-    CocPlug 'coc-eslint'
-    CocPlug 'coc-emoji'
-    CocPlug 'coc-emmet'
-    CocPlug 'coc-diagnostic'
-    CocPlug 'coc-calc'
-    CocPlug 'coc-actions'
-    CocPlug 'coc-xml'
-    CocPlug 'coc-tsserver'
-    CocPlug 'coc-svg'
-    CocPlug 'coc-markdownlint'
-    CocPlug 'coc-json'
-    CocPlug 'coc-html'
-    CocPlug 'coc-css' 
-    CocPlug 'coc-flow'
-    CocPlug 'coc-import-cost'
-    CocPlug 'coc-pairs'
-    CocPlug 'coc-cssmodules'
-    CocPlug 'coc-htmlhint'
-    CocPlug 'coc-scssmodules'
-    CocPlug 'coc-lightbulb'
-call coc_plug#end()
-
-
 
 
 
@@ -195,7 +155,7 @@ endfunction
 
 " setted color for quick scope plugin
 augroup qs_colors
- autocmd!
+  autocmd!
   autocmd ColorScheme * highlight QuickScopePrimary guibg='#434C5E' gui=underline cterm=underline
   autocmd ColorScheme * highlight QuickScopeSecondary  gui=underline cterm=underline
 augroup END
@@ -212,40 +172,40 @@ augroup END
 
 if has('macunix')
 
-" OSX
+  " OSX
 
-let g:python3_host_prog = '/usr/local/bin/python3' " -- Set python 3 provider
+  let g:python3_host_prog = '/usr/local/bin/python3' " -- Set python 3 provider
 
-let g:python_host_prog = '/usr/local/bin/python2' " --- Set python 2 provider
+  let g:python_host_prog = '/usr/local/bin/python2' " --- Set python 2 provider
 
 elseif has('unix')
 
-" Ubuntu
+  " Ubuntu
 
-let g:python3_host_prog = '/usr/bin/python3' " -------- Set python 3 provider
+  let g:python3_host_prog = '/usr/bin/python3' " -------- Set python 3 provider
 
-let g:python_host_prog = '/usr/bin/python' " ---------- Set python 2 provider
+  let g:python_host_prog = '/usr/bin/python' " ---------- Set python 2 provider
 
 elseif has('win32') || has('win64')
 
-" Window
+  " Window
 
 endif
 
 " }}}
 
 
-  let g:clap_layout = { 'relative': 'editor' }
-  let g:dashboard_custom_header= [
-        \'',
-        \'██╗   ██╗██╗███╗   ███╗',
-        \'██║   ██║██║████╗ ████║',
-        \'██║   ██║██║██╔████╔██║',
-        \'╚██╗ ██╔╝██║██║╚██╔╝██║',
-        \' ╚████╔╝ ██║██║ ╚═╝ ██║',
-        \'  ╚═══╝  ╚═╝╚═╝     ╚═╝',
-        \''
-        \]
+let g:clap_layout = { 'relative': 'editor' }
+let g:dashboard_custom_header= [
+      \'',
+      \'██╗   ██╗██╗███╗   ███╗',
+      \'██║   ██║██║████╗ ████║',
+      \'██║   ██║██║██╔████╔██║',
+      \'╚██╗ ██╔╝██║██║╚██╔╝██║',
+      \' ╚████╔╝ ██║██║ ╚═╝ ██║',
+      \'  ╚═══╝  ╚═╝╚═╝     ╚═╝',
+      \''
+      \]
 
 
 let g:polyglot_disabled = ['css', 'javascript', 'typescript', 'javascriptreact','typescriptreact']
@@ -253,9 +213,9 @@ let g:netrw_fastbrowse = 0
 let mapleader = ' '
 " screenshots
 let g:carbon_now_sh_options =
-\ { 'ln': 'false',
-\ 'fm': 'Fira Code',
-\ 't':'nord'}
+      \ { 'ln': 'false',
+      \ 'fm': 'Fira Code',
+      \ 't':'nord'}
 "session config
 let g:session_autoload = 'no'
 let g:session_autosave = 'yes'
@@ -291,15 +251,15 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 let g:ctrlp_extensions = [
-\ 'branches',
-\ ]
+      \ 'branches',
+      \ ]
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlPMRU'
 
- let g:hardtime_default_on = 0
- let g:hardtime_ignore_buffer_patterns = [ 'coc-explorer', 'NERD.*' ]
- let g:hardtime_ignore_quickfix = 1
- let g:hardtime_allow_different_key = 1
+let g:hardtime_default_on = 0
+let g:hardtime_ignore_buffer_patterns = [ 'coc-explorer', 'NERD.*' ]
+let g:hardtime_ignore_quickfix = 1
+let g:hardtime_allow_different_key = 1
 
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.5 } }
 
@@ -309,11 +269,54 @@ let g:gruvbox_material_statusline_style = 'mix'
 let g:gruvbox_material_diagnostic_virtual_text = 'colored'
 let g:gruvbox_material_transparent_background = 1
 let g:gruvbox_material_background = 'soft'
-let g:gruvbox_material_palette= "mix"
+let g:gruvbox_material_palette= 'mix'
 let g:gruvbox_material_better_performance = 1
 
 let g:diffget_local_map = 'gj'
 let g:diffget_upstream_map = 'gf'
+let g:coc_global_extensions=
+      \[
+      \'coc-yank',
+      \'coc-word',
+      \'coc-spell-checker',
+      \'coc-snippets',
+      \'coc-prettier',
+      \'coc-neosnippet',
+      \'coc-marketplace',
+      \'coc-lists',
+      \'coc-jest',
+      \'coc-java',
+      \'coc-highlight',
+      \'coc-git',
+      \'coc-explorer',
+      \'coc-eslint',
+      \'coc-emoji',
+      \'coc-emmet',
+      \'coc-diagnostic',
+      \'coc-calc',
+      \'coc-actions',
+      \'coc-xml',
+      \'coc-tsserver',
+      \'coc-svg',
+      \'coc-markdownlint',
+      \'coc-json',
+      \'coc-html',
+      \'coc-css',
+      \'coc-flow',
+      \'coc-import-cost',
+      \'coc-pairs',
+      \'coc-cssmodules',
+      \'coc-htmlhint',
+      \'coc-scssmodules',
+      \'coc-lightbulb'
+      \]
+
+
+
+
+
+
+
 
 colorscheme gruvbox-material "gruvbox-material "night-owl  nord onedark candid palenight gruvbox-material
 
@@ -321,7 +324,7 @@ filetype indent plugin on
 syntax on
 " If you have vim >=8.0 or Neovim >= 0.1.5
 if (has('termguicolors'))
- set termguicolors
+  set termguicolors
 endif
 set clipboard=unnamedplus
 set noswapfile
@@ -403,10 +406,10 @@ endif
 
 
 function! s:setupConflicted()
-     set stl+=%{ConflictedVersion()}
-     " Resolve and move to next conflicted file.
-     nnoremap ]m :GitNextConflict<cr>
- endfunction
+  set stl+=%{ConflictedVersion()}
+  " Resolve and move to next conflicted file.
+  nnoremap ]m :GitNextConflict<cr>
+endfunction
 
 " Now possible to do fg to find with grep in directory
 function s:coc_list_current_dir(args)
@@ -448,12 +451,12 @@ endfunction
 
 function! s:config_easyfuzzymotion(...) abort
   return extend(copy({
-  \   'converters': [incsearch#config#fuzzyword#converter()],
-  \   'modules': [incsearch#config#easymotion#module({'overwin': 1})],
-  \   'keymap': {"\<CR>": '<Over>(easymotion)'},
-  \   'is_expr': 0,
-  \   'is_stay': 1
-  \ }), get(a:, 1, {}))
+        \   'converters': [incsearch#config#fuzzyword#converter()],
+        \   'modules': [incsearch#config#easymotion#module({'overwin': 1})],
+        \   'keymap': {"\<CR>": '<Over>(easymotion)'},
+        \   'is_expr': 0,
+        \   'is_stay': 1
+        \ }), get(a:, 1, {}))
 endfunction
 " function! s:incsearch_config(...) abort
 "   return incsearch#util#deepextend(deepcopy({
@@ -668,64 +671,64 @@ augroup mygroup
 
 
 
- au GUIEnter * simalt ~x
- au BufNewFile,BufRead *.ejs set filetype=html
+  au GUIEnter * simalt ~x
+  au BufNewFile,BufRead *.ejs set filetype=html
 
- autocmd FileType scss setl iskeyword+=@-@
+  autocmd FileType scss setl iskeyword+=@-@
 
-"  autocmd CursorHold * silent syntax sync fromstart
+  "  autocmd CursorHold * silent syntax sync fromstart
 
-"  " Highlight symbol under cursor on CursorHold (colors )
- autocmd CursorHold * silent call CocActionAsync('highlight')
+  "  " Highlight symbol under cursor on CursorHold (colors )
+  autocmd CursorHold * silent call CocActionAsync('highlight')
 
- autocmd!
- " Setup formatexpr specified filetype(s).
- " autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
- " Update signature help on jump placeholder
- autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+  autocmd!
+  " Setup formatexpr specified filetype(s).
+  " autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+  " Update signature help on jump placeholder
+  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 
-autocmd FileType apache setlocal commentstring=#\ %s
+  autocmd FileType apache setlocal commentstring=#\ %s
 
 
-" autocmd CursorMoved,CursorMovedI,BufEnter *
-" \   if exists('*IsStyledDefinition') |
-" \     if IsStyledDefinition(line('.')) && g:emmetJsx |
-" \       call coc#config('emmet.includeLanguages', { 'javascript': 'css' } ) |
-" \       let g:emmetJsx = 0 |
-" \     elseif !IsStyledDefinition(line('.')) && !g:emmetJsx |
-" \       call coc#config('emmet.includeLanguages', { 'javascript': 'javascriptreact' } ) |
-" \       let g:emmetJsx = 1 |
-" \     endif |
-" \   endif
+  " autocmd CursorMoved,CursorMovedI,BufEnter *
+  " \   if exists('*IsStyledDefinition') |
+  " \     if IsStyledDefinition(line('.')) && g:emmetJsx |
+  " \       call coc#config('emmet.includeLanguages', { 'javascript': 'css' } ) |
+  " \       let g:emmetJsx = 0 |
+  " \     elseif !IsStyledDefinition(line('.')) && !g:emmetJsx |
+  " \       call coc#config('emmet.includeLanguages', { 'javascript': 'javascriptreact' } ) |
+  " \       let g:emmetJsx = 1 |
+  " \     endif |
+  " \   endif
 
-autocmd CursorMoved,BufEnter *
-\   if &filetype == 'coc-explorer' |
-\     execute 'norm 0' |
-\   endif
+  autocmd CursorMoved,BufEnter *
+        \   if &filetype == 'coc-explorer' |
+        \     execute 'norm 0' |
+        \   endif
 
 
 
 
   autocmd CmdLineEnter : let g:prev_hls = &hlsearch
   autocmd CmdLineChanged : let g:cmd = getcmdline() |
-\  if g:cmd =~# '^%\\?S.*/' |
-\    let g:splitcmd = split(g:cmd, '/') |
-\    let g:search_pat = len(g:splitcmd) >= 2 ? substitute(join(g:splitcmd[0:1], '/'), '^%', '', '') : '' |
-\    if !empty(g:search_pat) |
-\      try |
-\        silent exec 'norm \<Cmd>set hls|0verbose ' . g:search_pat . '/\<CR>' |
-\        catch /^Vim\%((\a\+)\)\=:E/ |
-\      endtry |
-\      silent exec 'norm N' |
-\      redraw! |
-\    endif |
-\  endif
+        \  if g:cmd =~# '^%\\?S.*/' |
+        \    let g:splitcmd = split(g:cmd, '/') |
+        \    let g:search_pat = len(g:splitcmd) >= 2 ? substitute(join(g:splitcmd[0:1], '/'), '^%', '', '') : '' |
+        \    if !empty(g:search_pat) |
+        \      try |
+        \        silent exec 'norm \<Cmd>set hls|0verbose ' . g:search_pat . '/\<CR>' |
+        \        catch /^Vim\%((\a\+)\)\=:E/ |
+        \      endtry |
+        \      silent exec 'norm N' |
+        \      redraw! |
+        \    endif |
+        \  endif
   autocmd CmdLineLeave : let &hlsearch = g:prev_hls
-" au BufWritePost * nested checktime %
+  " au BufWritePost * nested checktime %
 
-autocmd FileType coc-explorer call <SID>init_explorer()
+  autocmd FileType coc-explorer call <SID>init_explorer()
 
-autocmd User VimConflicted call s:setupConflicted()
+  autocmd User VimConflicted call s:setupConflicted()
 
 augroup end
 
@@ -780,15 +783,15 @@ call fake#define('sex', 'fake#choice(["male", "female"])')
 " Get a name of male or female
 " fake#int(1) returns 0 or 1
 call fake#define('name', 'fake#int(1) ? fake#gen("male_name")'
-                                  \ . ' : fake#gen("female_name")')
+      \ . ' : fake#gen("female_name")')
 
 " Get a full name
 call fake#define('fullname', 'fake#gen("name") . " " . fake#gen("surname")')
 
 " Get a nonsense text like Lorem ipsum
 call fake#define('sentense', 'fake#capitalize('
-                        \ . 'join(map(range(fake#int(3,15)),"fake#gen(\"nonsense\")"))'
-                        \ . ' . fake#chars(1,"..............!?"))')
+      \ . 'join(map(range(fake#int(3,15)),"fake#gen(\"nonsense\")"))'
+      \ . ' . fake#chars(1,"..............!?"))')
 
 call fake#define('paragraph', 'join(map(range(fake#int(3,10)),"fake#gen(\"sentense\")"))')
 
@@ -800,12 +803,12 @@ call fake#define('age', 'float2nr(floor(110 * fake#betapdf(1.0, 1.45)))')
 
 " Get a domain (ordered by number of websites)
 call fake#define('gtld', 'fake#get(fake#load("gtld"),'
-                        \ . 'fake#betapdf(0.2, 3.0))')
+      \ . 'fake#betapdf(0.2, 3.0))')
 
 call fake#define('email', 'tolower(substitute(printf("%s@%s.%s",'
-                        \ . 'fake#gen("name"),'
-                        \ . 'fake#gen("surname"),'
-                        \ . 'fake#gen("gtld")), "\\s", "-", "g"))')
+      \ . 'fake#gen("name"),'
+      \ . 'fake#gen("surname"),'
+      \ . 'fake#gen("gtld")), "\\s", "-", "g"))')
 
 
 
@@ -846,11 +849,11 @@ hi HighlightedyankRegion term=bold ctermbg=0 guibg=#EEE8A9
 
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
-  ensure_installed ="maintained",
-  highlight = {
-  enable = true, 
-  additional_vim_regex_highlighting=true,
-  }
+ensure_installed ="maintained",
+highlight = {
+enable = true, 
+additional_vim_regex_highlighting=true,
+}
 }
 EOF
 

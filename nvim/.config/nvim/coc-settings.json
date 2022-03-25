@@ -28,6 +28,7 @@
 	"diagnostic.errorSign": "",
 	"diagnostic.warningSign": "",
 	"codeLens.enable": true,
+	"diagnostic-languageserver.formatFiletypes": { "vim": "vint" },
 	"diagnostic-languageserver.filetypes": {
 		"vim": "vint",
 		"--markdown": "write-good",
@@ -53,7 +54,6 @@
 			]
 		}
 	},
-
 	"prettier.stylelintIntegration": false,
 	"------prettier.eslintIntegration": true,
 	"suggest.noselect": false,
