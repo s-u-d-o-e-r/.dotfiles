@@ -128,8 +128,7 @@ Plug 'arthurxavierx/vim-caser'
 Plug 'christoomey/vim-conflicted'
 Plug 'preservim/tagbar'
 Plug 'arcticicestudio/nord-vim'
-" Plug 'rcarriga/nvim-notify'
-" Plug 'nvim-treesitter/playground'
+Plug 'rcarriga/nvim-notify'
 call plug#end()
 
 
@@ -848,13 +847,14 @@ hi HighlightedyankRegion term=bold ctermbg=0 guibg=#EEE8A9
 
 
 lua <<EOF
-require'nvim-treesitter.configs'.setup {
-ensure_installed ="maintained",
-highlight = {
-enable = true, 
-additional_vim_regex_highlighting=true,
-}
-}
-EOF
 
-" vim.notify = require("notify")
+require'nvim-treesitter.configs'.setup {
+  ensure_installed ="maintained",
+  highlight = {
+    enable = true, 
+    additional_vim_regex_highlighting=true,
+  }
+}
+vim.notify = require("notify")
+
+EOF
