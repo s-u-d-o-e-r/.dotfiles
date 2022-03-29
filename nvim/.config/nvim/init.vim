@@ -5,9 +5,9 @@ Plug 'ekalinin/Dockerfile.vim'
 Plug 'tpope/vim-repeat'
 "" Repeat command extended to visual mode.
 Plug 'inkarkat/vim-visualrepeat'
-"" Brings physics-based smooth scrolling
+"" Brings physics-based smooth scrolling.
 Plug 'yuttie/comfortable-motion.vim'
-"" A dark colorscheme with vibrant colors
+"" A dark colorscheme with vibrant colors.
 " Plug 'flrnprz/candid.vim'
 ""Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-abolish'
@@ -36,18 +36,18 @@ Plug 'kristijanhusak/vim-carbon-now-sh'
 " Plug 'sheerun/vim-polyglot'
 " Fuzzy file, buffer, mru, tag, etc finder
 Plug 'ctrlpvim/ctrlp.vim'
-" " Lean & mean status/tabline for vim that's light as air
+" " Lean & mean status/tabline for vim that's light as air.
 Plug 'bling/vim-airline'
 " " Themes for airline
 Plug 'vim-airline/vim-airline-themes'
 " Snippets support
 Plug 'Shougo/neosnippet.vim'
-" Plug 'github/copilot.vim'
+Plug 'github/copilot.vim'
 " Default snippets
 Plug 'Shougo/neosnippet-snippets'
 " Print documents in echo area.
 Plug 'Shougo/echodoc.vim'
-" " Extended session management for Vim
+" " Extended session management for Vim.
 Plug 'xolox/vim-session'
 " " Session
 " " Required for vim-session
@@ -78,7 +78,7 @@ Plug 'glepnir/dashboard-nvim'
 Plug 'airblade/vim-gitgutter'
 " Use RipGrep in Vim and display results in a quickfix list
 " Plug 'jremmen/vim-ripgrep'
-" Changes Vim working directory to project root (i dentified by presence of known directory or file).
+" Changes Vim working directory to project root (identified by presence of known directory or file).
 Plug 'airblade/vim-rooter'
 " Vim motions on speed!
 Plug 'easymotion/vim-easymotion'
@@ -120,7 +120,7 @@ Plug 'haya14busa/incsearch-easymotion.vim'
 Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
-" Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 Plug 'yaegassy/coc-jsdoc', {'do': 'yarn install --frozen-lockfile'}
 " Plug 'Cybolic/palenight.vim'
 Plug 'arthurxavierx/vim-caser'
@@ -140,7 +140,6 @@ call plug#end()
 "
 "
 ""
-
 
 function! s:project_name()
   let l:cwd = resolve(getcwd())
@@ -270,6 +269,10 @@ let g:gruvbox_material_transparent_background = 1
 let g:gruvbox_material_background = 'soft'
 let g:gruvbox_material_palette= 'mix'
 let g:gruvbox_material_better_performance = 1
+
+let g:gitgutter_sign_added = '▎'
+let g:gitgutter_sign_modified = '▎'
+let g:gitgutter_sign_removed = '▎'
 
 let g:diffget_local_map = 'gj'
 let g:diffget_upstream_map = 'gf'
@@ -564,10 +567,10 @@ map <leader><leader>f :Clap files<CR>
 map <leader><leader>p :Clap providers<CR>
 
 "telescope
-" nnoremap<leader><leader>tf <cmd>Telescope find_files<cr>
-" nnoremap <leader><leader>tg <cmd>Telescope live_grep find_command=rg,--ignore<cr>
-" nnoremap <leader>b <cmd>Telescope buffers<cr>
-" nnoremap <leader>h <cmd>Telescope help_tags<cr>
+nnoremap<leader><leader>tf <cmd>Telescope find_files<cr>
+nnoremap <leader><leader>tg <cmd>Telescope live_grep find_command=rg,--ignore<cr>
+nnoremap <leader>b <cmd>Telescope buffers<cr>
+nnoremap <leader>h <cmd>Telescope help_tags<cr>
 " Buffers delete
 nnoremap <silent> <C-q> :Bdelete menu<CR>
 "easy motion
@@ -841,9 +844,12 @@ highlight Normal guibg=none
 highlight LineNr guifg=#5eacd3
 highlight netrwDir guifg=#5eacd3
 highlight qfFileName guifg=#aed75f
-" hi TelescopeBorder guifg=#5eacd
-hi HighlightedyankRegion term=bold ctermbg=0 guibg=#EEE8A9
+hi TelescopeBorder guifg=#5eacd
+hi HighlightedyankRegion term=bold ctermbg=0 guibg=#EEE8A9 
 
+highlight GitGutterAdd    guifg=#00b894 ctermfg=2
+highlight GitGutterChange guifg=#fdcb6e ctermfg=3
+highlight GitGutterDelete guifg=#ff7675 ctermfg=1
 
 
 lua <<EOF
@@ -856,5 +862,49 @@ require'nvim-treesitter.configs'.setup {
   }
 }
 vim.notify = require("notify")
+
+local custom_actions = {}
+local actions = require('telescope.actions')
+local action_state = require('telescope.actions.state')
+
+function custom_actions.fzf_multi_select(prompt_bufnr)
+  local picker = action_state.get_current_picker(prompt_bufnr)
+  local num_selections = table.getn(picker:get_multi_selection())
+
+  if num_selections > 1 then
+    local picker = action_state.get_current_picker(prompt_bufnr)
+    for _, entry in ipairs(picker:get_multi_selection()) do
+      vim.cmd(string.format("%s %s", ":e!", entry.value))
+    end
+    vim.cmd('stopinsert')
+  else
+    actions.file_edit(prompt_bufnr)
+  end
+end
+
+require('telescope').setup {
+  defaults = {
+    file_ignore_patterns = { "node_modules", ".git" },
+    mappings = { 
+      i = {
+        ['<esc>'] = actions.close,
+        ['<C-j>'] = actions.move_selection_next,
+        ['<C-k>'] = actions.move_selection_previous,
+        ['<tab>'] = actions.toggle_selection + actions.move_selection_next,
+        ['<s-tab>'] = actions.toggle_selection + actions.move_selection_previous,
+        ['<cr>'] = custom_actions.fzf_multi_select,
+      },
+      n = {
+        ['<esc>'] = actions.close,
+        ['<tab>'] = actions.toggle_selection + actions.move_selection_next,
+        ['<s-tab>'] = actions.toggle_selection + actions.move_selection_previous,
+        ['<cr>'] = custom_actions.fzf_multi_select
+      }
+    },
+  }
+}
+
+
+
 
 EOF

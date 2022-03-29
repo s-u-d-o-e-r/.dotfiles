@@ -19,7 +19,7 @@
 	"emmet.optimizeStylesheetParsing": true,
 	"emmet.showExpandedAbbreviation": "never",
 	"snippets.userSnippetsDirectory": "~/.config/nvim/snippets",
-	"git.enableGutters": true,
+	"git.enableGutters": false,
 	"git.addGBlameToVirtualText": true,
 	"git.showCommitInFloating": true,
 	"git.addGBlameToBufferVar": true,
