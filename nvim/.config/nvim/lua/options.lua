@@ -160,8 +160,7 @@ vim.g.gitgutter_sign_removed = '▎'
 
 vim.g.diffget_local_map = 'gj'
 vim.g.diffget_upstream_map = 'gf'
-
-
+vim.g.neoformat_only_msg_on_error = 1
 
 vim.diagnostic.config({
   virtual_text = false,

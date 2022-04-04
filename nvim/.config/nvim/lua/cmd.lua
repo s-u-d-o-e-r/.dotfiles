@@ -1,4 +1,4 @@
-vim.cmd("autocmd BufWritePre * Neoformat")
+vim.cmd("autocmd BufWritePre * silent! Neoformat")
 vim.cmd [[autocmd! CursorHold * lua vim.diagnostic.open_float(nil, {focus=false, scope="cursor"})]]
 
 local signs = { Error = "", Warn = "", Hint = "", Info = "" }
@@ -8,6 +8,7 @@ for type, icon in pairs(signs) do
 end
 
 vim.cmd([[
+
 
 function! s:project_name()
   let l:cwd = resolve(getcwd())
@@ -54,13 +55,6 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~ '\s'
 endfunction
 
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
 
 function! RipgrepFzf(query, fullscreen)
   let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case %s || true'
@@ -98,6 +92,11 @@ augroup mygroup
 
   autocmd FileType apache setlocal commentstring=#\ %s
 
+augroup highlight_yank
+    autocmd!
+    au TextYankPost * silent! lua vim.highlight.on_yank({higroup="HighlightedyankRegion", timeout=700})
+augroup END
+
   " autocmd CursorMoved,CursorMovedI,BufEnter *
   " \   if exists('*IsStyledDefinition') |
   " \     if IsStyledDefinition(line('.')) && g:emmetJsx |
@@ -110,7 +109,7 @@ augroup mygroup
   " \   endif
 
   autocmd CursorMoved,BufEnter *
-        \   if &filetype == 'coc-explorer' |
+        \   if &filetype == 'nerdtree' |
         \     execute 'norm 0' |
         \   endif
 

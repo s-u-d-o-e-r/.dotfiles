@@ -103,20 +103,7 @@ return require('packer').startup(function(use)
     requires = {
       'kyazdani42/nvim-web-devicons', -- optional, for file icon
     },
-    config = function() require'nvim-tree'.setup {
-      hijack_cursor = false,
-      view = {
-        mappings = {
-          custom_only = false,
-          list = {
-            { key = {"<CR>", "o","l" }, action = "edit", mode = "n"},
-            { key = {"<BS>","h"},  action = "close_node",mode ="n" },
-          },
-        },
-      },
-
-
-    } end
+    config = function() require('plugins.nvim-tree') end
   }
   -- " (Do)cumentation (Ge)nerator 15+ languages  Generate proper code documentation skeletons with a single keypress.
   -- " use 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
