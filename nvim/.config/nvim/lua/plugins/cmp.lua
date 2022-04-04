@@ -53,7 +53,7 @@ cmp.setup({
     -- select completion
     ['<CR>'] = cmp.mapping.confirm({
       behavior = cmp.ConfirmBehavior.Replace,
-      select = false,
+      select = true,
     }),
 
     ['<Tab>'] = function(fallback)
@@ -89,6 +89,19 @@ cmp.setup({
     {name = 'path'},
     {name = 'buffer'},
     {name = 'spell'},
+    { name = 'cmp_tabnine' },
+    { name = 'nvim_lsp_signature_help' },
+    {name = "neosnippet"}
     -- {name = 'calc'},
   },
 })
+
+-- nvim-pairs config
+
+-- If you want insert `(` after select function or method item
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+cmp.event:on( 'confirm_done', cmp_autopairs.on_confirm_done({  map_char = { tex = '' } }))
+
+
+-- add a lisp filetype (wrap my-function), FYI: Hardcoded = { "clojure", "clojurescript", "fennel", "janet" }
+cmp_autopairs.lisp[#cmp_autopairs.lisp+1] = "racket"

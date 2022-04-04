@@ -27,6 +27,8 @@ let g:session_autosave_to = fnameescape(s:project_name())
 
 
 
+
+
 function! s:setupConflicted()
   set stl+=%{ConflictedVersion()}
   " Resolve and move to next conflicted file.

@@ -22,7 +22,7 @@ nmap("<S-H>",":bprev<CR>")
 nmap("<S-L>",":bnext<CR>")
 -- " map <leader><leader>s :Startify<CR>
 vnoremap("<F3>",":CarbonNowSh<CR>")
-nnoremap("<F5>", ":ndotreeToggle<cr>")
+nnoremap("<F5>", ":UndotreeToggle<cr>")
 -- " save mappings
 nmap("<C-S>", ":w<CR>")
 imap("<C-S>","<C-O>:w<CR>")
@@ -39,10 +39,10 @@ imap("<C-p>",'<C-o>"+p')
 vmap('p','"_dP')
 
 
-nmap('<C-n>',':NvimTreeToggle<CR>')
+nmap('<C-n>',':NvimTreeFindFileToggle<CR>')
 -- " Use `[c` and `]c` to navigate diagnostics
-nmap("[c","<Plug>(coc-diagnostic-prev)")
-nmap("]c","<Plug>(coc-diagnostic-next)")
+-- nmap("[c","<Plug>(coc-diagnostic-prev)")
+-- nmap("]c","<Plug>(coc-diagnostic-next)")
 
 nmap('<F8>',':TagbarToggle<CR>')
 
@@ -61,23 +61,23 @@ nmap('<F8>',':TagbarToggle<CR>')
 -- " Use K to show documentation in preview window
 -- nnoremap("K",":call <SID>show_documentation()<CR>")
 -- " Remap for rename current word
-nmap('<leader>rn','<Plug>(coc-rename)')
--- " Remap for format selected region
-xmap('<leader>f',' <Plug>(coc-format-selected)')
-nmap('<leader>f',' <Plug>(coc-format-selected)')
--- " Remap for do codeAction
-xmap("<leader>ac","<Plug>(coc-codeaction-selected)")
-nmap("<leader>ac","<Plug>(coc-codeaction-line)")
-xmap('<leader>xs',' <Plug>(coc-convert-snippet)')
--- " Fix autofix problem of current line
-nmap('<leader>qf',' <Plug>(coc-fix-current)')
+-- nmap('<leader>rn','<Plug>(coc-rename)')
+-- -- " Remap for format selected region
+-- xmap('<leader>f',' <Plug>(coc-format-selected)')
+-- nmap('<leader>f',' <Plug>(coc-format-selected)')
+-- -- " Remap for do codeAction
+-- xmap("<leader>ac","<Plug>(coc-codeaction-selected)")
+-- nmap("<leader>ac","<Plug>(coc-codeaction-line)")
+-- xmap('<leader>xs',' <Plug>(coc-convert-snippet)')
+-- -- " Fix autofix problem of current line
+-- nmap('<leader>qf',' <Plug>(coc-fix-current)')
 -- " Using CocList
 -- " Show all diagnostics
-nnoremap("<space>a", ":<C-u>CocList diagnostics<cr>")
--- " Manage extensions
-nnoremap("<space>e",":<C-u>CocList extensions<cr>")
--- " Show commands
-nnoremap("<space>c",":<C-u>CocList commands<cr>")
+-- nnoremap("<space>a", ":<C-u>CocList diagnostics<cr>")
+-- -- " Manage extensions
+-- nnoremap("<space>e",":<C-u>CocList extensions<cr>")
+-- -- " Show commands
+-- nnoremap("<space>c",":<C-u>CocList commands<cr>")
 -- " Find symbol of current document
 -- " nnoremap  <space>o  :<C-u>CocList outline<cr>
 -- " Search workspace symbols
@@ -88,8 +88,8 @@ nnoremap("<space>c",":<C-u>CocList commands<cr>")
 -- " nnoremap  <space>k  :<C-u>CocPrev<CR>
 -- " Resume latest coc list
 -- " nnoremap  <space>p  :<C-u>CocListResume<CR>
-map('<leader>fs',':CocCommand eslint.executeAutofix<CR>')
-map('<leader>ff',":call CocAction('format')<CR>")
+-- map('<leader>fs',':CocCommand eslint.executeAutofix<CR>')
+-- map('<leader>ff',":call CocAction('format')<CR>")
 -- "Clap
 map('<leader><leader>g',':Clap grep2<Cr>')
 map('<leader><leader>f',':Clap files<CR>')
@@ -153,7 +153,7 @@ nmap(']g','<Plug>(coc-git-nextchunk)')
 -- " show chunk diff at current position
 nmap('gs','<Plug>(coc-git-chunkinfo)')
 -- " show commit contains current position
-nmap('<leader>gc','<Plug>(coc-git-commit)')
+-- nmap('<leader>gc','<Plug>(coc-git-commit)')
 -- " create text object for git chunks
 omap('ig','<Plug>(coc-git-chunk-inner)')
 xmap('ig','<Plug>(coc-git-chunk-inner)')
