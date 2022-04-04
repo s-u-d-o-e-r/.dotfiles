@@ -2,16 +2,12 @@
 -- local execute = vim.api.nvim_command
 local fn = vim.fn
 local cmd = vim.cmd
-
-
-
 -- Boostrap Packer
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 local packer_bootstrap
 if fn.empty(fn.glob(install_path)) > 0 then
   packer_bootstrap = fn.system({'git', 'clone','https://github.com/wbthomason/packer.nvim', install_path})
 end
-
 -- Rerun PackerCompile everytime pluggins.lua is updated
 cmd([[
 augroup packer_user_config
@@ -28,16 +24,11 @@ return require('packer').startup(function(use)
   -- Let Packer manage itself
   use({'wbthomason/packer.nvim', opt = true})
   -- LSP server
-  use({
-    'neovim/nvim-lspconfig',
-    config = function() require('plugins.lspconfig') end
-  })
+  use({'neovim/nvim-lspconfig', config = function() require('plugins.lspconfig') end })
   use 'williamboman/nvim-lsp-installer'  -- Helper for installing most language servers
   use 'RishabhRD/popfix'
   use 'RishabhRD/nvim-lsputils'
-  use {'windwp/nvim-autopairs',config = function ()
-    require('nvim-autopairs').setup{}
-  end}
+  use {'windwp/nvim-autopairs',config = function () require('nvim-autopairs').setup{} end}
   -- Autocomplete
   use "L3MON4D3/LuaSnip"  -- Snippet engine
   use "hood/popui.nvim"
@@ -62,16 +53,9 @@ return require('packer').startup(function(use)
     requires = {{'nvim-lua/plenary.nvim'}},
     config = function() require('plugins.telescope') end,
   })
-
-
-
-
   use({'nvim-telescope/telescope-fzf-native.nvim', run ='make'})
-
   use('sbdchd/neoformat')
-
   use('jose-elias-alvarez/null-ls.nvim')
-
   use 's-u-d-o-e-r/vim-gitcommit-issue-id'
   use 'ekalinin/Dockerfile.vim'
   -- "" Enable repeating supported plugin maps with '.'
@@ -82,7 +66,6 @@ return require('packer').startup(function(use)
   use 'yuttie/comfortable-motion.vim'
   -- "" A dark colorscheme with vibrant colors.
   -- " use 'flrnprz/candid.vim'
-  -- ""use 'mileszs/ack.vim'
   use 'tpope/vim-abolish'
   -- ""A Git wrapper
   use 'tpope/vim-fugitive'
@@ -92,21 +75,10 @@ return require('packer').startup(function(use)
   use 'Asheq/close-buffers.vim'
   -- "" Switch between single-line and multiline forms of code gS - spit / gJ - join
   use 'AndrewRadev/splitjoin.vim'
-  -- " Include source for coc.nvim
-  -- use 'Shougo/neoinclude.vim'
-  -- " " Include source for coc.nvim
-  -- use 'jsfaint/coc-neoinclude'
-  --  use({
-  --     'neoclide/coc.nvim', branch = 'release'
-  --   })
-  -- " Color scheme
+    -- " Color scheme
   -- " use 'haishanh/night-owl.vim'
   -- " " Screenshot maker
   use 'kristijanhusak/vim-carbon-now-sh'
-  -- " A lightweight and powerful git branch viewer for vim.
-  -- " use 'rbong/vim-flog'
-  -- " A solid language pack for Vim.
-  -- " use 'sheerun/vim-polyglot'
   -- " Fuzzy file, buffer, mru, tag, etc finder
   use 'ctrlpvim/ctrlp.vim'
   -- " " Lean & mean status/tabline for vim that's light as air.
@@ -115,7 +87,6 @@ return require('packer').startup(function(use)
   use 'vim-airline/vim-airline-themes'
   -- " Snippets support
   use 'Shougo/neosnippet.vim'
-  -- use 'github/copilot.vim'
   -- " Default snippets
   use 'Shougo/neosnippet-snippets'
   -- " Print documents in echo area.
@@ -146,37 +117,23 @@ return require('packer').startup(function(use)
 
 
     } end
-  }-- " (Do)cumentation (Ge)nerator 15+ languages  Generate proper code documentation skeletons with a single keypress.
+  }
+  -- " (Do)cumentation (Ge)nerator 15+ languages  Generate proper code documentation skeletons with a single keypress.
   -- " use 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
   -- " Vim bundle for styled-components based javascript files.
-  use({
-    'styled-components/vim-styled-components', branch = 'main'
-  })
-
+  use({'styled-components/vim-styled-components', branch = 'main' })
   -- " A Vim plugin that provides GraphQL file detection, syntax highlighting, and indentation.
   -- " use 'jparise/vim-graphql'
-  -- " Modern performant generic finder and dispatcher for Vim and NeoVim
-  -- use({
-  --   'liuchengxu/vim-clap',
-  --   run = ':Clap install-binary!'
-  -- })
-
   -- " Color scheme
   -- " use 'drewtempelmeyer/palenight.vim'
   -- " The undo history visualizer for VIM
   use 'mbbill/undotree'
   -- " Commentary.vim: comment stuff out 
   use 'tpope/vim-commentary'
-  -- " The fancy start screen for Vim.
-  -- " use 'mhinz/vim-startify'
   -- " Vim dashboard
   use 'glepnir/dashboard-nvim'
   -- " The open source plugin for productivity metrics, goals, leaderboards, and automatic time tracking.
-  -- " use 'wakatime/vim-wakatime'
-  -- " A Vim plugin which shows git diff markers in the sign column
-  -- use 'airblade/vim-gitgutter'
-  -- " Use RipGrep in Vim and display results in a quickfix list
-  -- " use 'jremmen/vim-ripgrep'
+  use 'wakatime/vim-wakatime'
   -- " Changes Vim working directory to project root (identified by presence of known directory or file).
   use 'airblade/vim-rooter'
   -- " Vim motions on speed!
@@ -189,9 +146,6 @@ return require('packer').startup(function(use)
   use 'rhysd/conflict-marker.vim'
   -- " Vim plugin to automate replacing expressions with assigned variables in any programming language
   use 'da-x/name-assign.vim'
-  -- " " VimL competition
-  -- " use 'Shougo/neco-vim'
-  -- " use 'neoclide/coc-neco'
   -- " " use that adds a 'cut' operation separate from 'delete'
   use 'svermeulen/vim-cutlass'
   -- " " Vim plugin that provides additional text objects
@@ -209,13 +163,9 @@ return require('packer').startup(function(use)
   -- "Hardtime helps you break that annoying habit vimmers have of scrolling up and down the page using jjjjj and kkkkk but without compromising the rest of our vim experience.
   use 'takac/vim-hardtime'
   -- "Treesitter configurations and abstraction layer for Neovim.
-  use({
-    'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate'
-  })
-
+  use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config = function() require('plugins.treesitter') end})
   -- " We recommend updating the parsers on update
-  -- "Blazing fast minimap for vim, powered by üõ∞ code-minimap written in Rust
+  -- "Blazing fast minimap for vim, powered by code-minimap written in Rust
   -- " use 'wfxr/minimap.vim'
   -- "EditorConfig plugin for Vim
   use 'editorconfig/editorconfig-vim'
@@ -224,7 +174,6 @@ return require('packer').startup(function(use)
   use 'haya14busa/incsearch-fuzzy.vim'
   use 'nvim-lua/popup.nvim'
   use 'nvim-lua/plenary.nvim'
-
   -- " use 'Cybolic/palenight.vim'
   use 'arthurxavierx/vim-caser'
   -- " use 'jiangmiao/auto-pairs'
@@ -232,25 +181,10 @@ return require('packer').startup(function(use)
   use 'preservim/tagbar'
   use 'arcticicestudio/nord-vim'
   use 'rcarriga/nvim-notify'
-
   use {
     'lewis6991/gitsigns.nvim',
-    config = function()
-      require('gitsigns').setup {
-        current_line_blame = true,
-        signs = {
-          add          = {hl = 'GitSignsAdd'   , text = '▎', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'},
-          change       = {hl = 'GitSignsChange', text = '▎', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},
-          delete       = {hl = 'GitSignsDelete', text = '_', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn'},
-          topdelete    = {hl = 'GitSignsDelete', text = '‾', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn'},
-          changedelete = {hl = 'GitSignsChange', text = '▎', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},
-        },
-      }
-    end
+    config = function() require('plugins.gitsigns') end,
   }
-
-
-
 
   if packer_bootstrap then
     require('packer').sync()

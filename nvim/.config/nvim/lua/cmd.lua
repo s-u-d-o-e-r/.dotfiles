@@ -1,7 +1,13 @@
+vim.cmd("autocmd BufWritePre * Neoformat")
+vim.cmd [[autocmd! CursorHold * lua vim.diagnostic.open_float(nil, {focus=false, scope="cursor"})]]
+
+local signs = { Error = "", Warn = "", Hint = "", Info = "" }
+for type, icon in pairs(signs) do
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end
+
 vim.cmd([[
-
-
-
 
 function! s:project_name()
   let l:cwd = resolve(getcwd())
@@ -11,8 +17,6 @@ function! s:project_name()
   return l:cwd
 endfunction
 
-
-
 " setted color for quick scope plugin
 augroup qs_colors
   autocmd!
@@ -21,13 +25,6 @@ augroup qs_colors
 augroup END
 
 let g:session_autosave_to = fnameescape(s:project_name()) 
-
-
-
-
-
-
-
 
 function! s:setupConflicted()
   set stl+=%{ConflictedVersion()}
@@ -83,19 +80,11 @@ function! s:config_easyfuzzymotion(...) abort
         \ }), get(a:, 1, {}))
 endfunction
 
-
-
-
-
 augroup mygroup
-
-
 
   au GUIEnter * simalt ~x
   au BufNewFile,BufRead *.ejs set filetype=html
-
   autocmd FileType scss setl iskeyword+=@-@
-
   "  autocmd CursorHold * silent syntax sync fromstart
 
   "  " Highlight symbol under cursor on CursorHold (colors )
@@ -108,7 +97,6 @@ augroup mygroup
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 
   autocmd FileType apache setlocal commentstring=#\ %s
-
 
   " autocmd CursorMoved,CursorMovedI,BufEnter *
   " \   if exists('*IsStyledDefinition') |
@@ -125,9 +113,6 @@ augroup mygroup
         \   if &filetype == 'coc-explorer' |
         \     execute 'norm 0' |
         \   endif
-
-
-
 
   autocmd CmdLineEnter : let g:prev_hls = &hlsearch
   autocmd CmdLineChanged : let g:cmd = getcmdline() |
@@ -151,8 +136,4 @@ augroup mygroup
   autocmd User VimConflicted call s:setupConflicted()
 
 augroup end
-
-
-
-
 ]])

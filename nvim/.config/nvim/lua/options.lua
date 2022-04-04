@@ -173,3 +173,8 @@ vim.diagnostic.config({
     source = "always",  -- Or "if_many"
   },
 })
+
+vim.ui.select = require"popui.ui-overrider"
+vim.notify = require("notify")
+
+
