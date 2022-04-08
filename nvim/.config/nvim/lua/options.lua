@@ -78,7 +78,6 @@ endif
 
 
 
-vim.g.clap_layout = { relative= 'editor' }
 vim.g.dashboard_custom_header= {
       '',
       '██╗   ██╗██╗███╗   ███╗',
@@ -105,9 +104,6 @@ vim.g.session_autosave = 'yes'
 vim.g.session_verbose_messages = 0
 -- "DoGE settings
 vim.g.doge_mapping = '<leader><leader>d'
--- " echodoc configs
-vim.api.nvim_set_var("echodoc#enable_at_startup",  1)
-vim.api.nvim_set_var("echodoc#type",'popup')
 -- "start page
 -- " vim.g.startify_session_dir = '~/.vim/sessions'
 -- """"" enable 24bit true color
@@ -125,7 +121,6 @@ vim.g.airline_right_sep = ''
 vim.g.airline_right_alt_sep = ''
 
 vim.g.emmetJsx = 1
-vim.g.clap_insert_mode_only = 'true'
 vim.g.EasyMotion_startofline = 0 
 vim.g.EasyMotion_smartcase = 1
 vim.g.nord_cursor_line_number_background = 1
@@ -142,11 +137,7 @@ vim.g.hardtime_default_on = 0
 vim.g.hardtime_ignore_buffer_patterns = { 'coc-explorer', 'NERD.*' }
 vim.g.hardtime_ignore_quickfix = 1
 vim.g.hardtime_allow_different_key = 1
-
-vim.g.fzf_layout = { window= { width= 0.9, height= 0.5 } }
-
 vim.g.material_style = 'palenight'
-
 vim.g.gruvbox_material_statusline_style = 'mix'
 vim.g.gruvbox_material_diagnostic_virtual_text = 'colored'
 vim.g.gruvbox_material_transparent_background = 1
@@ -166,8 +157,8 @@ vim.diagnostic.config({
   virtual_text = false,
   signs = true,
   underline = true,
-  update_in_insert = false,
-  severity_sort = false,
+  update_in_insert = true,
+  severity_sort = true,
   float = {
     source = "always",  -- Or "if_many"
   },

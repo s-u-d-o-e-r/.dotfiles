@@ -28,9 +28,8 @@ return require('packer').startup(function(use)
   use 'williamboman/nvim-lsp-installer'  -- Helper for installing most language servers
   use 'RishabhRD/popfix'
   use 'RishabhRD/nvim-lsputils'
-  use {'windwp/nvim-autopairs',config = function () require('nvim-autopairs').setup{} end}
+  use {'windwp/nvim-autopairs',config = function () require('nvim-autopairs').setup() end}
   -- Autocomplete
-  use "L3MON4D3/LuaSnip"  -- Snippet engine
   use "hood/popui.nvim"
   use({
     "hrsh7th/nvim-cmp",
@@ -40,7 +39,6 @@ return require('packer').startup(function(use)
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
       "hrsh7th/cmp-nvim-lua",
-      "saadparwaiz1/cmp_luasnip",
       "hrsh7th/cmp-nvim-lsp-signature-help",
       "notomo/cmp-neosnippet"
     },
@@ -57,7 +55,6 @@ return require('packer').startup(function(use)
   use('sbdchd/neoformat')
   use('jose-elias-alvarez/null-ls.nvim')
   use 's-u-d-o-e-r/vim-gitcommit-issue-id'
-  use 'ekalinin/Dockerfile.vim'
   -- "" Enable repeating supported plugin maps with '.'
   use 'tpope/vim-repeat'
   -- "" Repeat command extended to visual mode.
@@ -89,8 +86,6 @@ return require('packer').startup(function(use)
   use 'Shougo/neosnippet.vim'
   -- " Default snippets
   use 'Shougo/neosnippet-snippets'
-  -- " Print documents in echo area.
-  use 'Shougo/echodoc.vim'
   -- " " Extended session management for Vim.
   use 'xolox/vim-session'
   -- " " Session
@@ -101,7 +96,7 @@ return require('packer').startup(function(use)
   -- " (Do)cumentation (Ge)nerator 15+ languages  Generate proper code documentation skeletons with a single keypress.
   -- " use 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
   -- " Vim bundle for styled-components based javascript files.
-  use({'styled-components/vim-styled-components', branch = 'main' })
+  -- use({'styled-components/vim-styled-components', branch = 'main' })
   -- " A Vim plugin that provides GraphQL file detection, syntax highlighting, and indentation.
   -- " use 'jparise/vim-graphql'
   -- " Color scheme
@@ -122,8 +117,6 @@ return require('packer').startup(function(use)
   use 'djoshea/vim-autoread'
   -- " Color scheme
   use 'joshdick/onedark.vim'
-  -- " Motions to and inside git conflict markers
-  use 'rhysd/conflict-marker.vim'
   -- " Vim plugin to automate replacing expressions with assigned variables in any programming language
   use 'da-x/name-assign.vim'
   -- " " use that adds a 'cut' operation separate from 'delete'
@@ -156,8 +149,6 @@ return require('packer').startup(function(use)
   use 'nvim-lua/plenary.nvim'
   -- " use 'Cybolic/palenight.vim'
   use 'arthurxavierx/vim-caser'
-  -- " use 'jiangmiao/auto-pairs'
-  use 'christoomey/vim-conflicted'
   use 'preservim/tagbar'
   use 'arcticicestudio/nord-vim'
   use 'rcarriga/nvim-notify'
