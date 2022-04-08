@@ -98,13 +98,6 @@ return require('packer').startup(function(use)
   use 'xolox/vim-misc'
   -- " File extensions icons
   use 'ryanoasis/vim-devicons'
-  use {
-    'kyazdani42/nvim-tree.lua',
-    requires = {
-      'kyazdani42/nvim-web-devicons', -- optional, for file icon
-    },
-    config = function() require('plugins.nvim-tree') end
-  }
   -- " (Do)cumentation (Ge)nerator 15+ languages  Generate proper code documentation skeletons with a single keypress.
   -- " use 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
   -- " Vim bundle for styled-components based javascript files.
@@ -172,6 +165,17 @@ return require('packer').startup(function(use)
     'lewis6991/gitsigns.nvim',
     config = function() require('plugins.gitsigns') end,
   }
+  use {
+    'nvim-neo-tree/neo-tree.nvim',
+    branch = "v2.x",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim"
+    },
+    config = function() require('plugins.neoTree') end,
+  }
+
 
   if packer_bootstrap then
     require('packer').sync()

@@ -36,7 +36,7 @@ imap("<C-p>",'<C-o>"+p')
 vmap('p','"_dP')
 
 
-nmap('<C-n>',':NvimTreeFindFileToggle<CR>')
+nmap('<C-n>',':Neotree toggle=true reveal=true<CR>')
 
 nmap('<F8>',':TagbarToggle<CR>')
 

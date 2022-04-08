@@ -1,5 +1,5 @@
 vim.cmd("autocmd BufWritePre * silent! Neoformat")
-vim.cmd [[autocmd! CursorHold * lua vim.diagnostic.open_float(nil, {focus=false, scope="cursor"})]]
+vim.cmd [[autocmd! CursorHold * lua vim.diagnostic.open_float(nil, {focus=false, scope="line"})]]
 
 local signs = { Error = "", Warn = "", Hint = "", Info = "" }
 for type, icon in pairs(signs) do
@@ -82,13 +82,12 @@ augroup mygroup
   "  autocmd CursorHold * silent syntax sync fromstart
 
   "  " Highlight symbol under cursor on CursorHold (colors )
-  autocmd CursorHold * silent call CocActionAsync('highlight')
+  " autocmd CursorHold * silent call CocActionAsync('highlight')
 
   autocmd!
   " Setup formatexpr specified filetype(s).
   " autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
   " Update signature help on jump placeholder
-  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 
   autocmd FileType apache setlocal commentstring=#\ %s
 
@@ -109,9 +108,9 @@ augroup END
   " \   endif
 
   autocmd CursorMoved,BufEnter *
-        \   if &filetype == 'nerdtree' |
-        \     execute 'norm 0' |
-        \   endif
+       \   if &filetype == 'neo-tree' |
+       \     execute 'norm 0' |
+       \   endif
 
   autocmd CmdLineEnter : let g:prev_hls = &hlsearch
   autocmd CmdLineChanged : let g:cmd = getcmdline() |
@@ -129,8 +128,6 @@ augroup END
         \  endif
   autocmd CmdLineLeave : let &hlsearch = g:prev_hls
   " au BufWritePost * nested checktime %
-
-  autocmd FileType coc-explorer call <SID>init_explorer()
 
   autocmd User VimConflicted call s:setupConflicted()
 
