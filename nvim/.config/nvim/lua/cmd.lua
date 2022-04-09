@@ -61,12 +61,6 @@ endfunction
 
 augroup mygroup
 
-  au GUIEnter * simalt ~x
-  au BufNewFile,BufRead *.ejs set filetype=html
-  autocmd FileType scss setl iskeyword+=@-@
-  "  autocmd CursorHold * silent syntax sync fromstart
-  autocmd!
-  autocmd FileType apache setlocal commentstring=#\ %s
 
 augroup highlight_yank
     autocmd!

@@ -103,8 +103,6 @@ return require('packer').startup(function(use)
   -- " use 'drewtempelmeyer/palenight.vim'
   -- " The undo history visualizer for VIM
   use 'mbbill/undotree'
-  -- " Commentary.vim: comment stuff out 
-  use 'tpope/vim-commentary'
   -- " Vim dashboard
   use 'glepnir/dashboard-nvim'
   -- " The open source plugin for productivity metrics, goals, leaderboards, and automatic time tracking.
@@ -167,9 +165,16 @@ return require('packer').startup(function(use)
     config = function() require('plugins.neoTree') end,
   }
   use {
-  'romgrk/barbar.nvim',
-  requires = {'kyazdani42/nvim-web-devicons'}
-}
+    'romgrk/barbar.nvim',
+    requires = {'kyazdani42/nvim-web-devicons'}
+  }
+  -- Smart and powerful comment plugin for neovim. Supports treesitter, dot repeat, left-right/up-down motions, hooks, and more
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+      require('Comment').setup()
+    end
+  }
 
 
   if packer_bootstrap then
