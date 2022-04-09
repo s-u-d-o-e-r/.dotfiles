@@ -166,6 +166,10 @@ return require('packer').startup(function(use)
     },
     config = function() require('plugins.neoTree') end,
   }
+  use {
+  'romgrk/barbar.nvim',
+  requires = {'kyazdani42/nvim-web-devicons'}
+}
 
 
   if packer_bootstrap then
