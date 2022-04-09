@@ -1,6 +1,6 @@
-require('cmd')
+require('plugins')
 require('options')
 require('keymaps')
-require('plugins')
+require('cmd')
 require('themes')
 --   
