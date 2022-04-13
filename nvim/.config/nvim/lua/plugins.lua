@@ -31,6 +31,10 @@ return require('packer').startup(function(use)
   use {'windwp/nvim-autopairs',config = function () require('nvim-autopairs').setup() end}
   -- Autocomplete
   use "hood/popui.nvim"
+  use "L3MON4D3/LuaSnip"
+  use 'Shougo/neosnippet.vim'
+  -- " Default snippets
+  use 'Shougo/neosnippet-snippets'
   use({
     "hrsh7th/nvim-cmp",
     -- Sources for nvim-cmp
@@ -39,8 +43,9 @@ return require('packer').startup(function(use)
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
       "hrsh7th/cmp-nvim-lua",
+      "saadparwaiz1/cmp_luasnip",
+      "notomo/cmp-neosnippet",
       "hrsh7th/cmp-nvim-lsp-signature-help",
-      "notomo/cmp-neosnippet"
     },
     config = function() require('plugins.cmp') end,
   })
@@ -72,7 +77,7 @@ return require('packer').startup(function(use)
   use 'Asheq/close-buffers.vim'
   -- "" Switch between single-line and multiline forms of code gS - spit / gJ - join
   use 'AndrewRadev/splitjoin.vim'
-    -- " Color scheme
+  -- " Color scheme
   -- " use 'haishanh/night-owl.vim'
   -- " " Screenshot maker
   use 'kristijanhusak/vim-carbon-now-sh'
@@ -83,9 +88,6 @@ return require('packer').startup(function(use)
   -- " " Themes for airline
   use 'vim-airline/vim-airline-themes'
   -- " Snippets support
-  use 'Shougo/neosnippet.vim'
-  -- " Default snippets
-  use 'Shougo/neosnippet-snippets'
   -- " " Extended session management for Vim.
   use 'xolox/vim-session'
   -- " " Session
@@ -175,6 +177,28 @@ return require('packer').startup(function(use)
       require('Comment').setup()
     end
   }
+  use {
+    "folke/todo-comments.nvim",
+    requires = "nvim-lua/plenary.nvim",
+    config = function()
+      require("todo-comments").setup {
+        colors = {
+          error = {"#DB4B4B", "DiagnosticError", "ErrorMsg", "#DC2626" },
+          warning = {"#E0AF68", "DiagnosticWarning", "WarningMsg", "#FBBF24" },
+          info = { "#0EB9D7","DiagnosticInfo", "#2563EB" },
+          hint = {"#12B981", "DiagnosticHint", "#10B981" },
+          default = {"#A387D8", "Identifier", "#7C3AED" },
+        }
+      }
+    end
+  }
+  use {
+    'norcalli/nvim-colorizer.lua',
+    config = function()
+      require('colorizer').setup()
+    end
+  }
+
 
 
   if packer_bootstrap then

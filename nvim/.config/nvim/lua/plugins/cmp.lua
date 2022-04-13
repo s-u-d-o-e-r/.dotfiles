@@ -1,6 +1,7 @@
 local fn = vim.fn
 
 -- local Utils = require('utils')
+local luasnip = require('luasnip')
 local cmp = require('cmp')
 
 -- local exprinoremap = Utils.exprinoremap
@@ -9,7 +10,7 @@ local function get_snippets_rtp()
   return vim.tbl_map(function(itm)
     return fn.fnamemodify(itm, ":h")
   end, vim.api.nvim_get_runtime_file(
-      "package.json", true
+  "package.json", true
   ))
 end
 
@@ -20,6 +21,7 @@ local opts = {
   },
 }
 
+require('luasnip.loaders.from_vscode').lazy_load(opts)
 
 cmp.setup({
   -- Don't autocomplete, otherwise there is too much clutter
@@ -31,6 +33,7 @@ cmp.setup({
   -- Snippet engine, required
   snippet = {
     expand = function(args)
+      require('luasnip').lsp_expand(args.body)
     end,
   },
 
@@ -56,6 +59,8 @@ cmp.setup({
     ['<Tab>'] = function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
+      elseif luasnip.expand_or_jumpable() then
+        luasnip.expand_or_jump()
       else
         fallback()
       end
@@ -64,6 +69,8 @@ cmp.setup({
     ['<S-Tab>'] = function(fallback)
       if cmp.visible() then
         cmp.select_prev_item()
+      elseif luasnip.jumpable(-1) then
+        luasnip.jump(-1)
       else
         fallback()
       end
@@ -81,9 +88,10 @@ cmp.setup({
     {name = 'path'},
     {name = 'buffer'},
     {name = 'spell'},
-    -- { name = 'cmp_tabnine' },
+    {name = 'luasnip'},
+    {name = "neosnippet"},
+    { name = 'cmp_tabnine' },
     { name = 'nvim_lsp_signature_help' },
-    {name = "neosnippet"}
     -- {name = 'calc'},
   },
 })
