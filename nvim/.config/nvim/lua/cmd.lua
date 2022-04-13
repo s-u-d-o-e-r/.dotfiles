@@ -10,7 +10,7 @@ OpenDiagFloat = function ()
 end
 
 
-vim.cmd [[autocmd CursorHold <buffer> lua OpenDiagFloat()]]
+vim.cmd [[autocmd CursorHold * lua OpenDiagFloat()]]
 
 local signs = { Error = "", Warn = "", Hint = "", Info = "" }
 for type, icon in pairs(signs) do
