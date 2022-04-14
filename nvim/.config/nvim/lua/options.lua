@@ -164,7 +164,7 @@ vim.diagnostic.config({
   },
 })
 
-vim.ui.select = require"popui.ui-overrider"
+-- vim.ui.select = require"popui.ui-overrider"
 vim.notify = require("notify")
 
 

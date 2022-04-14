@@ -30,7 +30,6 @@ return require('packer').startup(function(use)
   use 'RishabhRD/nvim-lsputils'
   use {'windwp/nvim-autopairs',config = function () require('nvim-autopairs').setup() end}
   -- Autocomplete
-  use "hood/popui.nvim"
   use "L3MON4D3/LuaSnip"
   use 'Shougo/neosnippet.vim'
   -- " Default snippets
@@ -145,7 +144,6 @@ return require('packer').startup(function(use)
   use 'haya14busa/incsearch.vim'
   use 'haya14busa/incsearch-easymotion.vim'
   use 'haya14busa/incsearch-fuzzy.vim'
-  use 'nvim-lua/popup.nvim'
   use 'nvim-lua/plenary.nvim'
   -- " use 'Cybolic/palenight.vim'
   use 'arthurxavierx/vim-caser'
