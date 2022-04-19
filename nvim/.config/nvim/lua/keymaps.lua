@@ -53,8 +53,6 @@ map('/','<Plug>(easymotion-sn)')
 omap('/','<Plug>(easymotion-tn)')
 
 map('<Leader>','<Plug>(easymotion-prefix)')
-noremap('<expr><Space>/','incsearch#go(<SID>config_easyfuzzymotion())')
-
 
 -- " These `n` & `N` mappings are options. You do not have to map `n` & `N` to EasyMotion.
 -- " Without these mappings, `n` & `N` works fine. (These mappings just provide

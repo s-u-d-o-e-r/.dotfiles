@@ -57,7 +57,7 @@ return require('packer').startup(function(use)
   })
   use({'nvim-telescope/telescope-fzf-native.nvim', run ='make'})
   use('sbdchd/neoformat')
-  use('jose-elias-alvarez/null-ls.nvim')
+  use {'jose-elias-alvarez/null-ls.nvim'}
   use 's-u-d-o-e-r/vim-gitcommit-issue-id'
   -- "" Enable repeating supported plugin maps with '.'
   use 'tpope/vim-repeat'
@@ -145,19 +145,22 @@ return require('packer').startup(function(use)
   use 'haya14busa/incsearch-easymotion.vim'
   use 'haya14busa/incsearch-fuzzy.vim'
   use 'nvim-lua/plenary.nvim'
+  use 'hood/popui.nvim'
   -- " use 'Cybolic/palenight.vim'
   use 'arthurxavierx/vim-caser'
   use 'preservim/tagbar'
   use 'arcticicestudio/nord-vim'
-  use 'rcarriga/nvim-notify'
   use {
-    'lewis6991/gitsigns.nvim',
-    config = function() require('plugins.gitsigns') end,
-  }
-  use {
-    'nvim-neo-tree/neo-tree.nvim',
-    branch = "v2.x",
-    requires = {
+    'rcarriga/nvim-notify',
+    config= function () require("notify").setup({background_colour = "#555962"}) end}
+    use {
+      'lewis6991/gitsigns.nvim',
+      config = function() require('plugins.gitsigns') end,
+    }
+    use {
+      'nvim-neo-tree/neo-tree.nvim',
+      branch = "v2.x",
+      requires = {
       "nvim-lua/plenary.nvim",
       "kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
       "MunifTanjim/nui.nvim"
@@ -196,8 +199,8 @@ return require('packer').startup(function(use)
       require('colorizer').setup()
     end
   }
-
-
+  use {'kamykn/spelunker.vim'}
+  
 
   if packer_bootstrap then
     require('packer').sync()
