@@ -44,6 +44,7 @@ return require('packer').startup(function(use)
       "hrsh7th/cmp-nvim-lua",
       "saadparwaiz1/cmp_luasnip",
       "notomo/cmp-neosnippet",
+      "uga-rosa/cmp-dictionary",
       "hrsh7th/cmp-nvim-lsp-signature-help",
     },
     config = function() require('plugins.cmp') end,
@@ -74,8 +75,6 @@ return require('packer').startup(function(use)
   use 'tkhren/vim-fake'
   -- "" Buffers close menu
   use 'Asheq/close-buffers.vim'
-  -- "" Switch between single-line and multiline forms of code gS - spit / gJ - join
-  use 'AndrewRadev/splitjoin.vim'
   -- " Color scheme
   -- " use 'haishanh/night-owl.vim'
   -- " " Screenshot maker
@@ -96,26 +95,18 @@ return require('packer').startup(function(use)
   use 'ryanoasis/vim-devicons'
   -- " (Do)cumentation (Ge)nerator 15+ languages  Generate proper code documentation skeletons with a single keypress.
   -- " use 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
-  -- " Vim bundle for styled-components based javascript files.
-  -- use({'styled-components/vim-styled-components', branch = 'main' })
-  -- " A Vim plugin that provides GraphQL file detection, syntax highlighting, and indentation.
-  -- " use 'jparise/vim-graphql'
   -- " Color scheme
   -- " use 'drewtempelmeyer/palenight.vim'
   -- " The undo history visualizer for VIM
   use 'mbbill/undotree'
   -- " Vim dashboard
   use 'glepnir/dashboard-nvim'
-  -- " The open source plugin for productivity metrics, goals, leaderboards, and automatic time tracking.
-  use 'wakatime/vim-wakatime'
   -- " Changes Vim working directory to project root (identified by presence of known directory or file).
   use 'airblade/vim-rooter'
   -- " Vim motions on speed!
   use 'easymotion/vim-easymotion'
   -- " Have Vim automatically reload a file that has changed externally
   use 'djoshea/vim-autoread'
-  -- " Color scheme
-  use 'joshdick/onedark.vim'
   -- " Vim plugin to automate replacing expressions with assigned variables in any programming language
   use 'da-x/name-assign.vim'
   -- " " use that adds a 'cut' operation separate from 'delete'
@@ -125,7 +116,6 @@ return require('packer').startup(function(use)
   -- " Color scheme
   use 'sainnhe/gruvbox-material'
   -- "Git branch search using ctrlp.vim.
-  use 'imkmf/ctrlp-branches'
   -- "emmet-vim is a vim plug-in which provides support for expanding abbreviations similar to emmet.
   use 'mattn/emmet-vim'
   -- "An always-on highlight for a unique character in every word on a line to help you use f, F and family.
@@ -148,7 +138,6 @@ return require('packer').startup(function(use)
   use 'hood/popui.nvim'
   -- " use 'Cybolic/palenight.vim'
   use 'arthurxavierx/vim-caser'
-  use 'preservim/tagbar'
   use 'arcticicestudio/nord-vim'
   use {
     'rcarriga/nvim-notify',
@@ -161,51 +150,52 @@ return require('packer').startup(function(use)
       'nvim-neo-tree/neo-tree.nvim',
       branch = "v2.x",
       requires = {
-      "nvim-lua/plenary.nvim",
-      "kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
-      "MunifTanjim/nui.nvim"
-    },
-    config = function() require('plugins.neoTree') end,
-  }
-  use {
-    'romgrk/barbar.nvim',
-    requires = {'kyazdani42/nvim-web-devicons'}
-  }
-  -- Smart and powerful comment plugin for neovim. Supports treesitter, dot repeat, left-right/up-down motions, hooks, and more
-  use {
-    'numToStr/Comment.nvim',
-    config = function()
-      require('Comment').setup()
-    end
-  }
-  use {
-    "folke/todo-comments.nvim",
-    requires = "nvim-lua/plenary.nvim",
-    config = function()
-      require("todo-comments").setup {
-        colors = {
-          error = {"#DB4B4B", "DiagnosticError", "ErrorMsg", "#DC2626" },
-          warning = {"#E0AF68", "DiagnosticWarning", "WarningMsg", "#FBBF24" },
-          info = { "#0EB9D7","DiagnosticInfo", "#2563EB" },
-          hint = {"#12B981", "DiagnosticHint", "#10B981" },
-          default = {"#A387D8", "Identifier", "#7C3AED" },
+        "nvim-lua/plenary.nvim",
+        "kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
+        "MunifTanjim/nui.nvim"
+      },
+      config = function() require('plugins.neoTree') end,
+    }
+    use {
+      'romgrk/barbar.nvim',
+      requires = {'kyazdani42/nvim-web-devicons'}
+    }
+    -- Smart and powerful comment plugin for neovim. Supports treesitter, dot repeat, left-right/up-down motions, hooks, and more
+    use {
+      'numToStr/Comment.nvim',
+      config = function()
+        require('Comment').setup()
+      end
+    }
+    use {
+      "folke/todo-comments.nvim",
+      requires = "nvim-lua/plenary.nvim",
+      config = function()
+        require("todo-comments").setup {
+          colors = {
+            error = {"#DB4B4B", "DiagnosticError", "ErrorMsg", "#DC2626" },
+            warning = {"#E0AF68", "DiagnosticWarning", "WarningMsg", "#FBBF24" },
+            info = { "#0EB9D7","DiagnosticInfo", "#2563EB" },
+            hint = {"#12B981", "DiagnosticHint", "#10B981" },
+            default = {"#A387D8", "Identifier", "#7C3AED" },
+          }
         }
-      }
-    end
-  }
-  use {
-    'norcalli/nvim-colorizer.lua',
-    config = function()
-      require('colorizer').setup()
-    end
-  }
-  use {'kamykn/spelunker.vim'}
-  
+      end
+    }
+    use {
+      'norcalli/nvim-colorizer.lua',
+      config = function()
+        require('colorizer').setup()
+      end
+    }
+    use {'kamykn/spelunker.vim'}
+    use {'simrat39/symbols-outline.nvim'}
 
-  if packer_bootstrap then
-    require('packer').sync()
-  end
-end)
+
+    if packer_bootstrap then
+      require('packer').sync()
+    end
+  end)
 
 
 

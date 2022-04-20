@@ -92,6 +92,10 @@ cmp.setup({
     {name = "neosnippet"},
     { name = 'cmp_tabnine' },
     { name = 'nvim_lsp_signature_help' },
+    {
+      name = "dictionary",
+      keyword_length = 2,
+    }
     -- {name = 'calc'},
   },
 })

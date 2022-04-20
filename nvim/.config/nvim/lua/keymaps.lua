@@ -15,8 +15,10 @@ local smap = Utils.smap
 
 vmap("<leader>b" ,"<Plug>NameAssign")
 -- " mapping for buffers control
-nmap("<S-H>",":bprev<CR>")
-nmap("<S-L>",":bnext<CR>")
+nmap("<S-H>",":BufferPrevious<CR>")
+nmap("<S-L>",":BufferNext<CR>")
+-- nmap("<S-H>",":bprev<CR>")
+-- nmap("<S-L>",":bnext<CR>")
 -- " map <leader><leader>s :Startify<CR>
 vnoremap("<F3>",":CarbonNowSh<CR>")
 nnoremap("<F5>", ":UndotreeToggle<cr>")
@@ -38,7 +40,7 @@ vmap('p','"_dP')
 
 nmap('<C-n>',':Neotree toggle=true reveal=true<CR>')
 
-nmap('<F8>',':TagbarToggle<CR>')
+nmap('<F8>',':SymbolsOutline<CR>')
 
 -- "telescope
 nnoremap('<leader><leader>f','<cmd>Telescope find_files<cr>')
