@@ -38,9 +38,7 @@ return require('packer').startup(function(use)
   use {'windwp/nvim-autopairs',config = function () require('nvim-autopairs').setup() end}
   -- Autocomplete
   use "L3MON4D3/LuaSnip"
-  use 'Shougo/neosnippet.vim'
   -- " Default snippets
-  use 'Shougo/neosnippet-snippets'
   use({
     "hrsh7th/nvim-cmp",
     -- Sources for nvim-cmp
@@ -51,7 +49,6 @@ return require('packer').startup(function(use)
       "hrsh7th/cmp-nvim-lua",
       "f3fora/cmp-spell",
       "saadparwaiz1/cmp_luasnip",
-      "notomo/cmp-neosnippet",
       "uga-rosa/cmp-dictionary",
       "hrsh7th/cmp-nvim-lsp-signature-help",
     },

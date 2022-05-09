@@ -83,14 +83,13 @@ cmp.setup({
 
   -- Complete options from the LSP servers and the snippet engine
   sources = {
+    {name = 'luasnip'},
+    {name = 'path'},
+    { name = 'cmp_tabnine' },
+    {name = 'spell'},
     {name = 'nvim_lsp'},
     {name = 'nvim_lua'},
-    {name = 'path'},
     {name = 'buffer'},
-    {name = 'spell'},
-    {name = 'luasnip'},
-    {name = "neosnippet"},
-    { name = 'cmp_tabnine' },
     { name = 'nvim_lsp_signature_help' },
     {
       name = "dictionary",
@@ -122,3 +121,5 @@ tabnine:setup({
 	};
 	show_prediction_strength = true;
 })
+
+require("luasnip.loaders.from_snipmate").lazy_load()
