@@ -24,8 +24,15 @@ return require('packer').startup(function(use)
   -- Let Packer manage itself
   use({'wbthomason/packer.nvim', opt = true})
   -- LSP server
-  use({'neovim/nvim-lspconfig', config = function() require('plugins.lspconfig') end })
-  use 'williamboman/nvim-lsp-installer'  -- Helper for installing most language servers
+  use {
+    "williamboman/nvim-lsp-installer",
+    {
+      "neovim/nvim-lspconfig",
+      config = function()
+        require('plugins.lspconfig')
+      end
+    }
+  }
   use 'RishabhRD/popfix'
   use 'RishabhRD/nvim-lsputils'
   use {'windwp/nvim-autopairs',config = function () require('nvim-autopairs').setup() end}
