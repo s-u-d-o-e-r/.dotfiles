@@ -29,7 +29,6 @@ highlight GitGutterChange guifg=#fdcb6e ctermfg=3
 highlight GitGutterDelete guifg=#ff7675 ctermfg=1
 
 hi BufferCurrentSign guifg=#5eacd3
-
 ]]
 
 -- colorscheme gruvbox-material "gruvbox-material "night-owl  nord onedark candid palenight gruvbox-material

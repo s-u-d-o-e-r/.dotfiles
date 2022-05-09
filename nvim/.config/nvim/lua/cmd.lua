@@ -89,4 +89,11 @@ return extend(copy({
   autocmd CmdLineLeave : let &hlsearch = g:prev_hls
   " au BufWritePost * nested checktime %
   augroup end
+
+  augroup import_cost_auto_run
+  autocmd!
+  autocmd InsertLeave *.js,*.jsx,*.ts,*.tsx ImportCost
+  autocmd BufEnter *.js,*.jsx,*.ts,*.tsx ImportCost
+  autocmd BufWrite *.js,*.jsx,*.ts,*.tsx ImportCost
+  augroup END
   ]])

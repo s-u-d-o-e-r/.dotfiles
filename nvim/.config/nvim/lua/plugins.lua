@@ -49,6 +49,7 @@ return require('packer').startup(function(use)
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
       "hrsh7th/cmp-nvim-lua",
+      "f3fora/cmp-spell",
       "saadparwaiz1/cmp_luasnip",
       "notomo/cmp-neosnippet",
       "uga-rosa/cmp-dictionary",
@@ -58,6 +59,7 @@ return require('packer').startup(function(use)
   })
   use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
   -- Telescope
+  use({'yardnsm/vim-import-cost', run= 'npm install --production' })
   use({
     'nvim-telescope/telescope.nvim',
     requires = {{'nvim-lua/plenary.nvim'}},
