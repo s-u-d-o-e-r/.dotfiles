@@ -54,6 +54,7 @@ return require('packer').startup(function(use)
     },
     config = function() require('plugins.cmp') end,
   })
+  use 'rafamadriz/friendly-snippets'
   use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
   -- Telescope
   use({'yardnsm/vim-import-cost', run= 'npm install --production' })
