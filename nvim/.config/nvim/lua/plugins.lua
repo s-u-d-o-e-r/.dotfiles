@@ -78,7 +78,11 @@ return require('packer').startup(function(use)
   -- ""A Git wrapper
   use 'tpope/vim-fugitive'
   -- "" Fake data generator
-  use 'tkhren/vim-fake'
+  use({
+    "tkhren/vim-fake",
+    -- Sources for nvim-cmp
+    config = function() require('plugins.fake') end,
+  })
   -- "" Buffers close menu
   use 'Asheq/close-buffers.vim'
   -- " Color scheme
