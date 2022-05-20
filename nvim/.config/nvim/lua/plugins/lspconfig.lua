@@ -6,7 +6,7 @@ local fn = vim.fn
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
-local servers = { "html","cssls","cssmodules_ls","eslint","emmet_ls","sumneko_lua","tsserver","jsonls","vimls" }
+local servers = { "html","cssls","cssmodules_ls","eslint","emmet_ls","sumneko_lua","tsserver","jsonls","vimls", "rust_analyzer" }
 
 require("nvim-lsp-installer").setup {
   automatic_installation = true
@@ -72,8 +72,23 @@ for _, serverName in pairs(servers) do
     }
   end
 
+  if serverName == "rust_analyzer" then
+    config.settings = {
+      ["rust-analyzer"] = {
+        assist = {
+          importGranularity = "module",
+          importPrefix = "self",
+        },
+        cargo = {
+          loadOutDirsFromCheck = true
+        },
+        procMacro = {
+          enable = true
+        },
+      }}
+    end
 
 
-  lspconfig[serverName].setup(config)
+    lspconfig[serverName].setup(config)
 end
 
