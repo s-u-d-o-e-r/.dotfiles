@@ -27,8 +27,8 @@ set softtabstop=2
 set expandtab
 set cursorline
 set noshowmode
-set nowrap
-set nolbr
+set wrap
+set lbr
 set bg=dark
 set encoding=utf-8
 set guioptions-=m
@@ -164,7 +164,39 @@ vim.diagnostic.config({
   },
 })
 
-vim.ui.select = require"popui.ui-overrider"
-vim.ui.input = require"popui.input-overrider"
+-- vim.ui.select = require"popui.ui-overrider"
+-- vim.ui.input = require"popui.input-overrider"
 vim.notify = require("notify")
+vim.g.vimspector_enable_mappings = 'HUMAN'
+vim.g.vimspector_configurations={
+    chrome ={
+      adapter = "chrome",
+      configuration= {
+        request= "launch",
+        url= "http://localhost:3000/",
+        webRoot= "${workspaceRoot}/www"
+      }
+    },
+    firefox= {
+      adapter= "firefox",
+      configuration= {
+        request= "launch",
+        url= "http://localhost:3000/",
+        webRoot= "${workspaceRoot}/www",
+        reAttach= true
+      }
+    },
+    node= {
+      adapter= "vscode-node",
+      configuration= {
+        request= "launch",
+        protocol= "auto",
+        stopOnEntry= true,
+        console= "integratedTerminal",
+        program= "${workspaceRoot}/simple.js",
+        cwd= "${workspaceRoot}"
+      }
+    }
+}
+
 

@@ -20,8 +20,8 @@ nmap("<S-L>",":BufferNext<CR>")
 -- nmap("<S-H>",":bprev<CR>")
 -- nmap("<S-L>",":bnext<CR>")
 -- " map <leader><leader>s :Startify<CR>
-vnoremap("<F3>",":CarbonNowSh<CR>")
-nnoremap("<F5>", ":UndotreeToggle<cr>")
+vnoremap("<F2>",":CarbonNowSh<CR>")
+nnoremap("<F1>", ":UndotreeToggle<cr>")
 -- " save mappings
 nmap("<C-S>", ":w<CR>")
 imap("<C-S>","<C-O>:w<CR>")
