@@ -34,6 +34,12 @@ require('telescope').setup({
         ['<cr>'] = custom_actions.fzf_multi_select
       }
     },
+    layout_strategy = "flex",
+    layout_config = {
+      flex = {
+        flip_columns = 120,
+      },
+    }
   }
 
     })
