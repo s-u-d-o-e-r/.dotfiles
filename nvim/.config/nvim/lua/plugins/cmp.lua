@@ -6,22 +6,7 @@ local cmp = require('cmp')
 
 -- local exprinoremap = Utils.exprinoremap
 
-local function get_snippets_rtp()
-  return vim.tbl_map(function(itm)
-    return fn.fnamemodify(itm, ":h")
-  end, vim.api.nvim_get_runtime_file(
-  "package.json", true
-  ))
-end
 
-local opts = {
-  paths = {
-    fn.stdpath('config')..'/snips/',
-    get_snippets_rtp()[1],
-  },
-}
-
-require('luasnip.loaders.from_vscode').lazy_load(opts)
 
 cmp.setup({
   -- Don't autocomplete, otherwise there is too much clutter
@@ -121,6 +106,8 @@ tabnine:setup({
 	};
 	show_prediction_strength = true;
 })
+require("luasnip").filetype_extend("all", { "_" })
 
 require("luasnip.loaders.from_snipmate").lazy_load()
 require("luasnip.loaders.from_vscode").lazy_load()
+
