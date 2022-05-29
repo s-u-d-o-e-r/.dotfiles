@@ -68,13 +68,13 @@ cmp.setup({
 
   -- Complete options from the LSP servers and the snippet engine
   sources = {
-    {name = 'luasnip'},
-    {name = 'path'},
+    { name = 'luasnip' },
+    { name = 'path' },
     { name = 'cmp_tabnine' },
-    {name = 'spell'},
-    {name = 'nvim_lsp'},
-    {name = 'nvim_lua'},
-    {name = 'buffer'},
+    { name = 'spell' },
+    { name = 'nvim_lsp' },
+    { name = 'nvim_lua' },
+    { name = 'buffer' },
     { name = 'nvim_lsp_signature_help' },
     {
       name = "dictionary",
@@ -88,26 +88,25 @@ cmp.setup({
 
 -- If you want insert `(` after select function or method item
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
-cmp.event:on( 'confirm_done', cmp_autopairs.on_confirm_done({  map_char = { tex = '' } }))
+cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done({ map_char = { tex = '' } }))
 
 -- add a lisp filetype (wrap my-function), FYI: Hardcoded = { "clojure", "clojurescript", "fennel", "janet" }
-cmp_autopairs.lisp[#cmp_autopairs.lisp+1] = "racket"
+cmp_autopairs.lisp[#cmp_autopairs.lisp + 1] = "racket"
 
 local tabnine = require('cmp_tabnine.config')
 tabnine:setup({
-	max_lines = 1000;
-	max_num_results = 20;
-	sort = true;
-	run_on_every_keystroke = true;
-	snippet_placeholder = '..';
-	ignored_file_types = { -- default is not to ignore
-		-- uncomment to ignore in lua:
-		-- lua = true
-	};
-	show_prediction_strength = true;
+  max_lines = 1000;
+  max_num_results = 20;
+  sort = true;
+  run_on_every_keystroke = true;
+  snippet_placeholder = '..';
+  ignored_file_types = { -- default is not to ignore
+    -- uncomment to ignore in lua:
+    -- lua = true
+  };
+  show_prediction_strength = true;
 })
 require("luasnip").filetype_extend("all", { "_" })
 
 require("luasnip.loaders.from_snipmate").lazy_load()
 require("luasnip.loaders.from_vscode").lazy_load()
-

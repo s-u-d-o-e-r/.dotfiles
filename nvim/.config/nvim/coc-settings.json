@@ -1,165 +1,213 @@
 {
-	"coc.preferences.formatOnSaveFiletypes": [
-		"css",
-		"Markdown",
-		"html",
-		"json",
-		"javascript",
-		"javascriptreact",
-		"typescript",
-		"typescriptreact",
-		"jsonc",
-		"vim",
-		"scss"
-	],
-	"yank.enableCompletion": false,
-	"coc.preferences.extensionUpdateCheck": "daily",
-	"java.enabled": false,
-	"emmet.includeLanguages": { "javascript": "javascriptreact" },
-	"emmet.optimizeStylesheetParsing": true,
-	"emmet.showExpandedAbbreviation": "never",
-	"snippets.userSnippetsDirectory": "~/.config/nvim/snippets",
-	"git.enableGutters": false,
-	"git.addGBlameToVirtualText": true,
-	"git.showCommitInFloating": true,
-	"git.addGBlameToBufferVar": true,
-	"diagnostic.virtualText": true,
-	"diagnostic.infoSign": "",
-	"diagnostic.errorSign": "",
-	"diagnostic.warningSign": "",
-	"codeLens.enable": true,
-	"diagnostic-languageserver.formatFiletypes": { "vim": "vint" },
-	"diagnostic-languageserver.filetypes": {
-		"vim": "vint",
-		"--markdown": "write-good",
-		"--sh": "shellcheck"
-	},
-	"diagnostic.refreshOnInsertMode": true,
-	"diagnostic-languageserver.linters": {
-		"vint": {
-			"command": "vint",
-			"debounce": 100,
-			"args": ["--enable-neovim", "%filepath"],
-			"offsetLine": 0,
-			"offsetColumn": 0,
-			"sourceName": "vint",
-			"formatLines": 1,
-			"formatPattern": [
-				"[^:]+:(\\d+):(\\d+):\\s*(.*)(\\r|\\n)*$",
-				{
-					"line": 1,
-					"column": 2,
-					"message": 3
-				}
-			]
-		}
-	},
-	"prettier.stylelintIntegration": false,
-	"------prettier.eslintIntegration": true,
-	"suggest.noselect": false,
-	"suggest.autoTrigger": "always",
-	"suggest.acceptSuggestionOnCommitCharacter": true,
-	"suggest.echodocSupport": true,
-	"eslint.autoFixOnSave": false,
-	"eslint.codeAction.showDocumentation": {
-		"enable": true
-	},
-	"explorer.icon.enableNerdfont": true,
-	"cSpell.userWords": [
-		"Chargebacks",
-		"Formik",
-		"Linkify",
-		"Swipeable",
-		"TSYS",
-		"Unmount",
-		"Untracked",
-		"datasource",
-		"debounced",
-		"dropzone",
-		"ellipsize",
-		"financials",
-		"helpdesk",
-		"pacman",
-		"reseted",
-		"setted",
-		"uploader"
-	],
-	"prettier.trailingComma": "none",
-	"prettier.singleQuote": true,
-	"prettier.printWidth": 100,
-	"prettier.useTabs": true,
-	"prettier.tabWidth": 2,
-	"git.addedSign.hlGroup": "GitGutterAdd",
-	"git.changedSign.hlGroup": "GitGutterChange",
-	"git.removedSign.hlGroup": "GitGutterDelete",
-	"git.topRemovedSign.hlGroup": "GitGutterDelete",
-	"git.changeRemovedSign.hlGroup": "GitGutterChangeDelete",
-	"eslint-----.options": {
-		"env": {
-			"browser": true,
-			"es6": true
-		},
-		"extends": ["standard", "prettier", "prettier/react", "plugin:react/recommended", "react-app"],
-		"plugins": ["react", "prettier"],
-		"globals": ["localStorage", "window"],
-		"parserOptions": {
-			"ecmaFeatures": {
-				"jsx": true,
-				"modules": true
-			}
-		},
-		"rules": {
-			"semi": [2, "always"],
-			"max-len": [2, { "code": 100 }],
-			"quotes": [2, "single", { "avoidEscape": true }],
-			"jsx-quotes": [2, "prefer-double"],
-			"camelcase": 0
-		},
-		"settings": {
-			"react": {
-				"version": "16.8"
-			}
-		}
-	},
-	"tabnine.priority": 101,
-	"colors.filetypes": ["*"],
-	"coc.source.coc-tsserver.priority": 100,
-	"suggest.languageSourcePriority": 100,
-	"coc.source.word.priority": 80,
-	"coc.source.around.priority": 100,
-	"coc.source.neosnippet.priority": 100,
-	"suggest.completionItemKindLabels": {
-		"function": "\uf794",
-		"method": "\uf6a6",
-		"variable": "\uf71b",
-		"constant": "\uf8ff",
-		"struct": "\ufb44",
-		"class": "\uf0e8",
-		"interface": "\ufa52",
-		"text": "\ue612",
-		"enum": "\uf435",
-		"enumMember": "\uf02b",
-		"module": "\uf668",
-		"color": "\ue22b",
-		"property": "\ufab6",
-		"field": "\uf93d",
-		"unit": "\uf475",
-		"file": "\uf471",
-		"value": "\uf8a3",
-		"event": "\ufacd",
-		"folder": "\uf115",
-		"keyword": "\uf893",
-		"snippet": "\uf64d",
-		"operator": "\uf915",
-		"reference": "\uf87a",
-		"typeParameter": "\uf278",
-		"default": "\uf29c"
-	},
-	"languageserver": {
-		"graphql": {
-			"command": "graphql-lsp",
-			"args": ["server", "-m", "stream"],
-			"filetypes": ["typescript", "typescriptreact", "graphql", "javascript", "javascriptreact"]
-		}
-	}
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "Markdown",
+    "html",
+    "json",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "jsonc",
+    "vim",
+    "scss"
+  ],
+  "yank.enableCompletion": false,
+  "coc.preferences.extensionUpdateCheck": "daily",
+  "java.enabled": false,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "emmet.optimizeStylesheetParsing": true,
+  "emmet.showExpandedAbbreviation": "never",
+  "snippets.userSnippetsDirectory": "~/.config/nvim/snippets",
+  "git.enableGutters": false,
+  "git.addGBlameToVirtualText": true,
+  "git.showCommitInFloating": true,
+  "git.addGBlameToBufferVar": true,
+  "diagnostic.virtualText": true,
+  "diagnostic.infoSign": "",
+  "diagnostic.errorSign": "",
+  "diagnostic.warningSign": "",
+  "codeLens.enable": true,
+  "diagnostic-languageserver.formatFiletypes": {
+    "vim": "vint"
+  },
+  "diagnostic-languageserver.filetypes": {
+    "vim": "vint",
+    "--markdown": "write-good",
+    "--sh": "shellcheck"
+  },
+  "diagnostic.refreshOnInsertMode": true,
+  "diagnostic-languageserver.linters": {
+    "vint": {
+      "command": "vint",
+      "debounce": 100,
+      "args": [
+        "--enable-neovim",
+        "%filepath"
+      ],
+      "offsetLine": 0,
+      "offsetColumn": 0,
+      "sourceName": "vint",
+      "formatLines": 1,
+      "formatPattern": [
+        "[^:]+:(\\d+):(\\d+):\\s*(.*)(\\r|\\n)*$",
+        {
+          "line": 1,
+          "column": 2,
+          "message": 3
+        }
+      ]
+    }
+  },
+  "prettier.stylelintIntegration": false,
+  "------prettier.eslintIntegration": true,
+  "suggest.noselect": false,
+  "suggest.autoTrigger": "always",
+  "suggest.acceptSuggestionOnCommitCharacter": true,
+  "suggest.echodocSupport": true,
+  "eslint.autoFixOnSave": false,
+  "eslint.codeAction.showDocumentation": {
+    "enable": true
+  },
+  "explorer.icon.enableNerdfont": true,
+  "cSpell.userWords": [
+    "Chargebacks",
+    "Formik",
+    "Linkify",
+    "Swipeable",
+    "TSYS",
+    "Unmount",
+    "Untracked",
+    "datasource",
+    "debounced",
+    "dropzone",
+    "ellipsize",
+    "financials",
+    "helpdesk",
+    "pacman",
+    "reseted",
+    "setted",
+    "uploader"
+  ],
+  "prettier.trailingComma": "none",
+  "prettier.singleQuote": true,
+  "prettier.printWidth": 100,
+  "prettier.useTabs": true,
+  "prettier.tabWidth": 2,
+  "git.addedSign.hlGroup": "GitGutterAdd",
+  "git.changedSign.hlGroup": "GitGutterChange",
+  "git.removedSign.hlGroup": "GitGutterDelete",
+  "git.topRemovedSign.hlGroup": "GitGutterDelete",
+  "git.changeRemovedSign.hlGroup": "GitGutterChangeDelete",
+  "eslint-----.options": {
+    "env": {
+      "browser": true,
+      "es6": true
+    },
+    "extends": [
+      "standard",
+      "prettier",
+      "prettier/react",
+      "plugin:react/recommended",
+      "react-app"
+    ],
+    "plugins": [
+      "react",
+      "prettier"
+    ],
+    "globals": [
+      "localStorage",
+      "window"
+    ],
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true,
+        "modules": true
+      }
+    },
+    "rules": {
+      "semi": [
+        2,
+        "always"
+      ],
+      "max-len": [
+        2,
+        {
+          "code": 100
+        }
+      ],
+      "quotes": [
+        2,
+        "single",
+        {
+          "avoidEscape": true
+        }
+      ],
+      "jsx-quotes": [
+        2,
+        "prefer-double"
+      ],
+      "camelcase": 0
+    },
+    "settings": {
+      "react": {
+        "version": "16.8"
+      }
+    }
+  },
+  "tabnine.priority": 101,
+  "colors.filetypes": [
+    "*"
+  ],
+  "coc.source.coc-tsserver.priority": 100,
+  "suggest.languageSourcePriority": 100,
+  "coc.source.word.priority": 80,
+  "coc.source.around.priority": 100,
+  "coc.source.neosnippet.priority": 100,
+  "suggest.completionItemKindLabels": {
+    "function": "",
+    "method": "",
+    "variable": "",
+    "constant": "",
+    "struct": "פּ",
+    "class": "",
+    "interface": "禍",
+    "text": "",
+    "enum": "",
+    "enumMember": "",
+    "module": "",
+    "color": "",
+    "property": "襁",
+    "field": "綠",
+    "unit": "",
+    "file": "",
+    "value": "",
+    "event": "鬒",
+    "folder": "",
+    "keyword": "",
+    "snippet": "",
+    "operator": "洛",
+    "reference": "",
+    "typeParameter": "",
+    "default": ""
+  },
+  "languageserver": {
+    "graphql": {
+      "command": "graphql-lsp",
+      "args": [
+        "server",
+        "-m",
+        "stream"
+      ],
+      "filetypes": [
+        "typescript",
+        "typescriptreact",
+        "graphql",
+        "javascript",
+        "javascriptreact"
+      ]
+    }
+  }
 }

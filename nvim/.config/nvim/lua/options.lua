@@ -183,7 +183,7 @@ vim.g.vimspector_configurations = {
     adapter = "firefox",
     configuration = {
       request = "launch",
-      url = "http://localhost:3000/" ,
+      url = "http://localhost:3000/",
       webRoot = "${workspaceRoot}/www",
       reAttach = true
     }

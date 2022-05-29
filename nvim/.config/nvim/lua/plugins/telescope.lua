@@ -14,11 +14,10 @@ function custom_actions.fzf_multi_select(prompt_bufnr)
   end
 end
 
-
 require('telescope').setup({
- defaults = {
+  defaults = {
     file_ignore_patterns = { "node_modules", ".git" },
-    mappings = { 
+    mappings = {
       i = {
         ['<esc>'] = actions.close,
         ['<C-j>'] = actions.move_selection_next,
@@ -42,6 +41,6 @@ require('telescope').setup({
     }
   }
 
-    })
+})
 
 require('telescope').load_extension('fzf')

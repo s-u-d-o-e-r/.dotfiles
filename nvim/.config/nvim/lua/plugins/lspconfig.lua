@@ -6,7 +6,7 @@ local fn = vim.fn
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
-local servers = { "html","cssls","cssmodules_ls","eslint","emmet_ls","sumneko_lua","tsserver","jsonls","vimls", "rust_analyzer" }
+local servers = { "html", "cssls", "cssmodules_ls", "eslint", "emmet_ls", "sumneko_lua", "tsserver", "jsonls", "vimls", "rust_analyzer" }
 
 require("nvim-lsp-installer").setup {
   automatic_installation = true
@@ -32,7 +32,7 @@ for _, serverName in pairs(servers) do
         },
         diagnostics = {
           -- Get the language server to recognize the `vim` global
-          globals = {'vim'},
+          globals = { 'vim' },
         },
         workspace = {
           -- Make the server aware of Neovim runtime files
@@ -48,7 +48,7 @@ for _, serverName in pairs(servers) do
 
 
   if serverName == "eslint" then
-    config.on_attach = function (client, bufnr)
+    config.on_attach = function(client, bufnr)
       -- neovim's LSP client does not currently support dynamic capabilities registration, so we need to set
       -- the resolved capabilities of the eslint server ourselves!
       client.resolved_capabilities.document_formatting = true
@@ -61,13 +61,13 @@ for _, serverName in pairs(servers) do
 
 
   if serverName == "emmet_ls" then
-    config.filetypes = { "html", "css","scss" }
+    config.filetypes = { "html", "css", "scss" }
   end
 
   if serverName == "tsserver" then
     config.settings = {
       preferences = {
-        includeInlayParameterNameHints= 'all';
+        includeInlayParameterNameHints = 'all';
       }
     }
   end
@@ -85,10 +85,9 @@ for _, serverName in pairs(servers) do
         procMacro = {
           enable = true
         },
-      }}
-    end
+      } }
+  end
 
 
-    lspconfig[serverName].setup(config)
+  lspconfig[serverName].setup(config)
 end
-
