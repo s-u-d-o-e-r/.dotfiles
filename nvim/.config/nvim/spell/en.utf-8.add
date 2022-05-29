@@ -11,3 +11,7 @@ dropzone
 textarea
 backend
 onload
+augroup
+stdpath
+cmp_luasnip
+tabnine
