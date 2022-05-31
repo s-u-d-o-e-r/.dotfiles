@@ -196,6 +196,7 @@ return require('packer').startup(function(use)
     end
   }
   use 'puremourning/vimspector'
+  use 'dbeniamine/cheat.sh-vim'
   if packer_bootstrap then
     require('packer').sync()
   end

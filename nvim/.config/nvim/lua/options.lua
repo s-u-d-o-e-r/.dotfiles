@@ -155,6 +155,7 @@ vim.g.neoformat_only_msg_on_error = 1
 
 vim.diagnostic.config({
   virtual_text = {
+    severity = { vim.diagnostic.severity.ERROR, vim.diagnostic.severity.WARN },
     source = "always", -- Or "if_many"
   },
   signs = true,
