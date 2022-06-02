@@ -16,3 +16,5 @@ stdpath
 cmp_luasnip
 tabnine
 fieldset
+classnames
+keyof

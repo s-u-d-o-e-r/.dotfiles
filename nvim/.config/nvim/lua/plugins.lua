@@ -93,7 +93,7 @@ return require('packer').startup(function(use)
   -- " Fuzzy file, buffer, mru, tag, etc finder
   use 'ctrlpvim/ctrlp.vim'
   -- " " Lean & mean status/tabline for vim that's light as air.
-  use 'bling/vim-airline'
+  use 'vim-airline/vim-airline'
   -- " " Themes for airline
   use 'vim-airline/vim-airline-themes'
   -- " Snippets support
