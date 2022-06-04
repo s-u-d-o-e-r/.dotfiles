@@ -1,7 +1,7 @@
-local lib = require'nvim-tree.lib'
-local openfile = require'nvim-tree.actions.open-file'
-local actions = require'telescope.actions'
-local action_state = require'telescope.actions.state'
+local lib = require 'nvim-tree.lib'
+local openfile = require 'nvim-tree.actions.open-file'
+local actions = require 'telescope.actions'
+local action_state = require 'telescope.actions.state'
 local M = {}
 
 local view_selection = function(prompt_bufnr, map)

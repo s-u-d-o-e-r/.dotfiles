@@ -78,25 +78,25 @@ endif
 
 
 
-vim.g.dashboard_custom_header= {
-      '',
-      '██╗   ██╗██╗███╗   ███╗',
-      '██║   ██║██║████╗ ████║',
-      '██║   ██║██║██╔████╔██║',
-      '╚██╗ ██╔╝██║██║╚██╔╝██║',
-      ' ╚████╔╝ ██║██║ ╚═╝ ██║',
-      '  ╚═══╝  ╚═╝╚═╝     ╚═╝',
-      ''
-      }
+vim.g.dashboard_custom_header = {
+  '',
+  '██╗   ██╗██╗███╗   ███╗',
+  '██║   ██║██║████╗ ████║',
+  '██║   ██║██║██╔████╔██║',
+  '╚██╗ ██╔╝██║██║╚██╔╝██║',
+  ' ╚████╔╝ ██║██║ ╚═╝ ██║',
+  '  ╚═══╝  ╚═╝╚═╝     ╚═╝',
+  ''
+}
 
 
-vim.g.polyglot_disabled = {'css', 'javascript', 'typescript', 'javascriptreact','typescriptreact'}
+vim.g.polyglot_disabled = { 'css', 'javascript', 'typescript', 'javascriptreact', 'typescriptreact' }
 vim.g.netrw_fastbrowse = 0
 vim.g.mapleader = ' '
 -- " screenshots
-vim.g.carbon_now_sh_options = { ln= 'false',
-       fm= 'Fira Code',
-       t='nord'}
+vim.g.carbon_now_sh_options = { ln = 'false',
+  fm = 'Fira Code',
+  t = 'nord' }
 -- "session config
 vim.g.session_autoload = 'no'
 vim.g.session_autosave = 'yes'
@@ -111,9 +111,9 @@ vim.g.doge_mapping = '<leader><leader>d'
 -- "airline config
 vim.api.nvim_set_var('airline#extensions#tabline#enabled', 1)
 vim.g.airline_powerline_fonts = 1
-vim.g.airline_theme= 'gruvbox_material' 
+vim.g.airline_theme = 'gruvbox_material'
 --" 'gruvbox_material' "deus  nord
-vim.api.nvim_set_var('airline#extensions#tabline#formatter' , 'unique_tail_improved')
+vim.api.nvim_set_var('airline#extensions#tabline#formatter', 'unique_tail_improved')
 
 vim.g.airline_left_sep = ''
 vim.g.airline_left_alt_sep = ''
@@ -121,15 +121,15 @@ vim.g.airline_right_sep = ''
 vim.g.airline_right_alt_sep = ''
 
 vim.g.emmetJsx = 1
-vim.g.EasyMotion_startofline = 0 
+vim.g.EasyMotion_startofline = 0
 vim.g.EasyMotion_smartcase = 1
 vim.g.nord_cursor_line_number_background = 1
-vim.api.nvim_set_var('$NVIM_TUI_ENABLE_TRUE_COLOR',1)
+vim.api.nvim_set_var('$NVIM_TUI_ENABLE_TRUE_COLOR', 1)
 
-vim.g.ctrlp_user_command = {'.git', 'cd %s && git ls-files -co --exclude-standard'}
+vim.g.ctrlp_user_command = { '.git', 'cd %s && git ls-files -co --exclude-standard' }
 vim.g.ctrlp_extensions = {
-       'branches'
-     }
+  'branches'
+}
 vim.g.ctrlp_map = '<c-p>'
 vim.g.ctrlp_cmd = 'CtrlPMRU'
 
@@ -142,7 +142,7 @@ vim.g.gruvbox_material_statusline_style = 'mix'
 vim.g.gruvbox_material_diagnostic_virtual_text = 'colored'
 vim.g.gruvbox_material_transparent_background = 1
 vim.g.gruvbox_material_background = 'soft'
-vim.g.gruvbox_material_palette= 'mix'
+vim.g.gruvbox_material_palette = 'mix'
 vim.g.gruvbox_material_better_performance = 1
 
 vim.g.gitgutter_sign_added = '▎'
@@ -154,13 +154,16 @@ vim.g.diffget_upstream_map = 'gf'
 vim.g.neoformat_only_msg_on_error = 1
 
 vim.diagnostic.config({
-  virtual_text = false,
+  virtual_text = {
+    severity = { vim.diagnostic.severity.ERROR, vim.diagnostic.severity.WARN },
+    source = "always", -- Or "if_many"
+  },
   signs = true,
   underline = true,
   update_in_insert = true,
   severity_sort = true,
   float = {
-    source = "always",  -- Or "if_many"
+    source = "always", -- Or "if_many"
   },
 })
 
@@ -168,35 +171,33 @@ vim.diagnostic.config({
 -- vim.ui.input = require"popui.input-overrider"
 vim.notify = require("notify")
 vim.g.vimspector_enable_mappings = 'HUMAN'
-vim.g.vimspector_configurations={
-    chrome ={
-      adapter = "chrome",
-      configuration= {
-        request= "launch",
-        url= "http://localhost:3000/",
-        webRoot= "${workspaceRoot}/www"
-      }
-    },
-    firefox= {
-      adapter= "firefox",
-      configuration= {
-        request= "launch",
-        url= "http://localhost:3000/",
-        webRoot= "${workspaceRoot}/www",
-        reAttach= true
-      }
-    },
-    node= {
-      adapter= "vscode-node",
-      configuration= {
-        request= "launch",
-        protocol= "auto",
-        stopOnEntry= true,
-        console= "integratedTerminal",
-        program= "${workspaceRoot}/simple.js",
-        cwd= "${workspaceRoot}"
-      }
+vim.g.vimspector_configurations = {
+  chrome = {
+    adapter = "chrome",
+    configuration = {
+      request = "launch",
+      url = "http://localhost:3000/",
+      webRoot = "${workspaceRoot}/www"
     }
+  },
+  firefox = {
+    adapter = "firefox",
+    configuration = {
+      request = "launch",
+      url = "http://localhost:3000/",
+      webRoot = "${workspaceRoot}/www",
+      reAttach = true
+    }
+  },
+  node = {
+    adapter = "vscode-node",
+    configuration = {
+      request = "launch",
+      protocol = "auto",
+      stopOnEntry = true,
+      console = "integratedTerminal",
+      program = "${workspaceRoot}/simple.js",
+      cwd = "${workspaceRoot}"
+    }
+  }
 }
-
-

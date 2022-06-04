@@ -32,4 +32,3 @@ hi BufferCurrentSign guifg=#5eacd3
 ]]
 
 -- colorscheme gruvbox-material "gruvbox-material "night-owl  nord onedark candid palenight gruvbox-material
-
