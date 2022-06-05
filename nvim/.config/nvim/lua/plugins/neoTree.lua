@@ -57,9 +57,9 @@ require("neo-tree").setup({
         local path = node:get_id()
 
         if vim.loop.os_uname().sysname == "Darwin" then
-          vim.api.nvim_command("!open -g " .. path)
+          vim.api.nvim_command("silent !open -g " .. path)
         else
-          vim.api.nvim_command("!xdg-open " .. path)
+          vim.api.nvim_command("silent !xdg-open " .. path)
         end
       end,
     },
