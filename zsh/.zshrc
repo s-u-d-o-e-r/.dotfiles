@@ -120,7 +120,6 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#95a5a6"
 
-
 source ~/antigen.zsh
 
 # Load the oh-my-zsh's library.
@@ -144,3 +143,4 @@ antigen bundle 'wfxr/forgit'
 
 # Tell Antigen that you're done.
 antigen apply
+source /usr/share/nvm/init-nvm.sh

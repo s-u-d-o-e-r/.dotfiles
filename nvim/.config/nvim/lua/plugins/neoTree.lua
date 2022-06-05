@@ -37,7 +37,8 @@ require("neo-tree").setup({
         ["<leader><leader>f"] = "telescope_find",
         ["<leader><leader>g"] = "telescope_grep",
         ["l"] = "open",
-        ["h"] = "close_node"
+        ["h"] = "close_node",
+        ["o"] = "system_open",
       },
     },
     commands = {
@@ -50,6 +51,16 @@ require("neo-tree").setup({
         local node = state.tree:get_node()
         local path = node:get_id()
         require('telescope.builtin').live_grep(getTelescopeOpts(state, path))
+      end,
+      system_open = function(state)
+        local node = state.tree:get_node()
+        local path = node:get_id()
+
+        if vim.loop.os_uname().sysname == "Darwin" then
+          vim.api.nvim_command("!open -g " .. path)
+        else
+          vim.api.nvim_command("!xdg-open " .. path)
+        end
       end,
     },
   },
