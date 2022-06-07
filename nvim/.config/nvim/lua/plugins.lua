@@ -90,6 +90,7 @@ return require('packer').startup(function(use)
   -- " use 'haishanh/night-owl.vim'
   -- " " Screenshot maker
   use 'kristijanhusak/vim-carbon-now-sh'
+  use 's-u-d-o-e-r/vim-ray-so-beautiful'
   -- " Fuzzy file, buffer, mru, tag, etc finder
   use 'ctrlpvim/ctrlp.vim'
   -- " " Lean & mean status/tabline for vim that's light as air.
