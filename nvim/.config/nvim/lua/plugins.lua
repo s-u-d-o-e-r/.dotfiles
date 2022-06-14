@@ -196,7 +196,16 @@ return require('packer').startup(function(use)
       require('plugins.dressing')
     end
   }
-  use 'puremourning/vimspector'
+  use { 'mfussenegger/nvim-dap',
+    requires = {
+      "rcarriga/nvim-dap-ui",
+      "theHamsta/nvim-dap-virtual-text"
+    },
+
+    config = function()
+      require('plugins.dap')
+    end
+  }
   use 'dbeniamine/cheat.sh-vim'
   if packer_bootstrap then
     require('packer').sync()

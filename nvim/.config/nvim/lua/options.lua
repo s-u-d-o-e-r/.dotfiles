@@ -97,6 +97,9 @@ vim.g.mapleader = ' '
 vim.g.carbon_now_sh_options = { ln = 'false',
   fm = 'Fira Code',
   t = 'nord' }
+vim.g.ray_options = {
+  colors='candy'
+}
 -- "session config
 vim.g.session_autoload = 'no'
 vim.g.session_autosave = 'yes'
@@ -170,34 +173,3 @@ vim.diagnostic.config({
 -- vim.ui.select = require"popui.ui-overrider"
 -- vim.ui.input = require"popui.input-overrider"
 vim.notify = require("notify")
-vim.g.vimspector_enable_mappings = 'HUMAN'
-vim.g.vimspector_configurations = {
-  chrome = {
-    adapter = "chrome",
-    configuration = {
-      request = "launch",
-      url = "http://localhost:3000/",
-      webRoot = "${workspaceRoot}/www"
-    }
-  },
-  firefox = {
-    adapter = "firefox",
-    configuration = {
-      request = "launch",
-      url = "http://localhost:3000/",
-      webRoot = "${workspaceRoot}/www",
-      reAttach = true
-    }
-  },
-  node = {
-    adapter = "vscode-node",
-    configuration = {
-      request = "launch",
-      protocol = "auto",
-      stopOnEntry = true,
-      console = "integratedTerminal",
-      program = "${workspaceRoot}/simple.js",
-      cwd = "${workspaceRoot}"
-    }
-  }
-}
