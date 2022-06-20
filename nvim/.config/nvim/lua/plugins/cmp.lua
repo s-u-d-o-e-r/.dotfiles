@@ -1,5 +1,5 @@
 local fn = vim.fn
-
+require('nvim-autopairs').setup()
 -- local Utils = require('utils')
 local luasnip = require('luasnip')
 local cmp = require('cmp')

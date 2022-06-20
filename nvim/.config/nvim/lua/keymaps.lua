@@ -13,15 +13,9 @@ local map = Utils.map
 local imap = Utils.imap
 local smap = Utils.smap
 
-vmap("<leader>b", "<Plug>NameAssign")
 -- " mapping for buffers control
 nmap("<S-H>", ":BufferPrevious<CR>")
 nmap("<S-L>", ":BufferNext<CR>")
--- nmap("<S-H>",":bprev<CR>")
--- nmap("<S-L>",":bnext<CR>")
--- " map <leader><leader>s :Startify<CR>
-vnoremap("<F2>", ":CarbonNowSh<CR>")
-nnoremap("<F1>", ":UndotreeToggle<cr>")
 -- " save mappings
 nmap("<C-S>", ":w<CR>")
 imap("<C-S>", "<C-O>:w<CR>")
@@ -34,13 +28,10 @@ nnoremap("<leader>dd", "dd")
 nnoremap("<leader>D", "D")
 -- " mapping paste
 imap("<C-p>", '<C-o>"+p')
--- "map p "_dP
 vmap('p', '"_dP')
 
 
 nmap('<C-n>', ':Neotree toggle=true reveal=true<CR>')
-
-nmap('<F8>', ':SymbolsOutline<CR>')
 
 -- "telescope
 nnoremap('<leader><leader>f', '<cmd>Telescope find_files<cr>')
@@ -49,26 +40,6 @@ nnoremap('<leader>b', '<cmd>Telescope buffers<cr>')
 nnoremap('<leader>h', '<cmd>Telescope help_tags<cr>')
 -- " Buffers delete
 nnoremap("<C-q>", ":Bdelete menu<CR>")
--- "easy motion
-
-map('/', '<Plug>(easymotion-sn)')
-omap('/', '<Plug>(easymotion-tn)')
-
-map('<Leader>', '<Plug>(easymotion-prefix)')
-
--- " These `n` & `N` mappings are options. You do not have to map `n` & `N` to EasyMotion.
--- " Without these mappings, `n` & `N` works fine. (These mappings just provide
--- " " different highlight method and have some other features )
-map('n', '<Plug>(easymotion-next)')
-map('N', '<Plug>(easymotion-prev)')
--- " <Leader>f{char} to move to {char}
-map('<Leader>f', '<Plug>(easymotion-bd-f)')
-nmap('<Leader>f', '<Plug>(easymotion-overwin-f)')
--- " s{char}{char} to move to {char}{char}
-nmap('<Leader>s', '<Plug>(easymotion-overwin-f2)')
--- " Move to word
-map('<Leader>w', '<Plug>(easymotion-bd-w)')
-nmap('<Leader>w', '<Plug>(easymotion-overwin-w)')
 
 -- " Remapping for windows movements
 nnoremap('<leader>h', ':wincmd h<CR>')
@@ -83,14 +54,40 @@ nnoremap('<Leader>-', ':vertical resize -5<CR>')
 nmap('<leader>gj', ':diffget //3<CR>')
 nmap('<leader>gf', ':diffget //2<CR>')
 
-imap('<C-k>', '    <Plug>(neosnippet_expand_or_jump)')
-smap('<C-k>', '    <Plug>(neosnippet_expand_or_jump)')
+
+
+
+nnoremap("<F1>", ":UndotreeToggle<cr>")
+vnoremap("<F2>", ":CarbonNowSh<CR>")
+nnoremap("<F8>", ":SymbolsOutline<CR>")
+
+
+-- imap('<C-k>', '    <Plug>(neosnippet_expand_or_jump)')
+-- smap('<C-k>', '    <Plug>(neosnippet_expand_or_jump)')
 -- " xmap <C-k>     <Plug>(neosnippet_expand_target)
-
-
 -- nnoremap('<c-j>',' :m .+1<CR>==')
 -- nnoremap('<c-k>',':m .-2<CR>==')
 -- inoremap('<c-j>','<Esc>:m .+1<CR>==gi')
 -- inoremap('<c-k>','<Esc>:m .-2<CR>==gi')
 -- vnoremap('<c-j>',":m '>+1<CR>gv=gv")
 -- vnoremap('<c-k>',":m '<-2<CR>gv=gv")
+-- "easy motion
+-- map('/', '<Plug>(easymotion-sn)')
+-- omap('/', '<Plug>(easymotion-tn)')
+--
+-- map('<Leader>', '<Plug>(easymotion-prefix)')
+--
+-- -- " These `n` & `N` mappings are options. You do not have to map `n` & `N` to EasyMotion.
+-- -- " Without these mappings, `n` & `N` works fine. (These mappings just provide
+-- -- " " different highlight method and have some other features )
+-- map('n', '<Plug>(easymotion-next)')
+-- map('N', '<Plug>(easymotion-prev)')
+-- -- " <Leader>f{char} to move to {char}
+-- map('<Leader>f', '<Plug>(easymotion-bd-f)')
+-- nmap('<Leader>f', '<Plug>(easymotion-overwin-f)')
+-- -- " s{char}{char} to move to {char}{char}
+-- nmap('<Leader>s', '<Plug>(easymotion-overwin-f2)')
+-- -- " Move to word
+-- map('<Leader>w', '<Plug>(easymotion-bd-w)')
+-- nmap('<Leader>w', '<Plug>(easymotion-overwin-w)')
+-- vmap("<leader>b", "<Plug>NameAssign")

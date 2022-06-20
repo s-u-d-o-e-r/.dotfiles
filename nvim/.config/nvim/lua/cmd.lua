@@ -20,14 +20,14 @@ end
 
 vim.cmd([[
 
-
-function! s:project_name()
-let l:cwd = resolve(getcwd())
-let l:cwd = substitute(l:cwd, '^'.$HOME.'/', '', '')
-let l:cwd = fnamemodify(l:cwd, ':p:gs?/?_?')
-let l:cwd = substitute(l:cwd, '^\.', '', '')
-return l:cwd
-endfunction
+"
+" function! s:project_name()
+" let l:cwd = resolve(getcwd())
+" let l:cwd = substitute(l:cwd, '^'.$HOME.'/', '', '')
+" let l:cwd = fnamemodify(l:cwd, ':p:gs?/?_?')
+" let l:cwd = substitute(l:cwd, '^\.', '', '')
+" return l:cwd
+" endfunction
 
 " setted color for quick scope plugin
 augroup qs_colors
@@ -36,7 +36,7 @@ autocmd ColorScheme * highlight QuickScopePrimary guibg='#434C5E' gui=underline 
 autocmd ColorScheme * highlight QuickScopeSecondary  gui=underline cterm=underline
 augroup END
 
-let g:session_autosave_to = fnameescape(s:project_name()) 
+" let g:session_autosave_to = fnameescape(s:project_name()) 
 
 function! s:setupConflicted()
 set stl+=%{ConflictedVersion()}
@@ -48,17 +48,6 @@ function! s:check_back_space() abort
 let col = col('.') - 1
 return !col || getline('.')[col - 1]  =~ '\s'
 endfunction
-
-function! s:config_easyfuzzymotion(...) abort
-return extend(copy({
-  \   'converters': [incsearch#config#fuzzyword#converter()],
-  \   'modules': [incsearch#config#easymotion#module({'overwin': 1})],
-  \   'keymap': {"\<CR>": '<Over>(easymotion)'},
-  \   'is_expr': 0,
-  \   'is_stay': 1
-  \ }), get(a:, 1, {}))
-  endfunction
-
   augroup mygroup
 
 
@@ -87,7 +76,6 @@ return extend(copy({
   \    endif |
   \  endif
   autocmd CmdLineLeave : let &hlsearch = g:prev_hls
-  " au BufWritePost * nested checktime %
   augroup end
 
   augroup import_cost_auto_run
@@ -97,3 +85,17 @@ return extend(copy({
   autocmd BufWrite *.js,*.jsx,*.ts,*.tsx ImportCost
   augroup END
   ]])
+
+
+-- "
+-- " function! s:config_easyfuzzymotion(...) abort
+-- " return extend(copy({
+-- "   \   'converters': [incsearch#config#fuzzyword#converter()],
+-- "   \   'modules': [incsearch#config#easymotion#module({'overwin': 1})],
+-- "   \   'keymap': {"\<CR>": '<Over>(easymotion)'},
+-- "   \   'is_expr': 0,
+-- "   \   'is_stay': 1
+-- "   \ }), get(a:, 1, {}))
+-- "   endfunction
+-- "
+

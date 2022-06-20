@@ -35,7 +35,6 @@ return require('packer').startup(function(use)
   }
   use 'RishabhRD/popfix'
   use 'RishabhRD/nvim-lsputils'
-  use { 'windwp/nvim-autopairs', config = function() require('nvim-autopairs').setup() end }
   -- Autocomplete
   use "L3MON4D3/LuaSnip"
   -- " Default snippets
@@ -51,10 +50,10 @@ return require('packer').startup(function(use)
       "saadparwaiz1/cmp_luasnip",
       "uga-rosa/cmp-dictionary",
       "hrsh7th/cmp-nvim-lsp-signature-help",
-    },
+      'windwp/nvim-autopairs'
+ },
     config = function() require('plugins.cmp') end,
   })
-  use 'rafamadriz/friendly-snippets'
   use { 'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp' }
   -- Telescope
   use({ 'yardnsm/vim-import-cost', run = 'npm install --production' })
@@ -65,16 +64,11 @@ return require('packer').startup(function(use)
   })
   use({ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' })
   use('sbdchd/neoformat')
-  use { 'jose-elias-alvarez/null-ls.nvim' }
   use 's-u-d-o-e-r/vim-gitcommit-issue-id'
   -- "" Enable repeating supported plugin maps with '.'
   use 'tpope/vim-repeat'
-  -- "" Repeat command extended to visual mode.
-  use 'inkarkat/vim-visualrepeat'
   -- "" Brings physics-based smooth scrolling.
   use 'yuttie/comfortable-motion.vim'
-  -- "" A dark colorscheme with vibrant colors.
-  -- " use 'flrnprz/candid.vim'
   use 'tpope/vim-abolish'
   -- ""A Git wrapper
   use 'tpope/vim-fugitive'
@@ -86,10 +80,7 @@ return require('packer').startup(function(use)
   })
   -- "" Buffers close menu
   use 'Asheq/close-buffers.vim'
-  -- " Color scheme
-  -- " use 'haishanh/night-owl.vim'
-  -- " " Screenshot maker
-  use 'kristijanhusak/vim-carbon-now-sh'
+   -- " " Screenshot maker
   use 's-u-d-o-e-r/vim-ray-so-beautiful'
   -- " Fuzzy file, buffer, mru, tag, etc finder
   use 'ctrlpvim/ctrlp.vim'
@@ -97,26 +88,12 @@ return require('packer').startup(function(use)
   use 'vim-airline/vim-airline'
   -- " " Themes for airline
   use 'vim-airline/vim-airline-themes'
-  -- " Snippets support
-  -- " " Extended session management for Vim.
-  use 'xolox/vim-session'
-  -- " " Session
-  -- " " Required for vim-session
-  use 'xolox/vim-misc'
   -- " File extensions icons
   use 'ryanoasis/vim-devicons'
-  -- " (Do)cumentation (Ge)nerator 15+ languages  Generate proper code documentation skeletons with a single keypress.
-  -- " use 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
-  -- " Color scheme
-  -- " use 'drewtempelmeyer/palenight.vim'
   -- " The undo history visualizer for VIM
   use 'mbbill/undotree'
-  -- " Vim dashboard
-  -- use 'glepnir/dashboard-nvim'
   -- " Changes Vim working directory to project root (identified by presence of known directory or file).
   use 'airblade/vim-rooter'
-  -- " Vim motions on speed!
-  use 'easymotion/vim-easymotion'
   -- " Have Vim automatically reload a file that has changed externally
   use 'djoshea/vim-autoread'
   -- " " use that adds a 'cut' operation separate from 'delete'
@@ -125,7 +102,6 @@ return require('packer').startup(function(use)
   use 'wellle/targets.vim'
   -- " Color scheme
   use 'sainnhe/gruvbox-material'
-  -- "Git branch search using ctrlp.vim.
   -- "emmet-vim is a vim plug-in which provides support for expanding abbreviations similar to emmet.
   use 'mattn/emmet-vim'
   -- "An always-on highlight for a unique character in every word on a line to help you use f, F and family.
@@ -134,18 +110,11 @@ return require('packer').startup(function(use)
   use 'machakann/vim-sandwich'
   -- "Treesitter configurations and abstraction layer for Neovim.
   use({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config = function() require('plugins.treesitter') end })
-  -- " We recommend updating the parsers on update
   -- "EditorConfig plugin for Vim
   use 'editorconfig/editorconfig-vim'
-  use 'haya14busa/incsearch.vim'
-  use 'haya14busa/incsearch-easymotion.vim'
-  use 'haya14busa/incsearch-fuzzy.vim'
   use 'nvim-lua/plenary.nvim'
   use 'hood/popui.nvim'
-  use 'arthurxavierx/vim-caser'
   use 'arcticicestudio/nord-vim'
-  use {
-    'rcarriga/nvim-notify', config = function() require("notify").setup({ background_colour = "#555962" }) end }
   use { 'lewis6991/gitsigns.nvim', config = function() require('plugins.gitsigns') end, }
   use {
     'nvim-neo-tree/neo-tree.nvim',
@@ -190,7 +159,6 @@ return require('packer').startup(function(use)
     end
   }
   use { 'kamykn/spelunker.vim' }
-  use { 'simrat39/symbols-outline.nvim' }
   use { 'stevearc/dressing.nvim',
     config = function()
       require('plugins.dressing')
@@ -211,3 +179,29 @@ return require('packer').startup(function(use)
     require('packer').sync()
   end
 end)
+  -- use 'rafamadriz/friendly-snippets'
+  -- use { 'jose-elias-alvarez/null-ls.nvim' }
+  -- "" Repeat command extended to visual mode.
+   -- "" A dark colorscheme with vibrant colors.
+   -- " Color scheme
+  -- " use 'haishanh/night-owl.vim'
+-- " use 'flrnprz/candid.vim' -- use 'inkarkat/vim-visualrepeat'
+   -- -- " Snippets support
+  -- -- " " Extended session management for Vim.
+  -- use 'xolox/vim-session'
+  -- -- " " Session
+  -- -- " " Required for vim-session
+   -- " (Do)cumentation (Ge)nerator 15+ languages  Generate proper code documentation skeletons with a single keypress.
+  -- " use 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
+  -- " Color scheme
+   -- " Vim dashboard
+  -- use 'glepnir/dashboard-nvim' -- " use 'drewtempelmeyer/palenight.vim' -- use 'xolox/vim-misc' -- use 'kristijanhusak/vim-carbon-now-sh'
+  -- -- " Vim motions on speed!
+  -- use 'easymotion/vim-easymotion'
+  -- use 'haya14busa/incsearch.vim'
+  -- use 'haya14busa/incsearch-easymotion.vim'
+  -- use 'haya14busa/incsearch-fuzzy.vim'
+  -- use 'arthurxavierx/vim-caser'
+  -- use {
+  --   'rcarriga/nvim-notify', config = function() require("notify").setup({ background_colour = "#555962" }) end }
+  -- use { 'simrat39/symbols-outline.nvim' }

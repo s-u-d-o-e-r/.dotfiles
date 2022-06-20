@@ -78,24 +78,10 @@ endif
 
 
 
--- vim.g.dashboard_custom_header = {
---   '',
---   '██╗   ██╗██╗███╗   ███╗',
---   '██║   ██║██║████╗ ████║',
---   '██║   ██║██║██╔████╔██║',
---   '╚██╗ ██╔╝██║██║╚██╔╝██║',
---   ' ╚████╔╝ ██║██║ ╚═╝ ██║',
---   '  ╚═══╝  ╚═╝╚═╝     ╚═╝',
---   ''
-
-
 vim.g.polyglot_disabled = { 'css', 'javascript', 'typescript', 'javascriptreact', 'typescriptreact' }
 vim.g.netrw_fastbrowse = 0
 vim.g.mapleader = ' '
 -- " screenshots
-vim.g.carbon_now_sh_options = { ln = 'false',
-  fm = 'Fira Code',
-  t = 'nord' }
 vim.g.ray_options = {
   colors='candy'
 }
@@ -106,10 +92,6 @@ vim.g.session_autosave = 'yes'
 vim.g.session_verbose_messages = 0
 -- "DoGE settings
 vim.g.doge_mapping = '<leader><leader>d'
--- "start page
--- " vim.g.startify_session_dir = '~/.vim/sessions'
--- """"" enable 24bit true color
-
 -- "airline config
 vim.api.nvim_set_var('airline#extensions#tabline#enabled', 1)
 vim.g.airline_powerline_fonts = 1
@@ -123,9 +105,7 @@ vim.g.airline_right_sep = ''
 vim.g.airline_right_alt_sep = ''
 
 vim.g.emmetJsx = 1
-vim.g.EasyMotion_startofline = 0
-vim.g.EasyMotion_smartcase = 1
-vim.g.nord_cursor_line_number_background = 1
+-- vim.g.nord_cursor_line_number_background = 1
 vim.api.nvim_set_var('$NVIM_TUI_ENABLE_TRUE_COLOR', 1)
 
 vim.g.ctrlp_user_command = { '.git', 'cd %s && git ls-files -co --exclude-standard' }
@@ -134,12 +114,6 @@ vim.g.ctrlp_extensions = {
 }
 vim.g.ctrlp_map = '<c-p>'
 vim.g.ctrlp_cmd = 'CtrlPMRU'
-
-vim.g.hardtime_default_on = 0
-vim.g.hardtime_ignore_buffer_patterns = { 'coc-explorer', 'NERD.*' }
-vim.g.hardtime_ignore_quickfix = 1
-vim.g.hardtime_allow_different_key = 1
-vim.g.material_style = 'palenight'
 vim.g.gruvbox_material_statusline_style = 'mix'
 vim.g.gruvbox_material_diagnostic_virtual_text = 'colored'
 vim.g.gruvbox_material_transparent_background = 1
@@ -171,4 +145,32 @@ vim.diagnostic.config({
 
 -- vim.ui.select = require"popui.ui-overrider"
 -- vim.ui.input = require"popui.input-overrider"
-vim.notify = require("notify")
+-- vim.notify = require("notify")
+--
+
+-- vim.g.dashboard_custom_header = {
+--   '',
+--   '██╗   ██╗██╗███╗   ███╗',
+--   '██║   ██║██║████╗ ████║',
+--   '██║   ██║██║██╔████╔██║',
+--   '╚██╗ ██╔╝██║██║╚██╔╝██║',
+--   ' ╚████╔╝ ██║██║ ╚═╝ ██║',
+--   '  ╚═══╝  ╚═╝╚═╝     ╚═╝',
+--   ''
+--
+-- vim.g.carbon_now_sh_options = { ln = 'false',
+--   fm = 'Fira Code',
+--   t = 'nord' }
+--   vim.g.EasyMotion_startofline = 0
+-- vim.g.EasyMotion_smartcase = 1
+--
+-- vim.g.hardtime_default_on = 0
+-- vim.g.hardtime_ignore_buffer_patterns = { 'coc-explorer', 'NERD.*' }
+-- vim.g.hardtime_ignore_quickfix = 1
+-- vim.g.hardtime_allow_different_key = 1
+-- vim.g.material_style = 'palenight'
+
+-- "start page
+-- " vim.g.startify_session_dir = '~/.vim/sessions'
+-- """"" enable 24bit true color
+
