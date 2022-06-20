@@ -112,7 +112,7 @@ return require('packer').startup(function(use)
   -- " The undo history visualizer for VIM
   use 'mbbill/undotree'
   -- " Vim dashboard
-  use 'glepnir/dashboard-nvim'
+  -- use 'glepnir/dashboard-nvim'
   -- " Changes Vim working directory to project root (identified by presence of known directory or file).
   use 'airblade/vim-rooter'
   -- " Vim motions on speed!
