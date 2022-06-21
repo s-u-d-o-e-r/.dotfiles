@@ -175,6 +175,7 @@ return require('packer').startup(function(use)
     end
   }
   use 'dbeniamine/cheat.sh-vim'
+  use 'tpope/vim-vinegar'
   if packer_bootstrap then
     require('packer').sync()
   end
