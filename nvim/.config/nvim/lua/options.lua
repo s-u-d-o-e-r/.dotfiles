@@ -37,6 +37,7 @@ set guioptions-=T
 set guioptions-=r
 set guioptions-=L
 set smartcase
+set ignorecase
 set noruler
 set laststatus=0
 set noshowcmd
