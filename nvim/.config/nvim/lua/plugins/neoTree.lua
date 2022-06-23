@@ -41,7 +41,6 @@ require("neo-tree").setup({
         ["o"] = "system_open",
       },
     },
-    hijack_netrw_behavior = "disabled",
     commands = {
       telescope_find = function(state)
         local node = state.tree:get_node()
