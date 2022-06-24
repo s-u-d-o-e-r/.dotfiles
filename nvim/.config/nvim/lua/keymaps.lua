@@ -1,17 +1,11 @@
-local Utils = require('utils')
+local m = require('utils.keymap')
 
-local nnoremap = Utils.nnoremap
-local vnoremap = Utils.vnoremap
-local xnoremap = Utils.xnoremap
-local inoremap = Utils.inoremap
-local noremap = Utils.noremap
-local nmap = Utils.nmap
-local xmap = Utils.xmap
-local vmap = Utils.vmap
-local omap = Utils.omap
-local map = Utils.map
-local imap = Utils.imap
-local smap = Utils.smap
+local nnoremap = m.nnoremap
+local vnoremap = m.vnoremap
+local xnoremap = m.xnoremap
+local nmap = m.nmap
+local vmap = m.vmap
+local imap = m.imap
 
 -- " mapping for buffers control
 nmap("<S-H>", ":BufferPrevious<CR>")
