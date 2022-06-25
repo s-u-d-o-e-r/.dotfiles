@@ -72,38 +72,27 @@ endif
 ]])
 
 
-
-
-
-
-
-
-
-vim.g.polyglot_disabled = { 'css', 'javascript', 'typescript', 'javascriptreact', 'typescriptreact' }
-vim.g.netrw_fastbrowse = 0
 vim.g.mapleader = ' '
 -- " screenshots
 vim.g.ray_options = {
   colors='candy'
 }
 -- "session config
-vim.g.session_autoload = 'no'
-vim.g.session_autosave = 'yes'
+-- vim.g.session_autoload = 'no'
+-- vim.g.session_autosave = 'yes'
 -- " vim.g.session_autosave_to = 'default'
-vim.g.session_verbose_messages = 0
+-- vim.g.session_verbose_messages = 0
 -- "DoGE settings
-vim.g.doge_mapping = '<leader><leader>d'
+-- vim.g.doge_mapping = '<leader><leader>d'
 -- "airline config
-vim.api.nvim_set_var('airline#extensions#tabline#enabled', 1)
 vim.g.airline_powerline_fonts = 1
 vim.g.airline_theme = 'gruvbox_material'
 --" 'gruvbox_material' "deus  nord
-vim.api.nvim_set_var('airline#extensions#tabline#formatter', 'unique_tail_improved')
 
-vim.g.airline_left_sep = ''
-vim.g.airline_left_alt_sep = ''
-vim.g.airline_right_sep = ''
-vim.g.airline_right_alt_sep = ''
+-- vim.g.airline_left_sep = ''
+-- vim.g.airline_left_alt_sep = ''
+-- vim.g.airline_right_sep = ''
+-- vim.g.airline_right_alt_sep = ''
 
 vim.g.emmetJsx = 1
 -- vim.g.nord_cursor_line_number_background = 1
@@ -174,4 +163,4 @@ vim.diagnostic.config({
 -- "start page
 -- " vim.g.startify_session_dir = '~/.vim/sessions'
 -- """"" enable 24bit true color
-
+-- vim.g.polyglot_disabled = { 'css', 'javascript', 'typescript', 'javascriptreact', 'typescriptreact' }

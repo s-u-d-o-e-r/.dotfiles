@@ -41,6 +41,7 @@ require("neo-tree").setup({
         ["o"] = "system_open",
       },
     },
+
     commands = {
       telescope_find = function(state)
         local node = state.tree:get_node()
