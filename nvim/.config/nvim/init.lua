@@ -1,6 +1,6 @@
 require('core.plugins')
 require('core.options')
 require('core.keymaps')
-require('core.cmd')
+require('core.autocomands')
 require('core.themes')
 require('plugins.snippets')
