@@ -16,6 +16,17 @@ autocmd BufWritePost plugins.lua source <afile> | PackerCompile
 augroup end
 ]])
 
+-- setted color for quick scope plugin
+vim.api.nvim_create_augroup('packer_user_config', { clear = true })
+vim.api.nvim_create_autocmd('BufWritePost', {
+  group = 'packer_user_config',
+  pattern = '*',
+  command = "plugins.lua source <afile> | PackerCompile"
+})
+
+
+
+
 -- Load Packer
 cmd([[packadd packer.nvim]])
 

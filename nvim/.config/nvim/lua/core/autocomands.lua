@@ -67,6 +67,17 @@ autocmd('CursorMoved,BufEnter', {
 })
 
 
+autocmd('ColorScheme', {
+  pattern = '*',
+  command = "highlight NormalFloat guibg=#1f2335"
+})
+autocmd('ColorScheme', {
+  pattern = '*',
+  command = "highlight FloatBorder guifg=white guibg=#1f2335"
+})
+
+
+
 local signs = { Error = "", Warn = "", Hint = "", Info = "" }
 for type, icon in pairs(signs) do
   local hl = "DiagnosticSign" .. type

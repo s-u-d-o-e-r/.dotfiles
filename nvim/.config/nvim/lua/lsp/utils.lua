@@ -4,9 +4,6 @@ local cmd = vim.cmd
 
 local M = {}
 
-cmd([[autocmd ColorScheme * highlight NormalFloat guibg=#1f2335]])
-cmd([[autocmd ColorScheme * highlight FloatBorder guifg=white guibg=#1f2335]])
-
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap = true, silent = true }
