@@ -8,20 +8,13 @@ local packer_bootstrap
 if fn.empty(fn.glob(install_path)) > 0 then
   packer_bootstrap = fn.system({ 'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path })
 end
--- Rerun PackerCompile everytime pluggins.lua is updated
-cmd([[
-augroup packer_user_config
-autocmd!
-autocmd BufWritePost plugins.lua source <afile> | PackerCompile
-augroup end
-]])
 
 -- setted color for quick scope plugin
 vim.api.nvim_create_augroup('packer_user_config', { clear = true })
 vim.api.nvim_create_autocmd('BufWritePost', {
   group = 'packer_user_config',
-  pattern = '*',
-  command = "plugins.lua source <afile> | PackerCompile"
+  pattern = 'plugins.lua',
+  command = "source <afile> | PackerCompile"
 })
 
 
