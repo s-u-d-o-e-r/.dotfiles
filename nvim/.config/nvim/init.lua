@@ -1,7 +1,6 @@
-require('plugins')
-require('options')
-require('keymaps')
-require('cmd')
-require('themes')
+require('core.plugins')
+require('core.options')
+require('core.keymaps')
+require('core.cmd')
+require('core.themes')
 require('plugins.snippets')
---   
