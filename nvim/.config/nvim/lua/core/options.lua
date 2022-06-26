@@ -9,6 +9,7 @@
 local g = vim.g -- Global variables
 local opt = vim.opt -- Set options (global/buffer/windows-scoped)
 
+
 -----------------------------------------------------------
 -- General
 -----------------------------------------------------------
@@ -29,13 +30,28 @@ opt.splitbelow = true -- Horizontal split to the bottom
 opt.ignorecase = true -- Ignore case letters when search
 opt.smartcase = true -- Ignore lowercase for the whole pattern
 opt.linebreak = true -- Wrap on word boundary
-opt.termguicolors = true -- Enable 24-bit RGB colors
+
+if vim.fn.has('termguicolors') == 1 then
+  opt.termguicolors = true -- Enable 24-bit RGB colors
+end
+
 opt.laststatus = 0 -- Set global statusline
 opt.wrap = true
 opt.relativenumber = true
 opt.cursorline = true
 opt.bg = "dark"
 opt.ruler = false
+
+-- Always show the signcolumn, otherwise it would shift the text each time
+-- diagnostics appear/become resolved.
+if vim.fn.has('patch-8.1.1564') == 1 then
+  -- Recently vim can merge signcolumn and number column into one
+  opt.signcolumn = 'number'
+else
+  opt.signcolumn = 'yes'
+end
+
+
 -----------------------------------------------------------
 -- Tabs, indent
 -----------------------------------------------------------
@@ -125,6 +141,7 @@ g.gitgutter_sign_removed = '▎'
 g.diffget_local_map = 'gj'
 g.diffget_upstream_map = 'gf'
 g.neoformat_only_msg_on_error = 1
+
 
 vim.diagnostic.config({
   virtual_text = {
