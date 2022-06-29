@@ -17,6 +17,18 @@ opt.mouse = 'a' -- Enable mouse support
 opt.clipboard = 'unnamedplus' -- Copy/paste to system clipboard
 opt.swapfile = false -- Don't use swapfile
 opt.completeopt = 'menuone,noinsert,noselect' -- Autocomplete options
+opt.wildmenu = true
+opt.hlsearch = false
+opt.confirm = true
+opt.showmode = false
+opt.showcmd = false
+opt.undofile = true
+opt.backup = false
+opt.writebackup = false
+opt.undolevels = 3000
+opt.undoreload = 10000
+opt.background = "dark"
+opt.cmdheight = 1
 
 -----------------------------------------------------------
 -- Neovim UI
@@ -76,20 +88,6 @@ opt.updatetime = 300 -- ms to wait for trigger an event
 -----------------------------------------------------------
 opt.shortmess:append({ c = true })
 
--------
-
-opt.wildmenu = true
-opt.hlsearch = false
-opt.confirm = true
-opt.showmode = false
-opt.showcmd = false
-opt.undofile = true
-opt.backup = false
-opt.writebackup = false
-opt.undolevels = 3000
-opt.undoreload = 10000
-opt.background = "dark"
-opt.cmdheight = 1
 
 
 
@@ -107,15 +105,6 @@ g.ray_options = {
 -- g.session_verbose_messages = 0
 -- "DoGE settings
 -- g.doge_mapping = '<leader><leader>d'
--- "airline config
-g.airline_powerline_fonts = 1
-g.airline_theme = 'gruvbox_material'
---" 'gruvbox_material' "deus  nord
-
--- g.airline_left_sep = ''
--- g.airline_left_alt_sep = ''
--- g.airline_right_sep = ''
--- g.airline_right_alt_sep = ''
 
 g.emmetJsx = 1
 -- g.nord_cursor_line_number_background = 1

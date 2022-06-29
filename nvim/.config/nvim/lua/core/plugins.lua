@@ -87,10 +87,11 @@ return require('packer').startup(function(use)
   use 's-u-d-o-e-r/vim-ray-so-beautiful'
   -- " Fuzzy file, buffer, mru, tag, etc finder
   use 'ctrlpvim/ctrlp.vim'
-  -- " " Lean & mean status/tabline for vim that's light as air.
-  use 'vim-airline/vim-airline'
-  -- " " Themes for airline
-  use 'vim-airline/vim-airline-themes'
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+    config = function() require('plugins.lualine') end,
+  }
   -- " File extensions icons
   use 'ryanoasis/vim-devicons'
   -- " The undo history visualizer for VIM
@@ -181,8 +182,8 @@ return require('packer').startup(function(use)
   use { 'ThePrimeagen/harpoon', requires = {
     'nvim-lua/plenary.nvim'
   }, config = function()
-      require('plugins.harpoon')
-     end
+    require('plugins.harpoon')
+  end
   }
   if packer_bootstrap then
     require('packer').sync()
