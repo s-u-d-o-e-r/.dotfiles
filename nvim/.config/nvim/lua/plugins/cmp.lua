@@ -1,5 +1,5 @@
 local fn = vim.fn
-require('nvim-autopairs').setup()
+-- require('nvim-autopairs').setup()
 -- local Utils = require('utils')
 local luasnip = require('luasnip')
 local cmp = require('cmp')
@@ -87,8 +87,8 @@ cmp.setup({
 -- nvim-pairs config
 
 -- If you want insert `(` after select function or method item
-local cmp_autopairs = require('nvim-autopairs.completion.cmp')
-cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done({ map_char = { tex = '' } }))
+-- local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+-- cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done({ map_char = { tex = '' } }))
 
 local tabnine = require('cmp_tabnine.config')
 tabnine:setup({

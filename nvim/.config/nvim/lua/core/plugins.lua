@@ -54,7 +54,7 @@ return require('packer').startup(function(use)
       "saadparwaiz1/cmp_luasnip",
       "uga-rosa/cmp-dictionary",
       "hrsh7th/cmp-nvim-lsp-signature-help",
-      'windwp/nvim-autopairs'
+      -- 'windwp/nvim-autopairs'
     },
     config = function() require('plugins.cmp') end,
   })
@@ -75,11 +75,10 @@ return require('packer').startup(function(use)
   use 'yuttie/comfortable-motion.vim'
   use 'tpope/vim-abolish'
   -- ""A Git wrapper
-  use 'tpope/vim-fugitive'
+  use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim', config = function() require('plugins.neogit') end }
   -- "" Fake data generator
   use({
     "tkhren/vim-fake",
-    -- Sources for nvim-cmp
     config = function() require('plugins.fake') end,
   })
   -- "" Buffers close menu
