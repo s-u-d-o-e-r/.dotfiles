@@ -35,7 +35,6 @@ nnoremap('<leader><leader>f', function() require('telescope.builtin').find_files
 nnoremap('<leader><leader>g', function() require('telescope.builtin').live_grep({
     vimgrep_arguments = { 'rg', '--color=never', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case', '--hidden' } })
 end)
-nnoremap('<leader><leader>p', function() require('telescope.builtin').pickers() end)
 -- " Buffers delete
 nnoremap("<C-q>", ":Bdelete menu<CR>")
 
