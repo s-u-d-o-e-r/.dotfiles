@@ -139,6 +139,9 @@ antigen theme spaceship-prompt/spaceship-prompt
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle 'wfxr/forgit'
 
+#tmux
+antigen bundle thewtex/tmux-mem-cpu-load
+antigen bundle tmux-plugins/tmux-online-status
 
 
 # Tell Antigen that you're done.
