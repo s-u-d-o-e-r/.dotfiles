@@ -68,7 +68,7 @@ return require('packer').startup(function(use)
   })
   use({ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' })
   use('sbdchd/neoformat')
-  use 's-u-d-o-e-r/vim-gitcommit-issue-id'
+  use 'sudoerwx/vim-gitcommit-issue-id'
   -- "" Enable repeating supported plugin maps with '.'
   use 'tpope/vim-repeat'
   -- "" Brings physics-based smooth scrolling.
@@ -84,7 +84,7 @@ return require('packer').startup(function(use)
   -- "" Buffers close menu
   use 'Asheq/close-buffers.vim'
   -- " " Screenshot maker
-  use 's-u-d-o-e-r/vim-ray-so-beautiful'
+  use 'sudoerwx/vim-ray-so-beautiful'
   -- " Fuzzy file, buffer, mru, tag, etc finder
   use 'ctrlpvim/ctrlp.vim'
   use {
@@ -152,7 +152,17 @@ return require('packer').startup(function(use)
           info = { "#0EB9D7", "DiagnosticInfo", "#2563EB" },
           hint = { "#12B981", "DiagnosticHint", "#10B981" },
           default = { "#A387D8", "Identifier", "#7C3AED" },
-        }
+        },
+        keywords = {
+          FIX = {
+            alt = { "fixme", "bug", "fixit", "issue" },
+          },
+          TODO = { alt = { "todo" } },
+          HACK = { alt = { "hack" } },
+          WARN = { alt = { "warn", "warning", "xxx" } },
+          PERF = { alt = { "perf", "optim", "performance", "optimize" } },
+          NOTE = { alt = { "note", "info" } },
+        },
       }
     end
   }
