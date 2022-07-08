@@ -173,11 +173,11 @@ return require('packer').startup(function(use)
     end
   }
   use { 'kamykn/spelunker.vim' }
-  use { 'stevearc/dressing.nvim',
-    config = function()
-      require('plugins.dressing')
-    end
-  }
+  -- use { 'stevearc/dressing.nvim',
+  --   config = function()
+  --     require('plugins.dressing')
+  --   end
+  -- }
   use { 'mfussenegger/nvim-dap',
     requires = {
       "rcarriga/nvim-dap-ui",

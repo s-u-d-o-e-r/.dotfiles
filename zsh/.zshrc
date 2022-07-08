@@ -141,7 +141,6 @@ antigen bundle 'wfxr/forgit'
 
 #tmux
 antigen bundle thewtex/tmux-mem-cpu-load
-antigen bundle tmux-plugins/tmux-online-status
 
 
 # Tell Antigen that you're done.
