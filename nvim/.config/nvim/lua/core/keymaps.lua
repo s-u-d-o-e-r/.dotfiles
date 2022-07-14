@@ -31,10 +31,14 @@ vmap('p', '"_dP')
 nmap('<C-n>', ':Neotree toggle=true reveal=true<CR>', silent)
 
 -- "telescope
-nnoremap('<leader><leader>f', function() require('telescope.builtin').find_files({ hidden = true }) end)
-nnoremap('<leader><leader>g', function() require('telescope.builtin').live_grep({
-    vimgrep_arguments = { 'rg', '--color=never', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case', '--hidden' } })
-end)
+nnoremap('<leader>ff', function() require('telescope.builtin').find_files({ hidden = true }) end)
+nnoremap('<leader>fg', function() require('telescope.builtin').live_grep({
+  vimgrep_arguments = { 'rg', '--color=never', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case', '--hidden' }
+})end)
+nnoremap('<leader>fg', function() require('telescope.builtin').current_buffer_fuzzy_find()end)
+nnoremap('<leader>fh', function() require('telescope.builtin').help_tags()end)
+nnoremap('<leader>fr', function() require('telescope.builtin').resume()end)
+nnoremap('<leader>fd', function() require('telescope.builtin').diagnostics()end)
 -- " Buffers delete
 nnoremap("<C-q>", ":Bdelete menu<CR>")
 
