@@ -33,7 +33,7 @@ nmap('<C-n>', ':Neotree toggle=true reveal=true<CR>', silent)
 -- "telescope
 nnoremap('<leader>ff', function() require('telescope.builtin').find_files({ hidden = true }) end)
 nnoremap('<leader>fg', function() require('telescope.builtin').live_grep({
-  vimgrep_arguments = { 'rg', '--color=never', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case', '--hidden' }
+  -- vimgrep_arguments = { 'rg', '--color=never', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case', '--hidden' }
 })end)
 nnoremap('<leader>fb', function() require('telescope.builtin').current_buffer_fuzzy_find()end)
 nnoremap('<leader>fh', function() require('telescope.builtin').help_tags()end)
