@@ -66,3 +66,6 @@ require("neo-tree").setup({
     },
   },
 })
+
+local nmap = require("utils.keymap").nmap
+nmap('<C-n>', ':Neotree toggle=true reveal=true<CR>',{  silent = true })

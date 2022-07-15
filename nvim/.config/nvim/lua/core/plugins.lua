@@ -192,8 +192,12 @@ return require('packer').startup(function(use)
   use { 'ThePrimeagen/harpoon', requires = {
     'nvim-lua/plenary.nvim'
   }, config = function()
-    require('plugins.harpoon')
-  end
+       require('plugins.harpoon')
+     end
+  }
+  use { 'emmanueltouzery/agitator.nvim',
+    config = function() require('plugins.agitotor') 
+    end
   }
   if packer_bootstrap then
     require('packer').sync()

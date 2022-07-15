@@ -56,3 +56,19 @@ require('telescope').setup({
 })
 
 require('telescope').load_extension('fzf')
+
+
+local nnoremap = require("utils.keymap").nnoremap
+
+-- "telescope
+nnoremap('<leader>ff', function() require('telescope.builtin').find_files({ hidden = true }) end)
+nnoremap('<leader>fg', function() require('telescope.builtin').live_grep({
+  -- vimgrep_arguments = { 'rg', '--color=never', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case', '--hidden' }
+})end)
+nnoremap('<leader>fb', function() require('telescope.builtin').current_buffer_fuzzy_find()end)
+nnoremap('<leader>fh', function() require('telescope.builtin').help_tags()end)
+nnoremap('<leader>fr', function() require('telescope.builtin').resume()end)
+nnoremap('<leader>fd', function() require('telescope.builtin').diagnostics()end)
+nnoremap('<leader>fk', function() require('telescope.builtin').keymaps()end)
+
+

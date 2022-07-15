@@ -1,5 +1,5 @@
 local lspconfig = require('lspconfig')
-local utils = require('lsp.utils')
+local utils = require('utils.lsp')
 local fn = vim.fn
 
 -- add capabilities from nvim-cmp
