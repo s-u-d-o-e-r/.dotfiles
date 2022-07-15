@@ -35,7 +35,7 @@ nnoremap('<leader>ff', function() require('telescope.builtin').find_files({ hidd
 nnoremap('<leader>fg', function() require('telescope.builtin').live_grep({
   vimgrep_arguments = { 'rg', '--color=never', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case', '--hidden' }
 })end)
-nnoremap('<leader>fg', function() require('telescope.builtin').current_buffer_fuzzy_find()end)
+nnoremap('<leader>fb', function() require('telescope.builtin').current_buffer_fuzzy_find()end)
 nnoremap('<leader>fh', function() require('telescope.builtin').help_tags()end)
 nnoremap('<leader>fr', function() require('telescope.builtin').resume()end)
 nnoremap('<leader>fd', function() require('telescope.builtin').diagnostics()end)
