@@ -34,19 +34,12 @@ require 'mason-tool-installer'.setup {
   auto_update = true
 }
 
-
-
 require("mason-lspconfig").setup()
-
 require("mason-lspconfig").setup_handlers({
   function(serverName)
     local config = {
       on_attach = utils.common_on_attach,
       capabilities = capabilities,
-      flags = {
-        -- This will be the default in neovim 0.7+
-        debounce_text_changes = 150,
-      }
     }
 
     if serverName == "sumneko_lua" then
@@ -98,6 +91,8 @@ require("mason-lspconfig").setup_handlers({
         }
       }
     end
+
+
 
     if serverName == "rust_analyzer" then
       config.settings = {
