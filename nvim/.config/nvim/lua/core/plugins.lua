@@ -27,16 +27,6 @@ cmd([[packadd packer.nvim]])
 return require('packer').startup(function(use)
   -- Let Packer manage itself
   use({ 'wbthomason/packer.nvim', opt = true })
-  -- LSP server
-  use {
-    "williamboman/nvim-lsp-installer",
-    {
-      "neovim/nvim-lspconfig",
-      config = function()
-        require('plugins.lspconfig')
-      end
-    }
-  }
   use 'RishabhRD/popfix'
   use 'RishabhRD/nvim-lsputils'
   -- Autocomplete
@@ -192,13 +182,23 @@ return require('packer').startup(function(use)
   use { 'ThePrimeagen/harpoon', requires = {
     'nvim-lua/plenary.nvim'
   }, config = function()
-       require('plugins.harpoon')
-     end
+    require('plugins.harpoon')
+  end
   }
   use { 'emmanueltouzery/agitator.nvim',
-    config = function() require('plugins.agitotor') 
+    config = function() require('plugins.agitotor')
     end
   }
+  use { "williamboman/mason.nvim", branch = "alpha"
+    ,
+    {
+      "neovim/nvim-lspconfig",
+      config = function()
+        require('plugins.lspconfig')
+      end
+    }
+  }
+  use "WhoIsSethDaniel/mason-tool-installer.nvim"
   if packer_bootstrap then
     require('packer').sync()
   end
