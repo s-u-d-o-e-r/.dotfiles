@@ -16,7 +16,7 @@ ctrl - backspace : $(yabai -m window $(yabai -m query --windows --window | jq -r
 #lshift - x : terminal-notifier -message "$(yabai -m query --windows --window | jq -re ".id")"
 
 ## open terminal
-#ctrl - return : /Applications/iTerm.app/Contents/MacOS/iTerm2
+#ctrl - return : kitty
 
 ## swap window
 ctrl - y : yabai -m window --swap west
