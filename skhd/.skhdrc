@@ -8,8 +8,8 @@ alt - backspace : $(yabai -m window $(yabai -m query --windows --window | jq -re
 alt - return : /Applications/iTerm.app/Contents/MacOS/iTerm2
 
 ## send window to monitor and follow focus
-alt - u : $HOME/yabaiCustomScripts/SwitchSpaces/moveWindowLeftAndFollowFocus.sh
-alt - p : $HOME/yabaiCustomScripts/SwitchSpaces/moveWindowRightAndFollowFocus.sh
+alt - u : $HOME/yabaiyabaiCustomScripts/SwitchSpaces/moveWindowLeftAndFollowFocus.sh
+alt - p : $HOME/yabaiyabaiCustomScripts/SwitchSpaces/moveWindowRightAndFollowFocus.sh
 
 ## focus display
 ctrl + cmd - 1 : yabai -m window --display 1 yabai -m display --focus 1
@@ -82,3 +82,23 @@ alt + ctrl - left  : yabai -m window --insert west
 alt + ctrl - down  : yabai -m window --insert south
 alt + ctrl - up    : yabai -m window --insert north
 alt + ctrl - right : yabai -m window --insert east
+
+# set insertion point in focused container
+alt + ctrl - h : yabai -m window --insert west
+alt + ctrl - j : yabai -m window --insert south
+alt + ctrl - k : yabai -m window --insert north
+alt + ctrl - l : yabai -m window --insert east
+# (alt) set insertion point in focused container using arrows
+alt + ctrl - left  : yabai -m window --insert west
+alt + ctrl - down  : yabai -m window --insert south
+alt + ctrl - up    : yabai -m window --insert north
+alt + ctrl - right : yabai -m window --insert east
+
+
+# show next space per display
+#hyper - 1 : $HOME/yabaiCustomScripts/SwitchSpaces/switchAndFocus.sh 1
+#hyper - 2 : $HOME/yabaiCustomScripts/SwitchSpaces/switchAndFocus.sh 2
+#hyper - 3 : $HOME/yabaiCustomScripts/SwitchSpaces/switchAndFocus.sh 3
+alt - 1 : $HOME/yabaiCustomScripts/SwitchSpaces/switchAndFocusSIP.sh 1
+alt - 2 : $HOME/yabaiCustomScripts/SwitchSpaces/switchAndFocusSIP.sh 2
+alt - 3 : $HOME/yabaiCustomScripts/SwitchSpaces/switchAndFocusSIP.sh 3
