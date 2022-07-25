@@ -7,7 +7,6 @@ local cmp = require('cmp')
 -- local exprinoremap = Utils.exprinoremap
 
 
-
 cmp.setup({
   -- Don't autocomplete, otherwise there is too much clutter
   -- completion = {autocomplete = { false },},
@@ -68,6 +67,9 @@ cmp.setup({
 		["<C-u>"] = cmp.mapping.scroll_docs(-4),
 		["<C-d>"] = cmp.mapping.scroll_docs(4),
 		["<C-Space>"] = cmp.mapping.complete(),
+    ['<C-n>'] = cmp.mapping.select_next_item({ behavior = require"cmp.types.cmp".SelectBehavior.Select }),
+    ['<C-S-n>'] = cmp.mapping.select_prev_item({ behavior = require"cmp.types.cmp".SelectBehavior.Select }),
+    ['<CR>'] = cmp.mapping.confirm({ select = false })
   },
 
   -- Complete options from the LSP servers and the snippet engine
