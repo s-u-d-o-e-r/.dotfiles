@@ -70,6 +70,6 @@ nnoremap('<leader>fh', function() require('telescope.builtin').help_tags()end)
 nnoremap('<leader>fr', function() require('telescope.builtin').resume()end)
 nnoremap('<leader>fd', function() require('telescope.builtin').diagnostics()end)
 nnoremap('<leader>fk', function() require('telescope.builtin').keymaps()end)
-nnoremap('<leader>fc', function() require('telescope.builtin').comands()end)
+nnoremap('<leader>fc', function() require('telescope.builtin').commands()end)
 
 
