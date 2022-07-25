@@ -48,7 +48,7 @@ require('telescope').setup({
     fzf = {
       fuzzy = true,                    -- false will only do exact matching
       override_generic_sorter = true,  -- override the generic sorter
-      override_file_sorter = true,     -- override the file sorter
+
       case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
       -- the default case_mode is "smart_case"
     }
@@ -70,5 +70,6 @@ nnoremap('<leader>fh', function() require('telescope.builtin').help_tags()end)
 nnoremap('<leader>fr', function() require('telescope.builtin').resume()end)
 nnoremap('<leader>fd', function() require('telescope.builtin').diagnostics()end)
 nnoremap('<leader>fk', function() require('telescope.builtin').keymaps()end)
+nnoremap('<leader>fc', function() require('telescope.builtin').comands()end)
 
 
