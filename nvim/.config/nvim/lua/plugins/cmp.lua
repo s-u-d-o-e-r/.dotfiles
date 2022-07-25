@@ -24,55 +24,59 @@ cmp.setup({
 
   -- Mappings
   mapping = {
-    -- open/close autocomplete
-    ['<C-Space>'] = function(fallback)
-      if cmp.visible() then
-        cmp.close()
-      else
-        cmp.complete()
-      end
-    end,
+    -- -- open/close autocomplete
+    -- ['<C-Space>'] = function(fallback)
+    --   if cmp.visible() then
+    --     cmp.close()
+    --   else
+    --     cmp.complete()
+    --   end
+    -- end,
+    --
+    -- ['<C-c>'] = cmp.mapping.close(),
+    --
+    -- -- select completion
+    -- ['<CR>'] = cmp.mapping.confirm({
+    --   behavior = cmp.ConfirmBehavior.Replace,
+    --   select = true,
+    -- }),
+    --
+    -- ['<Tab>'] = function(fallback)
+    --   if cmp.visible() then
+    --     cmp.select_next_item()
+    --   elseif luasnip.expand_or_jumpable() then
+    --     luasnip.expand_or_jump()
+    --   else
+    --     fallback()
+    --   end
+    -- end,
+    --
+    -- ['<S-Tab>'] = function(fallback)
+    --   if cmp.visible() then
+    --     cmp.select_prev_item()
+    --   elseif luasnip.jumpable(-1) then
+    --     luasnip.jump(-1)
+    --   else
+    --     fallback()
+    --   end
+    -- end,
 
-    ['<C-c>'] = cmp.mapping.close(),
-
-    -- select completion
-    ['<CR>'] = cmp.mapping.confirm({
-      behavior = cmp.ConfirmBehavior.Replace,
-      select = true,
-    }),
-
-    ['<Tab>'] = function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      elseif luasnip.expand_or_jumpable() then
-        luasnip.expand_or_jump()
-      else
-        fallback()
-      end
-    end,
-
-    ['<S-Tab>'] = function(fallback)
-      if cmp.visible() then
-        cmp.select_prev_item()
-      elseif luasnip.jumpable(-1) then
-        luasnip.jump(-1)
-      else
-        fallback()
-      end
-    end,
-
-    -- Scroll documentation
-    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    -- -- Scroll documentation
+    -- ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+    -- ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+		["<C-u>"] = cmp.mapping.scroll_docs(-4),
+		["<C-d>"] = cmp.mapping.scroll_docs(4),
+		["<C-Space>"] = cmp.mapping.complete(),
   },
 
   -- Complete options from the LSP servers and the snippet engine
   sources = {
-    { name = 'luasnip' },
-    { name = 'path' },
     { name = 'cmp_tabnine' },
-    { name = 'spell' },
     { name = 'nvim_lsp' },
+    { name = 'path' },
+    { name = 'luasnip' },
+    { name = 'spell' },
     { name = 'nvim_lua' },
     { name = 'buffer' },
     { name = 'nvim_lsp_signature_help' },
