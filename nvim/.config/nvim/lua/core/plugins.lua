@@ -189,7 +189,7 @@ return require('packer').startup(function(use)
     config = function() require('plugins.agitotor')
     end
   }
-  use { "williamboman/mason.nvim", branch = "alpha",
+  use { "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
     {
       "neovim/nvim-lspconfig",
