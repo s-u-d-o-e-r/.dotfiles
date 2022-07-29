@@ -1,3 +1,4 @@
+#!/usr/bin/env zsh
 if [[ -z $STOW_FOLDERS ]]; then
     STOW_FOLDERS="nvim,zsh,i3,kitty,polybar,tmux,yabai,skhd"
 fi
