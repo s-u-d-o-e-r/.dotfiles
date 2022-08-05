@@ -64,24 +64,26 @@ cmp.setup({
     -- ['<C-d>'] = cmp.mapping.scroll_docs(-4),
     -- ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-		["<C-u>"] = cmp.mapping.scroll_docs(-4),
-		["<C-d>"] = cmp.mapping.scroll_docs(4),
-		["<C-Space>"] = cmp.mapping.complete(),
-    ['<C-n>'] = cmp.mapping.select_next_item({ behavior = require"cmp.types.cmp".SelectBehavior.Select }),
-    ['<C-S-n>'] = cmp.mapping.select_prev_item({ behavior = require"cmp.types.cmp".SelectBehavior.Select }),
+    ["<C-u>"] = cmp.mapping.scroll_docs(-4),
+    ["<C-d>"] = cmp.mapping.scroll_docs(4),
+    ["<C-Space>"] = cmp.mapping.complete(),
+    ['<C-n>'] = cmp.mapping.select_next_item({ behavior = require "cmp.types.cmp".SelectBehavior.Select }),
+    ['<C-S-n>'] = cmp.mapping.select_prev_item({ behavior = require "cmp.types.cmp".SelectBehavior.Select }),
     ['<CR>'] = cmp.mapping.confirm({ select = false })
   },
 
   -- Complete options from the LSP servers and the snippet engine
   sources = {
-    { name = 'cmp_tabnine' },
+    { name = 'cmp_tabnine',
+      keyword_length = 2,
+    },
+    { name = 'nvim_lsp_signature_help' },
     { name = 'nvim_lsp' },
     { name = 'path' },
     { name = 'luasnip' },
     { name = 'spell' },
     { name = 'nvim_lua' },
     { name = 'buffer' },
-    { name = 'nvim_lsp_signature_help' },
     {
       name = "dictionary",
       keyword_length = 2,
@@ -99,7 +101,7 @@ cmp.setup({
 local tabnine = require('cmp_tabnine.config')
 tabnine:setup({
   max_lines = 1000;
-  max_num_results = 20;
+  max_num_results = 2;
   sort = true;
   run_on_every_keystroke = true;
   snippet_placeholder = '..';
