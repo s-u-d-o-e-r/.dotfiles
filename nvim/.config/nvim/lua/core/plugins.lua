@@ -186,7 +186,7 @@ return require('packer').startup(function(use)
   end
   }
   use { 'emmanueltouzery/agitator.nvim',
-    config = function() require('plugins.agitotor')
+    config = function() require('plugins.agitator')
     end
   }
   use { "williamboman/mason.nvim",
