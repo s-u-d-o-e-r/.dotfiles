@@ -12,16 +12,23 @@ require('lualine').setup {
   options = {
     globalstatus = true,
     theme = new_auto,
+    component_separators = '',
     section_separators = { left = '', right = '' },
   },
   sections = {
-    lualine_a = { { 'mode', separator = { left = '', --[[ right = '' ]] }, right_padding = 2 } },
+    lualine_a = { { 'mode', separator = { left = '' }, right_padding = 2 } },
     lualine_b = { 'branch', 'diff' },
     lualine_c = { 'filename' },
     lualine_x = { 'filetype' },
-    lualine_y = { 'fileformat', 'encoding' },
+    lualine_y = { { 'diagnostics', colored = false,
+      separator = '|',
+      symbols = { error = " ", warn = " ", hint = " ", info = " "
+
+      },
+
+    }, 'fileformat', 'encoding' },
     lualine_z = {
-      { 'diagnostics', separator = { right = '' } }, { 'location', separator = { right = '' } }
+      { 'location', separator = { right = '' } }
     },
 
   },
