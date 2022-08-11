@@ -34,8 +34,8 @@ require("neo-tree").setup({
     },
     window = {
       mappings = {
-        ["<leader><leader>f"] = "telescope_find",
-        ["<leader><leader>g"] = "telescope_grep",
+        ["<leader>ff"] = "telescope_find",
+        ["<leader>fg"] = "telescope_grep",
         ["l"] = "open",
         ["h"] = "close_node",
         ["o"] = "system_open",
