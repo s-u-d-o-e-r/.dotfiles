@@ -79,7 +79,6 @@ return require('packer').startup(function(use)
   use 'ctrlpvim/ctrlp.vim'
   use {
     'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true },
     config = function() require('plugins.lualine') end,
   }
   -- " File extensions icons
@@ -110,19 +109,18 @@ return require('packer').startup(function(use)
   use 'hood/popui.nvim'
   use 'arcticicestudio/nord-vim'
   use { 'lewis6991/gitsigns.nvim', config = function() require('plugins.gitsigns') end, }
+  use 'kyazdani42/nvim-web-devicons'
   use {
     'nvim-neo-tree/neo-tree.nvim',
     branch = "v2.x",
     requires = {
       "nvim-lua/plenary.nvim",
-      "kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
       "MunifTanjim/nui.nvim"
     },
     config = function() require('plugins.neoTree') end,
   }
   use {
     'romgrk/barbar.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons' }
   }
   -- Smart and powerful comment plugin for neovim. Supports treesitter, dot repeat, left-right/up-down motions, hooks, and more
   use {
