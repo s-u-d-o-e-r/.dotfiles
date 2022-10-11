@@ -11,10 +11,10 @@ local silent = { silent = true }
 nmap("<S-H>", ":BufferPrevious<CR>", silent)
 nmap("<S-L>", ":BufferNext<CR>", silent)
 -- " save mappings
-nmap("<C-A>", ":w<CR>")
-imap("<C-A>", "<C-O>:w<CR>")
-nmap("<C-S>", ":noa w<CR>")
-imap("<C-S>", "<C-O>:noa w<CR>")
+nmap("<C-S>", ":w<CR>")
+imap("<C-S>", "<C-O>:w<CR>")
+nmap("<C-A>", ":noa w<CR>")
+imap("<C-A>", "<C-O>:noa w<CR>")
 -- " Delete /Cut mapping
 nnoremap("<leader>d", "d")
 xnoremap("<leader>d", "d")
