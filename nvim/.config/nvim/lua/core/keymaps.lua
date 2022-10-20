@@ -10,6 +10,8 @@ local silent = { silent = true }
 -- " mapping for buffers control
 nmap("<S-H>", ":BufferPrevious<CR>", silent)
 nmap("<S-L>", ":BufferNext<CR>", silent)
+
+nmap("<leader><leader>=", ":Neoformat<CR>", silent)
 -- " save mappings
 nmap("<C-S>", ":w<CR>")
 imap("<C-S>", "<C-O>:w<CR>")
