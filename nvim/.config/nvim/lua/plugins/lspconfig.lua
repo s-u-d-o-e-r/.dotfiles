@@ -3,7 +3,7 @@ local utils = require('utils.lsp')
 
 -- add capabilities from nvim-cmp
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 --local servers = --{ "html", "cssls", "cssmodules_ls", "eslint", "emmet_ls", "sumneko_lua", "tsserver", "jsonls", "vimls", "rust_analyzer" }
 require("mason").setup()
