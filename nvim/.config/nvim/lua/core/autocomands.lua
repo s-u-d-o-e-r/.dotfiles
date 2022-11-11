@@ -13,7 +13,7 @@ local autocmd = vim.api.nvim_create_autocmd -- Create autocommand
 autocmd('BufWritePre', {
   pattern = '*',
   callback = function()
-    vim.lsp.buf.formatting_sync()
+    vim.lsp.buf.format({ async = false })
   end
   -- command = "Neoformat"
 })
