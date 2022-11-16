@@ -104,7 +104,7 @@ return require('packer').startup(function(use)
   -- "Treesitter configurations and abstraction layer for Neovim.
   use({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config = function() require('plugins.treesitter') end })
   -- "EditorConfig plugin for Vim
-  use 'editorconfig/editorconfig-vim'
+  use 'gpanders/editorconfig.nvim'
   use 'nvim-lua/plenary.nvim'
   use 'hood/popui.nvim'
   use 'arcticicestudio/nord-vim'
