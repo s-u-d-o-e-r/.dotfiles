@@ -197,6 +197,7 @@ return require('packer').startup(function(use)
     }
   }
   use "WhoIsSethDaniel/mason-tool-installer.nvim"
+  use 'arthurxavierx/vim-caser'
   if packer_bootstrap then
     require('packer').sync()
   end
@@ -223,7 +224,6 @@ end)
 -- use 'haya14busa/incsearch.vim'
 -- use 'haya14busa/incsearch-easymotion.vim'
 -- use 'haya14busa/incsearch-fuzzy.vim'
--- use 'arthurxavierx/vim-caser'
 -- use {
 --   'rcarriga/nvim-notify', config = function() require("notify").setup({ background_colour = "#555962" }) end }
 -- use { 'simrat39/symbols-outline.nvim' }
