@@ -31,6 +31,7 @@ require("neo-tree").setup({
   filesystem = {
     filtered_items = {
       hide_gitignored = false,
+      hide_dotfiles = false,
     },
     window = {
       mappings = {
@@ -68,4 +69,4 @@ require("neo-tree").setup({
 })
 
 local nmap = require("utils.keymap").nmap
-nmap('<C-n>', ':Neotree toggle=true reveal=true<CR>',{  silent = true })
+nmap('<C-n>', ':Neotree toggle=true reveal=true<CR>', { silent = true })
