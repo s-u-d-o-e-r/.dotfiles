@@ -74,20 +74,19 @@ cmp.setup({
 
   -- Complete options from the LSP servers and the snippet engine
   sources = {
+    { name = 'buffer' },
     { name = 'cmp_tabnine',
       keyword_length = 2,
     },
-    { name = 'nvim_lsp_signature_help' },
     { name = 'nvim_lsp' },
-    { name = 'path' },
+    { name = 'nvim_lsp_signature_help' },
     { name = 'luasnip' },
     { name = 'spell' },
-    { name = 'nvim_lua' },
-    { name = 'buffer' },
     {
       name = "dictionary",
       keyword_length = 2,
-    }
+    },
+    { name = 'path' },
     -- {name = 'calc'},
   },
 })
