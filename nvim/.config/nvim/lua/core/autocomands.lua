@@ -87,8 +87,31 @@ for type, icon in pairs(signs) do
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
+vim.cmd [[
+autocmd FileType netrw setl bufhidden=wipe
+]]
 
+vim.api.nvim_create_user_command(
+  'Files',
+  function(opts)
+    local path = opts.args
+    require('telescope.builtin').find_files({ cwd = path,
+      search_dirs = { path } }
+    )
+  end,
+  { nargs = 1 }
+)
 
+vim.api.nvim_create_user_command(
+  'Grep',
+  function(opts)
+    local path = opts.args
+    require('telescope.builtin').live_grep({ cwd = path,
+      search_dirs = { path } }
+    )
+  end,
+  { nargs = 1 }
+)
 
 --
 -- vim.cmd([[
