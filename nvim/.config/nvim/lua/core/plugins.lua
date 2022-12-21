@@ -119,10 +119,10 @@ return require('packer').startup(function(use)
     },
     config = function() require('plugins.neoTree') end,
   }
-  use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons',
-    config = function() require('plugins.bufferline') end,
+  use {
+    'romgrk/barbar.nvim',
   }
--- Smart and powerful comment plugin for neovim. Supports treesitter, dot repeat, left-right/up-down motions, hooks, and more
+  -- Smart and powerful comment plugin for neovim. Supports treesitter, dot repeat, left-right/up-down motions, hooks, and more
   use {
     'numToStr/Comment.nvim',
     config = function()
