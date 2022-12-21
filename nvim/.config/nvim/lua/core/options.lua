@@ -83,6 +83,17 @@ opt.lazyredraw = true -- Faster scrolling
 opt.synmaxcol = 240 -- Max column for syntax highlight
 opt.updatetime = 300 -- ms to wait for trigger an event
 
+opt.listchars = {
+  eol = '↲',
+  tab = '» ',
+  trail = '·',
+  extends = '<',
+  precedes = '>',
+  conceal = '┊',
+  nbsp = '␣',
+}
+
+vim.opt.list = true
 -----------------------------------------------------------
 -- Startup
 -----------------------------------------------------------

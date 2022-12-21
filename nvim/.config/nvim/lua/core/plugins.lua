@@ -119,10 +119,10 @@ return require('packer').startup(function(use)
     },
     config = function() require('plugins.neoTree') end,
   }
-  use {
-    'romgrk/barbar.nvim',
+  use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons',
+    config = function() require('plugins.bufferline') end,
   }
-  -- Smart and powerful comment plugin for neovim. Supports treesitter, dot repeat, left-right/up-down motions, hooks, and more
+-- Smart and powerful comment plugin for neovim. Supports treesitter, dot repeat, left-right/up-down motions, hooks, and more
   use {
     'numToStr/Comment.nvim',
     config = function()
@@ -202,28 +202,3 @@ return require('packer').startup(function(use)
     require('packer').sync()
   end
 end)
--- use 'rafamadriz/friendly-snippets'
--- use { 'jose-elias-alvarez/null-ls.nvim' }
--- "" Repeat command extended to visual mode.
--- "" A dark colorscheme with vibrant colors.
--- " Color scheme
--- " use 'haishanh/night-owl.vim'
--- " use 'flrnprz/candid.vim' -- use 'inkarkat/vim-visualrepeat'
--- -- " Snippets support
--- -- " " Extended session management for Vim.
--- use 'xolox/vim-session'
--- -- " " Session
--- -- " " Required for vim-session
--- " (Do)cumentation (Ge)nerator 15+ languages  Generate proper code documentation skeletons with a single keypress.
--- " use 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
--- " Color scheme
--- " Vim dashboard
--- use 'glepnir/dashboard-nvim' -- " use 'drewtempelmeyer/palenight.vim' -- use 'xolox/vim-misc' -- use 'kristijanhusak/vim-carbon-now-sh'
--- -- " Vim motions on speed!
--- use 'easymotion/vim-easymotion'
--- use 'haya14busa/incsearch.vim'
--- use 'haya14busa/incsearch-easymotion.vim'
--- use 'haya14busa/incsearch-fuzzy.vim'
--- use {
---   'rcarriga/nvim-notify', config = function() require("notify").setup({ background_colour = "#555962" }) end }
--- use { 'simrat39/symbols-outline.nvim' }
