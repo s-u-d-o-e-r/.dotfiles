@@ -14,12 +14,13 @@ highlight GitGutterAdd    guifg=#00b894 ctermfg=2
 highlight GitGutterChange guifg=#fdcb6e ctermfg=3
 highlight GitGutterDelete guifg=#ff7675 ctermfg=1
 
-hi BufferCurrentSign guifg=#5eacd3 guibg=none
+hi BufferCurrentSign guifg=#5eacd3 guibg=#3D4548
+hi BufferCurrent guibg=#3D4548
+hi BufferCurrentIndex guibg=#3D4548
+hi BufferCurrentMod guibg=#3D4548
+hi BufferCurrentTarget guibg=#3D4548
+hi BufferCurrentIcon guibg=#3D4548
 
-hi BufferCurrent guibg=none
-hi BufferCurrentIndex guibg=none
-hi BufferCurrentMod guibg=none
-hi BufferCurrentTarget guibg=none
 hi BufferVisible guibg=none
 hi BufferVisibleIndex guibg=none
 hi BufferVisibleMod guibg=none
@@ -33,7 +34,6 @@ hi BufferInactiveTarget guibg=none
 hi BufferTabpages guibg=none
 hi BufferTabpageFill guibg=none
 
-hi BufferCurrentIcon guibg=none
 hi BufferVisibleIcon guibg=none
 hi BufferInactiveIcon guibg=none
 hi BufferOffset guibg=none
