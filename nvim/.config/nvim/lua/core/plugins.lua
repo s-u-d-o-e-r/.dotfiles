@@ -157,7 +157,7 @@ return require('packer').startup(function(use)
   use {
     'norcalli/nvim-colorizer.lua',
     config = function()
-      require('colorizer').setup()
+      require('colorizer').setup({ '*' }, { css = true })
     end
   }
   use { 'kamykn/spelunker.vim' }
