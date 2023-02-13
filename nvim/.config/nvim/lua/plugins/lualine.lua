@@ -1,10 +1,10 @@
 local new_auto = require 'lualine.themes.auto'
 
-new_auto.normal.c.bg = 'transparent'
-new_auto.inactive.c.bg = 'transparent'
-new_auto.insert.c.bg = 'transparent'
-new_auto.visual.c.bg = 'transparent'
-new_auto.replace.c.bg = 'transparent'
+if(new_auto.normal.c)then new_auto.normal.c.bg = 'transparent' end
+if(new_auto.inactive.c)then new_auto.inactive.c.bg = 'transparent' end
+if(new_auto.insert.c)then new_auto.insert.c.bg = 'transparent' end
+if(new_auto.visual.c)then new_auto.visual.c.bg = 'transparent' end
+if(new_auto.replace.c)then new_auto.replace.c.bg = 'transparent' end
 
 
 
