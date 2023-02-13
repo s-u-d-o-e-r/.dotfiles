@@ -15,6 +15,8 @@ highlight GitGutterAdd    guifg=#00b894 ctermfg=2
 highlight GitGutterChange guifg=#fdcb6e ctermfg=3
 highlight GitGutterDelete guifg=#ff7675 ctermfg=1
 
+hi Comment guifg=#8e95a0
+
 " hi BufferCurrentSign guifg=#5eacd3 guibg=#3D4548
 " hi BufferCurrent guibg=#3D4548
 " hi BufferCurrentIndex guibg=#3D4548
