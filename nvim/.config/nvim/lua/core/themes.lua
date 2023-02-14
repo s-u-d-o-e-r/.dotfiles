@@ -17,6 +17,9 @@ highlight GitGutterDelete guifg=#ff7675 ctermfg=1
 
 hi Comment guifg=#8e95a0
 
+hi PmenuSel guifg=#cdd6f4 guibg=#45475a
+hi Pmenu guibg=#2b2b3c
+
 " hi BufferCurrentSign guifg=#5eacd3 guibg=#3D4548
 " hi BufferCurrent guibg=#3D4548
 " hi BufferCurrentIndex guibg=#3D4548

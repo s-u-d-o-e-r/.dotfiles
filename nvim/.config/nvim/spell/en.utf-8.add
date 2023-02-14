@@ -21,3 +21,5 @@ keyof
 localforage
 recaptcha
 Uploader
+VITE_OPPORTUNITIES_BASE_URL
+VITE
