@@ -108,6 +108,7 @@ return require('packer').startup(function(use)
   use 'nvim-lua/plenary.nvim'
   use 'hood/popui.nvim'
   use 'shaunsingh/nord.nvim'
+  use { "catppuccin/nvim", as = "catppuccin", config = function() require('plugins.catppuccin') end}
   use { 'lewis6991/gitsigns.nvim', config = function() require('plugins.gitsigns') end, }
   use 'kyazdani42/nvim-web-devicons'
   use {

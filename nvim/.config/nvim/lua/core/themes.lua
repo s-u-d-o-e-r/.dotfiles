@@ -1,10 +1,10 @@
 vim.cmd [[
-colorscheme nord "gruvbox-material
+colorscheme catppuccin "nord gruvbox-material
 
 hi SignColumn guibg=none
 hi CursorLineNR guibg=None
 hi CursorLine guibg=None
-highlight Normal guibg=none
+highlight Normal guibg=none ctermbg=NONE
 highlight LineNr guifg=#5eacd3
 highlight netrwDir guifg=#5eacd3
 highlight qfFileName guifg=#aed75f
