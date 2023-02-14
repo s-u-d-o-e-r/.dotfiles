@@ -107,7 +107,7 @@ return require('packer').startup(function(use)
   use 'gpanders/editorconfig.nvim'
   use 'nvim-lua/plenary.nvim'
   use 'hood/popui.nvim'
-  use 'arcticicestudio/nord-vim'
+  use 'shaunsingh/nord.nvim'
   use { 'lewis6991/gitsigns.nvim', config = function() require('plugins.gitsigns') end, }
   use 'kyazdani42/nvim-web-devicons'
   use {

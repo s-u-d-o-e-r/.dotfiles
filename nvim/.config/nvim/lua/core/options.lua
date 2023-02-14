@@ -143,6 +143,11 @@ g.diffget_upstream_map = 'gf'
 g.neoformat_only_msg_on_error = 1
 
 
+-- Nord
+g.nord_bold = false
+g.nord_borders = true
+g.nord_disable_background = true
+
 vim.diagnostic.config({
   virtual_text = {
     severity = { vim.diagnostic.severity.ERROR, vim.diagnostic.severity.WARN },
