@@ -56,12 +56,12 @@ opt.ruler = false
 
 -- Always show the signcolumn, otherwise it would shift the text each time
 -- diagnostics appear/become resolved.
-if vim.fn.has('patch-8.1.1564') == 1 then
-  -- Recently vim can merge signcolumn and number column into one
-  opt.signcolumn = 'number'
-else
-  opt.signcolumn = 'yes'
-end
+-- if vim.fn.has('patch-8.1.1564') == 1 then
+--   -- Recently vim can merge signcolumn and number column into one
+--   opt.signcolumn = 'number'
+-- else
+--   opt.signcolumn = 'yes'
+-- end
 
 
 -----------------------------------------------------------
