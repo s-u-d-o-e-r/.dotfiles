@@ -50,7 +50,7 @@ return require('packer').startup(function(use)
   })
   -- use { 'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp' }
   -- Telescope
-  use({ 'yardnsm/vim-import-cost', run = 'npm install --production' })
+  -- use({ 'yardnsm/vim-import-cost', run = 'npm install --production' })
   use({
     'nvim-telescope/telescope.nvim',
     requires = { { 'nvim-lua/plenary.nvim' } },
@@ -96,7 +96,7 @@ return require('packer').startup(function(use)
   -- " Color scheme
   use 'sainnhe/gruvbox-material'
   -- "emmet-vim is a vim plug-in which provides support for expanding abbreviations similar to emmet.
-  use 'mattn/emmet-vim'
+  -- use 'mattn/emmet-vim'
   -- "An always-on highlight for a unique character in every word on a line to help you use f, F and family.
   use 'unblevable/quick-scope'
   -- "sandwich.vim is a set of operator and textobject plugins to add/delete/replace surroundings of a sandwiched textobject, like (foo), 'bar'.
@@ -120,9 +120,7 @@ return require('packer').startup(function(use)
     },
     config = function() require('plugins.neoTree') end,
   }
-  -- use {'romgrk/barbar.nvim'}
   use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons',config = function() require('plugins.bufferline') end,}
-  -- Smart and powerful comment plugin for neovim. Supports treesitter, dot repeat, left-right/up-down motions, hooks, and more
   use {
     'numToStr/Comment.nvim',
     config = function()
@@ -166,17 +164,17 @@ return require('packer').startup(function(use)
   --     require('plugins.dressing')
   --   end
   -- }
-  use { 'mfussenegger/nvim-dap',
-    requires = {
-      "rcarriga/nvim-dap-ui",
-      "theHamsta/nvim-dap-virtual-text"
-    },
-
-    config = function()
-      require('plugins.dap')
-    end
-  }
-  use 'dbeniamine/cheat.sh-vim'
+  -- use { 'mfussenegger/nvim-dap',
+  --   requires = {
+  --     "rcarriga/nvim-dap-ui",
+  --     "theHamsta/nvim-dap-virtual-text"
+  --   },
+  --
+  --   config = function()
+  --     require('plugins.dap')
+  --   end
+  -- }
+  -- use 'dbeniamine/cheat.sh-vim'
   use { 'ThePrimeagen/harpoon', requires = {
     'nvim-lua/plenary.nvim'
   }, config = function()
@@ -198,6 +196,10 @@ return require('packer').startup(function(use)
   }
   use "WhoIsSethDaniel/mason-tool-installer.nvim"
   use 'arthurxavierx/vim-caser'
+  use {
+    "windwp/nvim-autopairs",
+      config = function() require("nvim-autopairs").setup {} end
+  }
   if packer_bootstrap then
     require('packer').sync()
   end
