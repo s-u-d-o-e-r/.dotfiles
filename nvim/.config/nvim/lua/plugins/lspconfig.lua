@@ -71,8 +71,8 @@ require("mason-lspconfig").setup_handlers({
     if serverName == "eslint" then
       config.on_attach = function(client, bufnr)
         -- neovim's LSP client does not currently support dynamic capabilities registration, so we need to set
-        -- the resolved capabilities of the eslint server ourselves!
-        client.resolved_capabilities.document_formatting = true
+        -- the server capabilities of the eslint server ourselves!
+        client.server_capabilities.document_formatting = true
         utils.common_on_attach(client, bufnr)
       end
       config.settings = {
