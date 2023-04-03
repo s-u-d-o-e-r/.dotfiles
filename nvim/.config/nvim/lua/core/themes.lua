@@ -1,14 +1,14 @@
 vim.cmd [[
-colorscheme catppuccin "nord gruvbox-material
+colorscheme gruvbox-material "nord gruvbox-material
 
 hi SignColumn guibg=none
 hi CursorLineNR guibg=None
 hi CursorLine guibg=None
 highlight Normal guibg=none ctermbg=NONE
 highlight LineNr guifg=#5eacd3
-highlight netrwDir guifg=#5eacd3
-highlight qfFileName guifg=#aed75f
-hi TelescopeBorder guifg=#5eacd
+" highlight netrwDir guifg=#5eacd3
+" highlight qfFileName guifg=#aed75f
+" hi TelescopeBorder guifg=#5eacd
 hi HighlightedyankRegion term=bold ctermbg=0 guibg=#EEE8A9
 
 highlight GitGutterAdd    guifg=#00b894 ctermfg=2
