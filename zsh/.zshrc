@@ -152,3 +152,6 @@ export NVM_DIR="$HOME/.nvm"
 
 export GOPATH="$HOME/go"
 PATH="$GOPATH/bin:$PATH"
+# Changes the ulimit limits.
+ulimit -Sn 4096      # Increase open files.
+ulimit -Sl unlimited # Increase max locked memory.
