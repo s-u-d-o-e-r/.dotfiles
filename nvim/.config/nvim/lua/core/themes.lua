@@ -1,5 +1,5 @@
 vim.cmd [[
-colorscheme gruvbox-material "nord gruvbox-material
+colorscheme kanagawa "gruvbox-material "nord gruvbox-material
 
 hi SignColumn guibg=none
 hi CursorLineNR guibg=None
