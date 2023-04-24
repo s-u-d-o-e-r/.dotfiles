@@ -1,24 +1,10 @@
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system{
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable",
-    lazypath,
-  }
-end
-vim.opt.rtp:prepend(lazypath)
-
-
 require("lazy").setup({
-  
-   'RishabhRD/popfix',
-   'RishabhRD/nvim-lsputils',
-   "L3MON4D3/LuaSnip",
+
+  'RishabhRD/popfix',
+  'RishabhRD/nvim-lsputils',
+  "L3MON4D3/LuaSnip",
   {
-    "hrsh7th/nvim-cmp",
+    "rsh7th/nvim-cmp",
     dependencies = {
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-buffer",
@@ -27,11 +13,11 @@ require("lazy").setup({
       "f3fora/cmp-spell",
       "saadparwaiz1/cmp_luasnip",
       "uga-rosa/cmp-dictionary",
-      "hrsh7th/cmp-nvim-lsp-signature-help", 
+      "hrsh7th/cmp-nvim-lsp-signature-help",
     },
     config = function() require('plugins.cmp') end,
   },
-  
+
   {
     'nvim-telescope/telescope.nvim',
     dependencies = { { 'nvim-lua/plenary.nvim' } },
@@ -39,60 +25,72 @@ require("lazy").setup({
   },
   { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
   'sbdchd/neoformat',
-   'sudoerwx/vim-gitcommit-issue-id',
-  
-   'tpope/vim-repeat',
-  
-   'yuttie/comfortable-motion.vim',
-   'tpope/vim-abolish',
-  
-   { 'TimUntersberger/neogit', dependencies = {'nvim-lua/plenary.nvim'}, config = function() require('plugins.neogit') end },
-   { 'sindrets/diffview.nvim', dependencies = {'nvim-lua/plenary.nvim'} },
-   { 'tpope/vim-fugitive'},
+  'sudoerwx/vim-gitcommit-issue-id',
 
-  
+  'tpope/vim-repeat',
+
+  'yuttie/comfortable-motion.vim',
+  'tpope/vim-abolish',
+  {
+    'TimUntersberger/neogit',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    config = function()
+      require(
+        'plugins.neogit')
+    end
+  },
+  { 'sindrets/diffview.nvim',                   dependencies = { 'nvim-lua/plenary.nvim' } },
+  { 'tpope/vim-fugitive' },
+
+
   {
     "tkhren/vim-fake",
     config = function() require('plugins.fake') end,
   },
-  
-   'Asheq/close-buffers.vim',
-  
-   'sudoerwx/vim-ray-so-beautiful',
-  
-   'ctrlpvim/ctrlp.vim',
-   {
+
+  'Asheq/close-buffers.vim',
+
+  'sudoerwx/vim-ray-so-beautiful',
+
+  'ctrlpvim/ctrlp.vim',
+  {
     'nvim-lualine/lualine.nvim',
     config = function() require('plugins.lualine') end,
   },
-  
-   'ryanoasis/vim-devicons',
-  
-   'mbbill/undotree',
-  
-   'airblade/vim-rooter',
-  
-   'djoshea/vim-autoread',
-  
-   'svermeulen/vim-cutlass',
-  
-   'wellle/targets.vim',
-  
-   'sainnhe/gruvbox-material',
-  
-   'unblevable/quick-scope',
-  
-   'machakann/vim-sandwich',
-  
-  { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config = function() require('plugins.treesitter') end },
-  
-   'gpanders/editorconfig.nvim',
-   'nvim-lua/plenary.nvim',
-   'hood/popui.nvim',
-   'shaunsingh/nord.nvim',
-   { 'lewis6991/gitsigns.nvim', config = function() require('plugins.gitsigns') end, },
-   'kyazdani42/nvim-web-devicons',
-   {
+
+  'ryanoasis/vim-devicons',
+
+  'mbbill/undotree',
+
+  'airblade/vim-rooter',
+
+  'djoshea/vim-autoread',
+
+  'svermeulen/vim-cutlass',
+
+  'wellle/targets.vim',
+
+  'sainnhe/gruvbox-material',
+
+  'unblevable/quick-scope',
+
+  'machakann/vim-sandwich',
+  {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate',
+    config = function()
+      require(
+        'plugins.treesitter')
+    end
+  },
+
+  'gpanders/editorconfig.nvim',
+  'nvim-lua/plenary.nvim',
+  'hood/popui.nvim',
+  'shaunsingh/nord.nvim',
+  { 'lewis6991/gitsigns.nvim', config = function() require('plugins.gitsigns') end, },
+  'nvim-tree/nvim-web-devicons',
+  {
     'nvim-neo-tree/neo-tree.nvim',
     branch = "v2.x",
     dependencies = {
@@ -101,14 +99,21 @@ require("lazy").setup({
     },
     config = function() require('plugins.neoTree') end,
   },
-   {'akinsho/bufferline.nvim', tag = "v3.*", dependencies = 'nvim-tree/nvim-web-devicons',config = function() require('plugins.bufferline') end,},
-   {
+  {
+    'akinsho/bufferline.nvim',
+    tag = "v3.*",
+    config = function()
+      require(
+        'plugins.bufferline')
+    end,
+  },
+  {
     'numToStr/Comment.nvim',
     config = function()
       require('Comment').setup()
     end
   },
-   {
+  {
     "folke/todo-comments.nvim",
     dependencies = "nvim-lua/plenary.nvim",
     config = function()
@@ -133,30 +138,35 @@ require("lazy").setup({
       }
     end
   },
-   {
+  {
     'norcalli/nvim-colorizer.lua',
     config = function()
       require('colorizer').setup({ '*' }, { css = true })
     end
   },
-   { 'kamykn/spelunker.vim' },
-  
-  
- 
-  
-  
-  
-   { 'ThePrimeagen/harpoon', dependencies = {
-    'nvim-lua/plenary.nvim'
-  }, config = function()
-    require('plugins.harpoon')
-  end
-  },
-   { 'emmanueltouzery/agitator.nvim',
-    config = function() require('plugins.agitator')
+  { 'kamykn/spelunker.vim' },
+
+
+
+
+
+
+  {
+    'ThePrimeagen/harpoon',
+    dependencies = {
+      'nvim-lua/plenary.nvim'
+    },
+    config = function()
+      require('plugins.harpoon')
     end
   },
-   { "williamboman/mason.nvim",
+  {
+    'emmanueltouzery/agitator.nvim',
+    config = function()
+      require('plugins.agitator')
+    end
+  },
+  { "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
     {
       "neovim/nvim-lspconfig",
@@ -165,10 +175,10 @@ require("lazy").setup({
       end
     }
   },
-   "WhoIsSethDaniel/mason-tool-installer.nvim",
-   'arthurxavierx/vim-caser',
-   {
+  "WhoIsSethDaniel/mason-tool-installer.nvim",
+  'arthurxavierx/vim-caser',
+  {
     "windwp/nvim-autopairs",
-      config = function() require("nvim-autopairs").setup {} end
+    config = function() require("nvim-autopairs").setup {} end
   }
 })
