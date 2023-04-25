@@ -13,6 +13,10 @@ highlight GitGutterChange guifg=#fdcb6e ctermfg=3 guibg=none ctermbg=none
 highlight GitGutterDelete guifg=#ff7675 ctermfg=1 guibg=none ctermbg=none
 
 
+hi DiagnosticSignError guibg=none
+hi DiagnosticSignWarn guibg=none
+hi DiagnosticSignHint guibg=none
+hi DiagnosticSignInfo guibg=none
 
 highlight GitSignsAdd    guifg=#00b894 ctermfg=2 guibg=none ctermbg=none
 highlight GitSignsChange guifg=#fdcb6e ctermfg=3 guibg=none ctermbg=none
