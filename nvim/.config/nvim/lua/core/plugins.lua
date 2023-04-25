@@ -12,6 +12,14 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+    config = function()
+      require("plugins.copilot")
+    end
+  },
   'RishabhRD/popfix',
   'RishabhRD/nvim-lsputils',
   "L3MON4D3/LuaSnip",
