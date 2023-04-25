@@ -1,40 +1,22 @@
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
+
 require("lazy").setup({
-  {
-    'rebelot/kanagawa.nvim',
-    config = function()
-      require('kanagawa').setup({
-        compile = false, -- enable compiling the colorscheme
-        undercurl = true, -- enable undercurls
-        commentStyle = { italic = true },
-        functionStyle = {},
-        keywordStyle = { italic = true },
-        statementStyle = { bold = true },
-        typeStyle = {},
-        transparent = true, -- do not set background color
-        dimInactive = false, -- dim inactive window `:h hl-NormalNC`
-        terminalColors = true, -- define vim.g.terminal_color_{0,17}
-        colors = {
-                           -- add/modify theme and palette colors
-          palette = {},
-          theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
-        },
-        overrides = function(colors) -- add/modify highlights
-          return {}
-        end,
-        theme = "wave", -- Load "wave" theme when 'background' option is not set
-        background = {
-                       -- map the value of 'background' option to a theme
-          dark = "wave", -- try "dragon" !
-          light = "lotus"
-        },
-      })
-    end
-  },
   'RishabhRD/popfix',
   'RishabhRD/nvim-lsputils',
   "L3MON4D3/LuaSnip",
   {
-    "rsh7th/nvim-cmp",
+    "hrsh7th/nvim-cmp",
     dependencies = {
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-buffer",
@@ -47,13 +29,12 @@ require("lazy").setup({
     },
     config = function() require('plugins.cmp') end,
   },
-
   {
     'nvim-telescope/telescope.nvim',
     dependencies = { { 'nvim-lua/plenary.nvim' } },
     config = function() require('plugins.telescope') end,
   },
-  { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
+  { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
   'sbdchd/neoformat',
   'sudoerwx/vim-gitcommit-issue-id',
 
@@ -107,7 +88,7 @@ require("lazy").setup({
   'machakann/vim-sandwich',
   {
     'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate',
+    build = ':TSUpdate',
     config = function()
       require(
         'plugins.treesitter')
@@ -131,7 +112,6 @@ require("lazy").setup({
   },
   {
     'akinsho/bufferline.nvim',
-    tag = "v3.*",
     config = function()
       require(
         'plugins.bufferline')

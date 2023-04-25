@@ -161,35 +161,3 @@ vim.diagnostic.config({
     source = "always", -- Or "if_many"
   },
 })
-
--- vim.ui.select = require"popui.ui-overrider"
--- vim.ui.input = require"popui.input-overrider"
--- vim.notify = require("notify")
---
-
--- g.dashboard_custom_header = {
---   '',
---   '██╗   ██╗██╗███╗   ███╗',
---   '██║   ██║██║████╗ ████║',
---   '██║   ██║██║██╔████╔██║',
---   '╚██╗ ██╔╝██║██║╚██╔╝██║',
---   ' ╚████╔╝ ██║██║ ╚═╝ ██║',
---   '  ╚═══╝  ╚═╝╚═╝     ╚═╝',
---   ''
---
--- g.carbon_now_sh_options = { ln = 'false',
---   fm = 'Fira Code',
---   t = 'nord' }
---   g.EasyMotion_startofline = 0
--- g.EasyMotion_smartcase = 1
---
--- g.hardtime_default_on = 0
--- g.hardtime_ignore_buffer_patterns = { 'coc-explorer', 'NERD.*' }
--- g.hardtime_ignore_quickfix = 1
--- g.hardtime_allow_different_key = 1
--- g.material_style = 'palenight'
-
--- "start page
--- " g.startify_session_dir = '~/.vim/sessions'
--- """"" enable 24bit true color
--- g.polyglot_disabled = { 'css', 'javascript', 'typescript', 'javascriptreact', 'typescriptreact' }

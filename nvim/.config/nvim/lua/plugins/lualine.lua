@@ -6,8 +6,6 @@ if(new_auto.insert.c)then new_auto.insert.c.bg = 'transparent' end
 if(new_auto.visual.c)then new_auto.visual.c.bg = 'transparent' end
 if(new_auto.replace.c)then new_auto.replace.c.bg = 'transparent' end
 
-
-
 require('lualine').setup {
   options = {
     globalstatus = true,
