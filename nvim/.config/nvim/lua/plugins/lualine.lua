@@ -32,3 +32,7 @@ require('lualine').setup {
   },
   extensions = { 'quickfix', 'neo-tree', 'nvim-dap-ui' }
 }
+
+if vim.api.nvim_buf_get_name(vim.api.nvim_get_current_buf()) == '' then
+    vim.cmd('intro')
+end
