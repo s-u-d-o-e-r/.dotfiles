@@ -229,8 +229,4 @@ require("lazy").setup({
   },
   "WhoIsSethDaniel/mason-tool-installer.nvim",
   'arthurxavierx/vim-caser',
-  {
-    "windwp/nvim-autopairs",
-    config = function() require("nvim-autopairs").setup {} end
-  }
 })
