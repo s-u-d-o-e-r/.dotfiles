@@ -1,16 +1,8 @@
 local fn = vim.fn
--- require('nvim-autopairs').setup()
--- local Utils = require('utils')
 local luasnip = require('luasnip')
 local cmp = require('cmp')
 
--- local exprinoremap = Utils.exprinoremap
-
-
 cmp.setup({
-  -- Don't autocomplete, otherwise there is too much clutter
-  -- completion = {autocomplete = { false },},
-
   -- Don't preselect an option
   preselect = cmp.PreselectMode.None,
   -- Snippet engine, required
@@ -38,7 +30,5 @@ cmp.setup({
   },
 })
 
-require("luasnip").filetype_extend("all", { "_" })
-
-require("luasnip.loaders.from_snipmate").lazy_load()
 require("luasnip.loaders.from_vscode").lazy_load()
+require("luasnip.loaders.from_snipmate").lazy_load()

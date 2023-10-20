@@ -56,7 +56,12 @@ require("lazy").setup({
   },
   'RishabhRD/popfix',
   'RishabhRD/nvim-lsputils',
-  "L3MON4D3/LuaSnip",
+  {
+    "L3MON4D3/LuaSnip",
+    version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+    -- install jsregexp (optional!).
+    build = "make install_jsregexp"
+  },
   {
     "hrsh7th/nvim-cmp",
     dependencies = {
@@ -76,7 +81,11 @@ require("lazy").setup({
     dependencies = { { 'nvim-lua/plenary.nvim' } },
     config = function() require('plugins.telescope') end,
   },
-  { 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' },
+  {
+    'nvim-telescope/telescope-fzf-native.nvim',
+    build =
+    'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
+  },
   'sbdchd/neoformat',
   'sudoerwx/vim-gitcommit-issue-id',
 
@@ -92,7 +101,7 @@ require("lazy").setup({
         'plugins.neogit')
     end
   },
-  { 'sindrets/diffview.nvim',                   dependencies = { 'nvim-lua/plenary.nvim' } },
+  { 'sindrets/diffview.nvim', dependencies = { 'nvim-lua/plenary.nvim' } },
   { 'tpope/vim-fugitive' },
 
 
