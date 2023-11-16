@@ -39,6 +39,7 @@ nnoremap('<leader>u', ':UndotreeToggle<CR>')
 nnoremap('<leader>-', ':vertical resize -5<CR>')
 nnoremap('<leader>+', ':vertical resize +5<CR>')
 vnoremap("<F2>", ":CarbonNowSh<CR>")
+nmap("gdd", ":lua require('neogen').generate()<CR>", { noremap = true, silent = true })
 -- nnoremap("<F8>", ":SymbolsOutline<CR>")
 -- Line swapping
 -- nnoremap('<c-j>', ' :m .+1<CR>==')

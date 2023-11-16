@@ -143,9 +143,15 @@ require("lazy").setup({
     config = function()
       require(
         'plugins.treesitter')
-    end
+    end,
   },
-
+  {
+    "danymat/neogen",
+    dependencies = "nvim-treesitter/nvim-treesitter",
+    config = true,
+    -- Uncomment next line if you want to follow only stable versions
+    -- version = "*"
+  },
   'gpanders/editorconfig.nvim',
   'nvim-lua/plenary.nvim',
   'hood/popui.nvim',
