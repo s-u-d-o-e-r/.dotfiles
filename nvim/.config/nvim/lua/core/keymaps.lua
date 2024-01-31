@@ -38,7 +38,7 @@ nnoremap('<leader>l', ':wincmd l<CR>')
 nnoremap('<leader>u', ':UndotreeToggle<CR>')
 nnoremap('<leader>-', ':vertical resize -5<CR>')
 nnoremap('<leader>+', ':vertical resize +5<CR>')
-vnoremap("<F2>", ":CarbonNowSh<CR>")
+vnoremap("<F2>", ":Ray<CR>")
 nmap("gdd", ":lua require('neogen').generate()<CR>", { noremap = true, silent = true })
 -- nnoremap("<F8>", ":SymbolsOutline<CR>")
 -- Line swapping
