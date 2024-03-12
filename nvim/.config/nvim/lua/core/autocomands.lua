@@ -29,6 +29,12 @@ autocmd('CursorHold', {
     vim.diagnostic.open_float(nil, { focus = false, scope = "line" })
   end
 })
+--
+-- autocmd('BufReadPost,FileReadPost', {
+--   pattern = '*',
+--   command='normal zR'
+-- })
+
 
 
 -- augroup('import_cost_auto_run', { clear = true })

@@ -73,6 +73,11 @@ opt.softtabstop = 2 -- 1 tab == 4 spaces
 opt.smartindent = true -- Autoindent new lines
 opt.smartcase = true
 opt.ignorecase = true
+
+
+opt.foldmethod = "expr"
+opt.foldexpr = "nvim_treesitter#foldexpr()"
+opt.foldlevelstart = 99
 -----------------------------------------------------------
 -- Memory, CPU
 -----------------------------------------------------------
