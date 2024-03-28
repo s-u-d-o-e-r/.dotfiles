@@ -1,6 +1,8 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -155,3 +157,9 @@ PATH="$GOPATH/bin:$PATH"
 # Changes the ulimit limits.
 ulimit -Sn 4096      # Increase open files.
 ulimit -Sl unlimited # Increase max locked memory.
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
