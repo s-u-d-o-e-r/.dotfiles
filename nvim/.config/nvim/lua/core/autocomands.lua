@@ -66,7 +66,7 @@ autocmd('ColorScheme', {
   command = "highlight QuickScopeSecondary  gui=underline cterm=underline"
 })
 
-autocmd('CursorMoved,BufEnter', {
+autocmd({ 'CursorMoved', 'BufEnter' }, {
   pattern = '*',
   callback = function()
     if vim.bo.filetype == 'neo-tree' then
