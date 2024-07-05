@@ -44,7 +44,6 @@ require("mason-lspconfig").setup_handlers({
     }
 
     if serverName == "sumneko_lua" then
-
       config.settings = {
         Lua = {
           runtime = {
@@ -88,7 +87,20 @@ require("mason-lspconfig").setup_handlers({
     if serverName == "tsserver" then
       config.settings = {
         preferences = {
-          includeInlayParameterNameHints = 'all';
+          includeInlayParameterNameHints = 'all',
+        }
+      }
+      config.commands = {
+        OI = {
+          organize_imports = function()
+            local params = {
+              command = "_typescript.organizeImports",
+              arguments = { vim.api.nvim_buf_get_name(0) },
+              title = ""
+            }
+            vim.lsp.buf.execute_command(params)
+          end,
+          description = "Organize Imports"
         }
       }
     end
