@@ -156,6 +156,30 @@ require("lazy").setup({
   'nvim-lua/plenary.nvim',
   'hood/popui.nvim',
   'shaunsingh/nord.nvim',
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
+    config = function()
+      require("catppuccin").setup({
+        transparent_background = true, -- disables setting the background color.
+      })
+    end
+  },
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
+  {
+    'AlexvZyl/nordic.nvim',
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require 'nordic'.load()
+    end
+  },
   { 'lewis6991/gitsigns.nvim', config = function() require('plugins.gitsigns') end, },
   'nvim-tree/nvim-web-devicons',
   {
