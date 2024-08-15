@@ -171,6 +171,18 @@ require("lazy").setup({
     lazy = false,
     priority = 1000,
     opts = {},
+    config = function()
+      require("tokyonight").setup({
+        transparent = true, -- Enable this to disable setting the background color
+        terminal_colors = true,
+        styles = {
+          sidebars = "transparent",
+          -- floats = "transparent",
+        }
+
+      })
+    end
+
   },
   {
     'AlexvZyl/nordic.nvim',
