@@ -13,40 +13,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   {
-    'rebelot/kanagawa.nvim',
-    priority = 1000,
-    lazy = false,
-    config = function()
-      require('kanagawa').setup({
-        compile = true,   -- enable compiling the colorscheme
-        undercurl = true, -- enable undercurls
-        commentStyle = { italic = true },
-        functionStyle = {},
-        keywordStyle = { italic = true },
-        statementStyle = { bold = true },
-        typeStyle = {},
-        transparent = true,    -- do not set background color
-        dimInactive = false,   -- dim inactive window `:h hl-NormalNC`
-        terminalColors = true, -- define vim.g.terminal_color_{0,17}
-        colors = {
-          -- add/modify theme and palette colors
-          palette = {},
-          theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
-        },
-        overrides = function(colors) -- add/modify highlights
-          return {}
-        end,
-        theme = "wave", -- Load "wave" theme when 'background' option is not set
-        background = {
-          -- map the value of 'background' option to a theme
-          dark = "wave", -- try "dragon" !
-          light = "lotus"
-        },
-      })
-      -- vim.cmd([[colorscheme kanagawa]])
-    end
-  },
-  {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
     event = "InsertEnter",
@@ -166,7 +132,6 @@ require("lazy").setup({
 
   'wellle/targets.vim',
 
-  'sainnhe/gruvbox-material',
 
   'unblevable/quick-scope',
 
@@ -189,43 +154,6 @@ require("lazy").setup({
   'gpanders/editorconfig.nvim',
   'nvim-lua/plenary.nvim',
   'hood/popui.nvim',
-  'shaunsingh/nord.nvim',
-  {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    priority = 1000,
-    config = function()
-      require("catppuccin").setup({
-        transparent_background = true, -- disables setting the background color.
-      })
-    end
-  },
-  {
-    "folke/tokyonight.nvim",
-    lazy = false,
-    priority = 1000,
-    opts = {},
-    config = function()
-      require("tokyonight").setup({
-        transparent = true, -- Enable this to disable setting the background color
-        terminal_colors = true,
-        styles = {
-          sidebars = "transparent",
-          -- floats = "transparent",
-        }
-
-      })
-    end
-
-  },
-  {
-    'AlexvZyl/nordic.nvim',
-    lazy = false,
-    priority = 1000,
-    config = function()
-      require 'nordic'.load()
-    end
-  },
   { 'lewis6991/gitsigns.nvim', config = function() require('plugins.gitsigns') end, },
   'nvim-tree/nvim-web-devicons',
   {
@@ -282,12 +210,6 @@ require("lazy").setup({
     end
   },
   { 'kamykn/spelunker.vim' },
-
-
-
-
-
-
   {
     'ThePrimeagen/harpoon',
     dependencies = {
@@ -314,4 +236,153 @@ require("lazy").setup({
   },
   "WhoIsSethDaniel/mason-tool-installer.nvim",
   'arthurxavierx/vim-caser',
+-- Colorschemes
+--
+
+
+  -- 'sainnhe/gruvbox-material',
+
+
+  {
+    'rebelot/kanagawa.nvim',
+    priority = 1000,
+    lazy = false,
+    config = function()
+      require('kanagawa').setup({
+        compile = true,   -- enable compiling the colorscheme
+        undercurl = true, -- enable undercurls
+        commentStyle = { italic = true },
+        functionStyle = {},
+        keywordStyle = { italic = true },
+        statementStyle = { bold = true },
+        typeStyle = {},
+        transparent = true,    -- do not set background color
+        dimInactive = false,   -- dim inactive window `:h hl-NormalNC`
+        terminalColors = true, -- define vim.g.terminal_color_{0,17}
+        colors = {
+          -- add/modify theme and palette colors
+          palette = {},
+          theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
+        },
+        overrides = function(colors) -- add/modify highlights
+          return {}
+        end,
+        theme = "wave", -- Load "wave" theme when 'background' option is not set
+        background = {
+          -- map the value of 'background' option to a theme
+          dark = "wave", -- try "dragon" !
+          light = "lotus"
+        },
+      })
+      -- vim.cmd([[colorscheme kanagawa]])
+    end
+  },
+
+  -- 'shaunsingh/nord.nvim',
+
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
+    config = function()
+      require("catppuccin").setup({
+        transparent_background = true, -- disables setting the background color.
+      })
+    end
+  },
+  -- {
+  --   "folke/tokyonight.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   opts = {},
+  --   config = function()
+  --     require("tokyonight").setup({
+  --       transparent = true, -- Enable this to disable setting the background color
+  --       terminal_colors = true,
+  --       styles = {
+  --         sidebars = "transparent",
+  --         floats = "transparent",
+  --       },
+  --       on_colors = function(hl, c)
+  --         hl.LineNr = { fg = '#5eacd3', }
+  --       end
+  --
+  --     })
+  --   end
+  --
+  -- },
+  --
+  -- {
+  --   'AlexvZyl/nordic.nvim',
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     require 'nordic'.load()
+  --   end
+  -- },
+
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    dependencies = {
+      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+      "MunifTanjim/nui.nvim",
+      -- OPTIONAL:
+      --   `nvim-notify` is only needed, if you want to use the notification view.
+      --   If not available, we use `mini` as the fallback
+      "rcarriga/nvim-notify",
+    },
+    config = function()
+      require("noice").setup({
+        views = {
+          mini = {
+            win_options = {
+              winblend = 0
+            },
+            winhighlight = {},
+          },
+        },
+        lsp = {
+          -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
+          override = {
+            ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+            ["vim.lsp.util.stylize_markdown"] = true,
+            ["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
+          },
+        },
+        -- you can enable a preset for easier configuration
+        presets = {
+          bottom_search = true,         -- use a classic bottom cmdline for search
+          command_palette = false,      -- position the cmdline and popupmenu together
+          long_message_to_split = true, -- long messages will be sent to a split
+          inc_rename = false,           -- enables an input dialog for inc-rename.nvim
+          lsp_doc_border = false,       -- add a border to hover docs and signature help
+        },
+        cmdline = {
+
+          enabled = true, -- enables the Noice cmdline UI
+          view = "cmdline",
+        },
+        messages = {
+          -- NOTE: If you enable messages, then the cmdline is enabled automatically.
+          -- This is a current Neovim limitation.
+          enabled = true,              -- enables the Noice messages UI
+          view = "notify",             -- default view for messages
+          view_error = "notify",       -- view for errors
+          view_warn = "notify",        -- view for warnings
+          view_history = "messages",   -- view for :messages
+          view_search = "virtualtext", -- view for search count messages. Set to `false` to disable
+        },
+        lsp = {
+          progress = {
+            enabled = true,
+            format = "lsp_progress",
+            format_done = "lsp_progress_done",
+            throttle = 1000 / 30, -- frequency to update lsp progress message
+            view = "mini",
+          },
+        }
+      })
+    end,
+  },
 })
