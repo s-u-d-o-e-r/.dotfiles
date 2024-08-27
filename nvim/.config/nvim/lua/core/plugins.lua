@@ -94,11 +94,10 @@ require("lazy").setup({
   'yuttie/comfortable-motion.vim',
   'tpope/vim-abolish',
   {
-    'TimUntersberger/neogit',
+    'NeogitOrg/neogit',
     dependencies = { 'nvim-lua/plenary.nvim' },
     config = function()
-      require(
-        'plugins.neogit')
+      require('plugins.neogit')
     end
   },
   { 'sindrets/diffview.nvim', dependencies = { 'nvim-lua/plenary.nvim' } },
@@ -236,8 +235,8 @@ require("lazy").setup({
   },
   "WhoIsSethDaniel/mason-tool-installer.nvim",
   'arthurxavierx/vim-caser',
--- Colorschemes
---
+  -- Colorschemes
+  --
 
 
   -- 'sainnhe/gruvbox-material',
@@ -290,27 +289,27 @@ require("lazy").setup({
       })
     end
   },
-  -- {
-  --   "folke/tokyonight.nvim",
-  --   lazy = false,
-  --   priority = 1000,
-  --   opts = {},
-  --   config = function()
-  --     require("tokyonight").setup({
-  --       transparent = true, -- Enable this to disable setting the background color
-  --       terminal_colors = true,
-  --       styles = {
-  --         sidebars = "transparent",
-  --         floats = "transparent",
-  --       },
-  --       on_colors = function(hl, c)
-  --         hl.LineNr = { fg = '#5eacd3', }
-  --       end
-  --
-  --     })
-  --   end
-  --
-  -- },
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+    config = function()
+      require("tokyonight").setup({
+        transparent = true, -- Enable this to disable setting the background color
+        terminal_colors = true,
+        styles = {
+          sidebars = "transparent",
+          floats = "transparent",
+        },
+        on_colors = function(hl, c)
+          hl.LineNr = { fg = '#5eacd3', }
+        end
+
+      })
+    end
+
+  },
   --
   -- {
   --   'AlexvZyl/nordic.nvim',
