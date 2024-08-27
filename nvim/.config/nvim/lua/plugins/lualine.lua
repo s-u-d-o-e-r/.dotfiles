@@ -1,4 +1,4 @@
-local new_auto = require 'lualine.themes.auto'
+local new_auto = require 'lualine.themes.gruvbox-material'
 
 if(new_auto.normal.c)then new_auto.normal.c.bg = 'transparent' end
 if(new_auto.inactive.c)then new_auto.inactive.c.bg = 'transparent' end
