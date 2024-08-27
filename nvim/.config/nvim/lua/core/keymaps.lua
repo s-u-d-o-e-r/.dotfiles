@@ -8,11 +8,11 @@ local imap = m.imap
 local silent = { silent = true }
 
 -- " mapping for buffers control
--- nmap("<S-H>", ":BufferPrevious<CR>", silent)
--- nmap("<S-L>", ":BufferNext<CR>", silent)
+nmap("<S-H>", ":BufferPrevious<CR>", silent)
+nmap("<S-L>", ":BufferNext<CR>", silent)
 
-nmap("<S-H>", ":BufferLineCyclePrev<CR>", silent)
-nmap("<S-L>", ":BufferLineCycleNext<CR>", silent)
+-- nmap("<S-H>", ":BufferLineCyclePrev<CR>", silent)
+-- nmap("<S-L>", ":BufferLineCycleNext<CR>", silent)
 
 nmap("<leader><leader>=", ":Neoformat<CR>", silent)
 -- " save mappings

@@ -24,6 +24,11 @@ highlight GitSignsChange guifg=#fdcb6e ctermfg=3 guibg=none ctermbg=none
 highlight GitSignsDelete guifg=#ff7675 ctermfg=1 guibg=none ctermbg=none
 highlight GitSignsChangeDelete guifg=#ff7675 ctermfg=1 guibg=none ctermbg=none
 
+hi BufferOffset ctermbg=none guibg=none
+hi BufferTabpageFill ctermbg=none guibg=none
+hi BufferTabpagesSep ctermbg=none guibg=none
+hi BufferScrollArrow ctermbg=none guibg=none
+hi BufferTabpages ctermbg=none guibg=none
 
 hi TelescopeBorder guifg=#5eacd guibg=none
 

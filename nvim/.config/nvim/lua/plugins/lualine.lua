@@ -11,22 +11,20 @@ require('lualine').setup {
     globalstatus = true,
     theme = new_auto,
     component_separators = '',
-    section_separators = { left = '', right = '' },
   },
   sections = {
-    lualine_a = { { 'mode', separator = { left = '' }, right_padding = 2 } },
+    lualine_a = { { 'mode',  right_padding = 2 } },
     lualine_b = { 'branch', 'diff' },
     lualine_c = { 'filename' },
     lualine_x = { 'filetype' },
     lualine_y = { { 'diagnostics', colored = false,
-      separator = '|',
       symbols = { error = " ", warn = " ", hint = " ", info = " "
 
       },
 
     }, 'fileformat', 'encoding' },
     lualine_z = {
-      { 'location', separator = { right = '' } }
+      { 'location',  }
     },
 
   },
@@ -36,3 +34,33 @@ require('lualine').setup {
 -- if vim.api.nvim_buf_get_name(vim.api.nvim_get_current_buf()) == '' then
 --     vim.cmd('intro')
 -- end
+--
+--
+--
+-- require('lualine').setup {
+--   options = {
+--     globalstatus = true,
+--     theme = new_auto,
+--     component_separators = '',
+--     section_separators = { left = '', right = '' },
+--   },
+--   sections = {
+--     lualine_a = { { 'mode', separator = { left = '' }, right_padding = 2 } },
+--     lualine_b = { 'branch', 'diff' },
+--     lualine_c = { 'filename' },
+--     lualine_x = { 'filetype' },
+--     lualine_y = { { 'diagnostics', colored = false,
+--       separator = '|',
+--       symbols = { error = " ", warn = " ", hint = " ", info = " "
+--
+--       },
+--
+--     }, 'fileformat', 'encoding' },
+--     lualine_z = {
+--       { 'location', separator = { right = '' } }
+--     },
+--
+--   },
+--   extensions = { 'quickfix', 'neo-tree', 'nvim-dap-ui' }
+-- }
+--
