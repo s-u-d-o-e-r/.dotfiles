@@ -394,6 +394,9 @@ require("lazy").setup({
             throttle = 1000 / 30, -- frequency to update lsp progress message
             view = "mini",
           },
+          message = {
+            enabled = false,
+          },
         }
       })
     end,
