@@ -85,7 +85,7 @@ require("mason-lspconfig").setup_handlers({
       config.filetypes = { "html", "css", "scss" }
     end
 
-    if serverName == "tsserver" then
+    if serverName == "ts_ls" then
       config.settings = {
         preferences = {
           includeInlayParameterNameHints = 'all';
