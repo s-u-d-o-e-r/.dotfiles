@@ -1,7 +1,7 @@
 require('copilot').setup({
   panel = {
     enabled = true,
-    auto_refresh = false,
+    auto_refresh = true,
     keymap = {
       jump_prev = "[[",
       jump_next = "]]",
@@ -22,8 +22,8 @@ require('copilot').setup({
       accept = "<M-s>",
       accept_word = false,
       accept_line = false,
-      next = "<M-]>",
-      prev = "<M-[>",
+      next = "<M-w>",
+      prev = "<M-m>",
       dismiss = "<M-x>",
     },
   },

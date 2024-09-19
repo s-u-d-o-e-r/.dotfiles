@@ -111,9 +111,8 @@ require("mason-lspconfig").setup_handlers({
         }
       }
     end
-
-    lspconfig[serverName].setup(config)
-  end
+    lspconfig[serverName].setup({})
+end
 })
 
 -- Change border of documentation hover window, See https://github.com/neovim/neovim/pull/13998.

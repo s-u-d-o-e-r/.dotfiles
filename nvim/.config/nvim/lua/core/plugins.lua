@@ -20,6 +20,7 @@ require("lazy").setup({
       require("plugins.copilot")
     end
   },
+  'onsails/lspkind.nvim',
   'RishabhRD/popfix',
   'RishabhRD/nvim-lsputils',
   {
@@ -72,7 +73,7 @@ require("lazy").setup({
       "f3fora/cmp-spell",
       "saadparwaiz1/cmp_luasnip",
       "uga-rosa/cmp-dictionary",
-      "hrsh7th/cmp-nvim-lsp-signature-help",
+      -- "hrsh7th/cmp-nvim-lsp-signature-help",
     },
     config = function() require('plugins.cmp') end,
   },
@@ -333,8 +334,8 @@ require("lazy").setup({
   --     require 'nordic'.load()
   --   end
   -- },
-{
-  "folke/noice.nvim",
+  {
+    "folke/noice.nvim",
     event = "VeryLazy",
     dependencies = {
       -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
@@ -368,7 +369,7 @@ require("lazy").setup({
           command_palette = false,      -- position the cmdline and popupmenu together
           long_message_to_split = true, -- long messages will be sent to a split
           inc_rename = false,           -- enables an input dialog for inc-rename.nvim
-          lsp_doc_border = true,       -- add a border to hover docs and signature help
+          lsp_doc_border = true,        -- add a border to hover docs and signature help
         },
 
         cmdline = {
@@ -378,7 +379,7 @@ require("lazy").setup({
         messages = {
           -- NOTE: If you enable messages, then the cmdline is enabled automatically.
           -- This is a current Neovim limitation.
-          enabled = false,              -- enables the Noice messages UI
+          enabled = false,             -- enables the Noice messages UI
           view = "notify",             -- default view for messages
           view_error = "notify",       -- view for errors
           view_warn = "notify",        -- view for warnings
