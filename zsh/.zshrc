@@ -163,3 +163,5 @@ fi
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+export PYTHONPATH=/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages:/opt/local/lib/python2.7/site-packages:${PYTHONPATH}
