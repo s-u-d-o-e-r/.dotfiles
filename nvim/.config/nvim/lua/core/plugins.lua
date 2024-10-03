@@ -397,5 +397,17 @@ require("lazy").setup({
         }
       })
     end,
-  }
+  },
+  {
+    "mfussenegger/nvim-dap",
+    dependencies = {
+      "mxsdev/nvim-dap-vscode-js",
+      "rcarriga/nvim-dap-ui",
+      "nvim-neotest/nvim-nio",
+      "theHamsta/nvim-dap-virtual-text"
+    },
+    config = function()
+      require('plugins.dap')
+    end
+  },
 })

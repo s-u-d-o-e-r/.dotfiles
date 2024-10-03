@@ -26,8 +26,6 @@ require 'mason-tool-installer'.setup {
     "json-lsp",
     "vim-language-server",
     "rust-analyzer",
-    "chrome-debug-adapter",
-    "node-debug2-adapter",
     "tailwindcss-language-server"
   },
   -- if set to true this will check each tool for updates. If updates
