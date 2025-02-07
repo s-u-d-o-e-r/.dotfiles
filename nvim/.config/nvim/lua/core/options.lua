@@ -165,3 +165,6 @@ vim.diagnostic.config({
     border = 'rounded'
   },
 })
+
+g.copilot_proxy = 'http://webproxy.merck.com:8080'
+g.copilot_proxy_strict_ssl = false

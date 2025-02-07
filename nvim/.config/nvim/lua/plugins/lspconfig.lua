@@ -42,7 +42,6 @@ require("mason-lspconfig").setup_handlers({
     }
 
     if serverName == "sumneko_lua" then
-
       config.settings = {
         Lua = {
           runtime = {
@@ -83,11 +82,17 @@ require("mason-lspconfig").setup_handlers({
       config.filetypes = { "html", "css", "scss" }
     end
 
+    if serverName == "angularls" then
+      config.filetypes = { "javascriptreact", "typescriptreact", "typescript.tsx", "htmlangular" , "js", "javascript", "ts", "typescript", "html" }
+    end
+
     if serverName == "ts_ls" then
       config.settings = {
         preferences = {
-          includeInlayParameterNameHints = 'all';
-        }
+          includeInlayParameterNameHints = 'all',
+        },
+
+        ['typescript.format.enable'] = false
       }
     end
 
@@ -109,8 +114,8 @@ require("mason-lspconfig").setup_handlers({
         }
       }
     end
-    lspconfig[serverName].setup({})
-end
+    lspconfig[serverName].setup(config)
+  end
 })
 
 -- Change border of documentation hover window, See https://github.com/neovim/neovim/pull/13998.

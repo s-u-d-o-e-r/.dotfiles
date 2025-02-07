@@ -18,17 +18,17 @@ local autocmd = vim.api.nvim_create_autocmd -- Create autocommand
 --   command = "Neoformat"
 -- })
 
--- autocmd('CursorHold', {
---   pattern = '*',
---   callback = function()
---     for _, winid in pairs(vim.api.nvim_tabpage_list_wins(0)) do
---       if vim.api.nvim_win_get_config(winid).zindex then
---         return
---       end
---     end
---     vim.diagnostic.open_float(nil, { focus = false, scope = "line" })
---   end
--- })
+autocmd('CursorHold', {
+  pattern = '*',
+  callback = function()
+    for _, winid in pairs(vim.api.nvim_tabpage_list_wins(0)) do
+      if vim.api.nvim_win_get_config(winid).zindex then
+        return
+      end
+    end
+    vim.diagnostic.open_float(nil, { focus = false, scope = "line" })
+  end
+})
 --
 -- autocmd('BufReadPost,FileReadPost', {
 --   pattern = '*',
