@@ -1,6 +1,7 @@
 return {
     "neovim/nvim-lspconfig",
     dependencies = {
+        "jose-elias-alvarez/null-ls.nvim",
         "stevearc/conform.nvim",
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
@@ -28,7 +29,7 @@ return {
             cmp_lsp.default_capabilities())
 
         require("fidget").setup({
-            notification = { -- NOTE: you're missing this outer table
+            notification = {      -- NOTE: you're missing this outer table
                 window = {
                     winblend = 0, -- NOTE: it's winblend, not blend
                 },
@@ -56,7 +57,7 @@ return {
             vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
             vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
             vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
-            vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
+            vim.keymap.set({ 'n', 'i' }, '<C-k>', vim.lsp.buf.signature_help, bufopts)
             vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, bufopts)
             vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
             vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
@@ -122,6 +123,20 @@ return {
                 --   vim.g.zig_fmt_parse_errors = 0
                 --   vim.g.zig_fmt_autosave = 0
                 -- end,
+                ["ts_ls"] = function()
+                    local lspconfig = require("lspconfig")
+                    lspconfig.ts_ls.setup {
+                        on_attach = common_on_attach,
+                        capabilities = capabilities,
+                        settings = {
+                            tsserver_file_preferences = {
+                                includeInlayParameterNameHints = 'all',
+                            },
+                            tsserver_format_enable = false
+                        }
+                    }
+                end,
+
                 ["lua_ls"] = function()
                     local lspconfig = require("lspconfig")
                     lspconfig.lua_ls.setup {
@@ -172,6 +187,13 @@ return {
             })
         })
 
+
+        local null_ls = require("null-ls")
+        null_ls.setup({
+            sources = {
+                null_ls.builtins.formatting.prettierd,
+            },
+        })
         vim.diagnostic.config({
             virtual_text = {
                 severity = { vim.diagnostic.severity.ERROR, vim.diagnostic.severity.WARN },
