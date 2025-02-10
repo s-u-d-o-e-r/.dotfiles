@@ -27,7 +27,13 @@ return {
             vim.lsp.protocol.make_client_capabilities(),
             cmp_lsp.default_capabilities())
 
-        require("fidget").setup({})
+        require("fidget").setup({
+            notification = { -- NOTE: you're missing this outer table
+                window = {
+                    winblend = 0, -- NOTE: it's winblend, not blend
+                },
+            },
+        })
         --
         --
         -- local lspconfig = require('lspconfig')
