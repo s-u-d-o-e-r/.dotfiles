@@ -12,7 +12,6 @@ require 'mason-tool-installer'.setup {
   -- start; they should be the names Mason uses for each tool
   ensure_installed = {
     'lua-language-server',
-    'vim-language-server',
     'json-to-struct',
     'misspell',
     'shellcheck',

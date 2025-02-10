@@ -50,12 +50,6 @@ require("lazy").setup({
   'onsails/lspkind.nvim',
   'RishabhRD/popfix',
   'RishabhRD/nvim-lsputils',
-  {
-    "L3MON4D3/LuaSnip",
-    version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
-    -- install jsregexp (optional!).
-    build = "make install_jsregexp"
-  },
   'HiPhish/rainbow-delimiters.nvim',
   {
     "lukas-reineke/indent-blankline.nvim",
@@ -97,8 +91,6 @@ require("lazy").setup({
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
       "hrsh7th/cmp-nvim-lua",
-      "f3fora/cmp-spell",
-      "saadparwaiz1/cmp_luasnip",
       "uga-rosa/cmp-dictionary",
       "hrsh7th/cmp-nvim-lsp-signature-help",
     },

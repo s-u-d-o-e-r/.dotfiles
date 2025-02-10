@@ -31,8 +31,8 @@ function M.common_on_attach(client, bufnr)
   vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
   vim.keymap.set('n', '<leader>==', vim.lsp.buf.format, bufopts)
-  vim.keymap.set('n', 'gn', ']d', bufopts)
-  vim.keymap.set('n', 'gp', '[d', bufopts)
+  -- vim.keymap.set('n', 'gn', ']d', bufopts)
+  -- vim.keymap.set('n', 'gp', '[d', bufopts)
 end
 
 return M
