@@ -19,15 +19,15 @@ local autocmd = vim.api.nvim_create_autocmd -- Create autocommand
 -- })
 
 autocmd('CursorHold', {
-  pattern = '*',
-  callback = function()
-    for _, winid in pairs(vim.api.nvim_tabpage_list_wins(0)) do
-      if vim.api.nvim_win_get_config(winid).zindex then
-        return
-      end
+    pattern = '*',
+    callback = function()
+        for _, winid in pairs(vim.api.nvim_tabpage_list_wins(0)) do
+            if vim.api.nvim_win_get_config(winid).zindex then
+                return
+            end
+        end
+        vim.diagnostic.open_float(nil, { focus = false, scope = "line" })
     end
-    vim.diagnostic.open_float(nil, { focus = false, scope = "line" })
-  end
 })
 --
 -- autocmd('BufReadPost,FileReadPost', {
@@ -48,31 +48,31 @@ autocmd('CursorHold', {
 -- Highlight on yank
 augroup('YankHighlight', { clear = true })
 autocmd('TextYankPost', {
-  group = 'YankHighlight',
-  callback = function()
-    vim.highlight.on_yank({ higroup = 'HighlightedyankRegion', timeout = '700' })
-  end
+    group = 'YankHighlight',
+    callback = function()
+        vim.highlight.on_yank({ higroup = 'HighlightedyankRegion', timeout = '700' })
+    end
 })
 
 
 -- setted color for quick scope plugin
 augroup('qs_colors', { clear = true })
 autocmd('ColorScheme', {
-  group = 'qs_colors',
-  command = "highlight QuickScopePrimary guibg='#434C5E' gui=underline cterm=underline"
+    group = 'qs_colors',
+    command = "highlight QuickScopePrimary guibg='#434C5E' gui=underline cterm=underline"
 })
 autocmd('ColorScheme', {
-  group = 'qs_colors',
-  command = "highlight QuickScopeSecondary  gui=underline cterm=underline"
+    group = 'qs_colors',
+    command = "highlight QuickScopeSecondary  gui=underline cterm=underline"
 })
 
 autocmd({ 'CursorMoved', 'BufEnter' }, {
-  pattern = '*',
-  callback = function()
-    if vim.bo.filetype == 'neo-tree' then
-      vim.api.nvim_command('norm 0')
+    pattern = '*',
+    callback = function()
+        if vim.bo.filetype == 'neo-tree' then
+            vim.api.nvim_command('norm 0')
+        end
     end
-  end
 })
 
 
@@ -88,7 +88,6 @@ autocmd({ 'CursorMoved', 'BufEnter' }, {
 
 local signs = { Error = "", Warn = "", Hint = "", Info = "" }
 for type, icon in pairs(signs) do
-  local hl = "DiagnosticSign" .. type
-  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+    local hl = "DiagnosticSign" .. type
+    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
-

@@ -7,30 +7,6 @@ capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 --local servers = --{ "html", "cssls", "cssmodules_ls", "eslint", "emmet_ls", "sumneko_lua", "tsserver", "jsonls", "vimls", "rust_analyzer" }
 require("mason").setup()
-require 'mason-tool-installer'.setup {
-  -- a list of all tools you want to ensure are installed upon
-  -- start; they should be the names Mason uses for each tool
-  ensure_installed = {
-    'lua-language-server',
-    'json-to-struct',
-    'misspell',
-    'shellcheck',
-    'vint',
-    "html-lsp",
-    "css-lsp",
-    "cssmodules-language-server",
-    "eslint-lsp",
-    "emmet-ls",
-    "typescript-language-server",
-    "json-lsp",
-    "vim-language-server",
-    "rust-analyzer",
-    "tailwindcss-language-server"
-  },
-  -- if set to true this will check each tool for updates. If updates
-  -- are available the tool will be updated.
-  auto_update = true
-}
 
 require("mason-lspconfig").setup()
 require("mason-lspconfig").setup_handlers({

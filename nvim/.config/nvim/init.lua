@@ -1,5 +1,5 @@
 require('core.options')
-require('core.plugins')
+require('core.lazy_init')
 require('core.themes')
 require('core.keymaps')
 require('core.usercommands')
