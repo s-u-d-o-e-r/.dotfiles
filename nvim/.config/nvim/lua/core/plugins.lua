@@ -342,4 +342,11 @@ require("lazy").setup({
       require('plugins.dap')
     end
   },
+  {
+    "m4xshen/hardtime.nvim",
+    dependencies = { "MunifTanjim/nui.nvim" },
+    opts = {}
+  },
+
+  -- 'yuttie/comfortable-motion.vim',
 })

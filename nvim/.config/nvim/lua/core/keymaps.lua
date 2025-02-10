@@ -5,6 +5,7 @@ local xnoremap = m.xnoremap
 local nmap = m.nmap
 local vmap = m.vmap
 local imap = m.imap
+local inmap = m.inmap
 local silent = { silent = true }
 
 -- " mapping for buffers control
@@ -25,6 +26,9 @@ nnoremap("<leader>d", "d")
 xnoremap("<leader>d", "d")
 nnoremap("<leader>dd", "dd")
 nnoremap("<leader>D", "D")
+-- scroll map
+nnoremap("<C-u>", "<C-u>zz")
+nnoremap("<C-d>", "<C-d>zz")
 -- " mapping paste
 imap("<C-p>", '<C-o>"+p')
 vmap('p', '"_dP')
@@ -48,3 +52,6 @@ nmap("gdd", ":lua require('neogen').generate()<CR>", { noremap = true, silent = 
 -- inoremap('<c-k>', '<Esc>:m .-2<CR>==gi')
 -- vnoremap('<c-j>', ":m '>+1<CR>gv=gv")
 -- vnoremap('<c-k>', ":m '<-2<CR>gv=gv")
+-- in lua
+inmap("<ScrollWheelUp>", "<C-Y>")
+inmap("<ScrollWheelDown>", "<C-E>")
