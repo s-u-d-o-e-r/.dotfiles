@@ -2,6 +2,8 @@ vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldlevelstart = 99
 vim.opt.clipboard = 'unnamedplus'                 -- Copy/paste to system clipboard
+vim.opt.smartcase = true
+vim.opt.ignorecase = true
 
 vim.opt.listchars = {
     eol = '↲',
@@ -57,7 +59,7 @@ vim.opt.expandtab = true
 
 vim.opt.smartindent = true
 
-vim.opt.wrap = false
+-- vim.opt.wrap = false
 
 vim.opt.swapfile = false
 vim.opt.backup = false
@@ -75,7 +77,7 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
-vim.opt.colorcolumn = "80"
+-- vim.opt.colorcolumn = "80"
 
 
 
@@ -104,8 +106,8 @@ vim.opt.confirm = true
 -- -- Neovim UI
 -- -----------------------------------------------------------
 -- vim.opt.number = true       -- Show line number
--- vim.opt.showmatch = true    -- Highlight matching parenthesis
--- vim.opt.colorcolumn = '120' -- Line ht marker at 80 columns
+vim.opt.showmatch = true    -- Highlight matching parenthesis
+vim.opt.colorcolumn = '120' -- Line ht marker at 80 columns
 -- vim.opt.splitright = true   -- Vertical split to the right
 -- vim.opt.splitbelow = true   -- Horizontal split to the bottom
 -- vim.opt.ignorecase = true   -- Ignore case letters when search
@@ -117,7 +119,7 @@ vim.opt.confirm = true
 -- end
 --
 -- vim.opt.laststatus = 0 -- Set global statusline
--- vim.opt.wrap = true
+vim.opt.wrap = true
 -- vim.opt.cursorline = true
 -- vim.opt.bg = "dark"
 -- vim.opt.ruler = false
