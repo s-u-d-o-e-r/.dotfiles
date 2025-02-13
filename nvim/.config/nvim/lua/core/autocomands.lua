@@ -9,13 +9,14 @@ local augroup = vim.api.nvim_create_augroup -- Create/get autocommand group
 local autocmd = vim.api.nvim_create_autocmd -- Create autocommand
 
 
-autocmd('BufWritePre', {
-    pattern = '*',
-    callback = function()
-        vim.lsp.buf.format({ async = false })
-    end
-    -- command = "Neoformat"
-})
+-- Format on save
+-- autocmd('BufWritePre', {
+--   pattern = '*',
+--   -- callback = function()
+--   --   vim.lsp.buf.format({ async = false })
+--   -- end
+--   command = "Neoformat"
+-- })
 
 autocmd('CursorHold', {
     pattern = '*',
@@ -25,7 +26,7 @@ autocmd('CursorHold', {
                 return
             end
         end
-        vim.diagnostic.open_float(nil, { focus = false, scope = "line" })
+        vim.diagnostic.open_float(nil, { focus = false, scope = "cursor" })
     end
 })
 --
