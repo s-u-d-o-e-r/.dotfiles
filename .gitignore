@@ -1,4 +1,4 @@
 .netrwhist
 .DS_Store
 nvim/.config/nvim/plugin/packer_compiled.lua
-1localnvimvariables.lua
+localnvimvariables.lua
