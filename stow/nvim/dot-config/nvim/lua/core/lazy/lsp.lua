@@ -62,7 +62,9 @@ return {
             vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
             vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
             vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-            vim.keymap.set('n', '<leader>==', vim.lsp.buf.format, bufopts)
+            vim.keymap.set('n', '<leader>==', function()
+                vim.lsp.buf.format { filter = function(client) return client.name ~= "ts_ls" end }
+            end, bufopts)
         end
 
         -- vim.keymap.set('n', 'gn', ']d', bufopts)
@@ -132,7 +134,7 @@ return {
                             tsserver_file_preferences = {
                                 includeInlayParameterNameHints = 'all',
                             },
-                            tsserver_format_enable = false
+                            -- tsserver_format_enable = false
                         }
                     }
                 end,
